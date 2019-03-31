@@ -2,10 +2,10 @@
   "name": "java-basic-notes",
   "version": "1.0.0",
   "description": "Java Basic Notes, Java基础笔记",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "dev": "gitbook serve",
-    "build": "gitbook build"
+    "build": "gitbook build && node build.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/capricorncd/Java-Basic-Notes#readme",
   "devDependencies": {
     "bash-color": "^0.0.4",
+    "fs-extra": "^7.0.1",
     "gitbook": "^2.6.9",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-back-to-top-button": "^0.1.4",
