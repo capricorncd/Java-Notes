@@ -23,3 +23,9 @@
 * [面向对象特性：继承](pages/second-season/inheritance.md)
 
 * [面向对象特性：多态](pages/second-season/polymorphic.md)
+
+* [Java中的抽象类](pages/second-season/abstract.md)
+
+* [接口](pages/second-season/interface.md)
+
+* [UML(Unified Modeling Language)](pages/second-season/UML.md)
