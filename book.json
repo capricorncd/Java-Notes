@@ -17,7 +17,7 @@
   ],
   "pluginsConfig": {
     "insert-logo": {
-      "url": "/Java-Basic-Notes/logo.png",
+      "url": "/Java-Notes/logo.png",
       "style": "background: none; max-height: 50px; min-height: 30px"
     },
     "code": {
