@@ -1,5 +1,7 @@
 /build
 /docs
 
+gulpfile.js
+
 .bookignore
 .gitignore

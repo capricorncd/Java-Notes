@@ -24,7 +24,7 @@ https://www.cnblogs.com/silent2012/archive/2011/09/07/2169946.html
 
 用例图（The Use Case Diagram）
 
-> [!TIP|style:plat|label:The Use Case Diagram]
+> [!TIP|style:flat|label:The Use Case Diagram]
 
 > 用例图能够以可视化的方式，表达系统如何满足所收集的业务规则，以及特定的用户需求等信息。
 
@@ -32,7 +32,7 @@ https://www.cnblogs.com/silent2012/archive/2011/09/07/2169946.html
 
 序列图（The Sequence Diagram）
 
-> [!TIP|style:plat|label:The Sequence Diagram]
+> [!TIP|style:flat|label:The Sequence Diagram]
 
 > 序列图用于安装交互发生的一系列顺序，显示对象之间的这些交互。
 
@@ -40,7 +40,7 @@ https://www.cnblogs.com/silent2012/archive/2011/09/07/2169946.html
 
 类图（The Class Diagram）
 
-> [!TIP|style:plat|label:The Class Diagram]
+> [!TIP|style:flat|label:The Class Diagram]
 
 > UML类图、业务逻辑和所有支持结构一同被用于定义全部的代码结构。
 
