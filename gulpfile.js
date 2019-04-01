@@ -9,7 +9,7 @@ const htmlmin = require('gulp-htmlmin')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const cleanCss = require('gulp-clean-css')
-// const replace = require('gulp-replace')
+const replace = require('gulp-replace')
 /**
  * *********************************************************
  * html
@@ -31,7 +31,7 @@ function html1 () {
     return gulp.src('./_book/*.html')
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
-        // .pipe(replace(/&#xFF0C;powered by Gitbook/ig, '.'))
+        .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
         .pipe(gulp.dest('./_book'))
 }
 
@@ -39,7 +39,7 @@ function html2 () {
     return gulp.src('./_book/pages/**/*.html')
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
-        // .pipe(replace(/&#xFF0C;powered by Gitbook/ig, '.'))
+        .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
         .pipe(gulp.dest('./_book/pages'))
 }
 
