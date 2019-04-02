@@ -6,7 +6,7 @@
 // gulp
 const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
-const babel = require('gulp-babel')
+// const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const cleanCss = require('gulp-clean-css')
 const replace = require('gulp-replace')
@@ -65,9 +65,9 @@ function js () {
     return gulp.src([
         './_book/**/**/*.js'
     ])
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
+        // .pipe(babel({
+        //     presets: ['@babel/env']
+        // }))
         .pipe(uglify())
         .pipe(gulp.dest('./_book'))
 }
