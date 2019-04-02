@@ -1,7 +1,7 @@
 {
   "name": "java-notes",
   "version": "1.0.0",
-  "description": "Java Notes, Java基础笔记",
+  "description": "Java Notes, Java笔记",
   "main": "",
   "scripts": {
     "dev": "gitbook serve",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capricorncd/Java-Basic-Notes.git"
+    "url": "git+https://github.com/capricorncd/Java-Notes.git"
   },
   "keywords": [
     "Java",
@@ -19,21 +19,18 @@
   "author": "Capricorncd",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/capricorncd/Java-Basic-Notes/issues"
+    "url": "https://github.com/capricorncd/Java-Notes/issues"
   },
-  "homepage": "https://github.com/capricorncd/Java-Basic-Notes#readme",
+  "homepage": "https://github.com/capricorncd/Java-Notes#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
     "bash-color": "^0.0.4",
     "fs-extra": "^7.0.1",
     "gitbook": "^2.6.9",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-back-to-top-button": "^0.1.4",
     "gitbook-plugin-chapter-fold": "^0.0.4",
-    "gitbook-plugin-code": "^0.1.0",
     "gitbook-plugin-expandable-chapters-small": "^0.1.7",
-    "gitbook-plugin-flexible-alerts": "^1.0.1",
+    "gitbook-plugin-flexible-alerts": "^1.0.2",
     "gitbook-plugin-insert-logo": "^0.1.5",
     "gitbook-plugin-klipse": "^1.2.0",
     "gitbook-plugin-search-pro": "^2.0.2",

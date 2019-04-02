@@ -2,9 +2,7 @@
 
 语法：使用`abstract`关键字修饰，则该类为抽象类。
 
-应用场景：
-
-> [!TIP|style:flat|label:Application Scenarios]
+> [!TIP|style:flat|label:应用场景]
 
 > 1. 在某些情况下，某个父类只是知道其子类应该包含怎样的方法，但无法准确知道这些子类如何实现这些方法。（父类规定子类必须包含哪些方法，但不关心子类如何实现）
 
@@ -26,7 +24,7 @@
 
 5. 抽象类不能直接创建，可以定义引用变量
 
-> [!WARNING|style:flat]
+> [!WARNING|style:flat|label:注意]
 
 > 抽象方法`没有方法体`，以`分号`直接结束。
 

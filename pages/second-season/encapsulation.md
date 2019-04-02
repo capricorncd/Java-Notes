@@ -43,7 +43,9 @@ public class Hello {
 
 2、包的定义：package 包名
 
-注意：必须放在Java源程序的第一行，包名间可以使用`.`号隔开，eg: `com.test.HelloWorld`
+> [!WARNING|style:flat|label:注意]
+
+> 必须放在Java源程序的第一行，包名间可以使用 `.` 号隔开，eg:  `com.test.HelloWorld`
 
 ```
 // 例子：音乐类-MyClassMusic
@@ -191,7 +193,9 @@ public class Outer {
 
 3. 定义了成员内部类后，必须使用外部类对象来创建内部类对象，而不能直接去 new 一个内部类对象，即：
 
-`内部类 对象名 = 外部类对象.new 内部类( );`
+    ```
+    内部类 对象名 = 外部类对象.new 内部类( );
+    ```
 
 4. 编译上面的程序后，会发现产生了两个 `.class` 文件
 
@@ -199,15 +203,17 @@ public class Outer {
 
 其中，第二个是外部类的 .class 文件，第一个是内部类的 .class 文件，即成员内部类的 .class 文件总是这样：外部类名$内部类名.class
 
-注意：
+> [!WARNING|style:flat|label:注意]
 
-1. 外部类不能直接使用内部类的成员和方法
+> 1、外部类不能直接使用内部类的成员和方法
 
 ![](img/outer-inner-class-2.jpg)
 
 可先创建内部类的对象，然后通过内部类的对象来访问其成员变量和方法。
 
-2. 如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 `this`关键字。如：
+> [!WARNING|style:flat|label:注意]
+
+> 2、如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 `this`关键字。如：
 
 ![](img/outer-inner-class-3.jpg)
 
@@ -243,9 +249,7 @@ public class Outer {
 
 ![](img/outer-inner-method-class.jpg)
 
-注意：
-
-> [!WARNING|style:flat]
+> [!WARNING|style:flat|label:注意]
 
 > 由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。
 

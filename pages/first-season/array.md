@@ -7,63 +7,61 @@ System.out.println(scores[2]); // 3
 
 ![](img/array.jpg)
 
-### 声明和初始化赋值
+### 声明数组
 
-1. 声明数组
+语法：  `数据类型[ ] 数组名`；
 
-    语法：  `数据类型[ ] 数组名`；
+或者   `数据类型 数组名[ ]`；
 
-    或者   `数据类型 数组名[ ]`；
+其中，数组名可以是任意合法的变量名，如：
 
-    其中，数组名可以是任意合法的变量名，如：
+```java
+// 存储学生成绩的数组，类型为整型
+int[] scores;
+// 存在身高的数组，类型为浮点型
+double height[];
+// 存储学生姓名的数组，类型为字符串
+String[] names;
+```
 
-    ```java
-    // 存储学生成绩的数组，类型为整型
-    int[] scores;
-    // 存在身高的数组，类型为浮点型
-    double height[];
-    // 存储学生姓名的数组，类型为字符串
-    String[] names;
-    ```
+### 分配空间
 
-2. 分配空间
+简单地说，就是指定数组中最多可存储多少个元素
 
-   简单地说，就是指定数组中最多可存储多少个元素
+语法：  `数组名 = new  数据类型 [ 数组长度 ]`;
 
-   语法：  `数组名 = new  数据类型 [ 数组长度 ]`;
+其中，数组长度就是数组中能存放元素的个数，如：
 
-   其中，数组长度就是数组中能存放元素的个数，如：
+```java
+scores = new int[5];
+height = new double[5];
+names = new String[5];
+```
 
-    ```java
-    scores = new int[5];
-    height = new double[5];
-    names = new String[5];
-    ```
+也可以将上面的两个步骤合并，在声明数组的同时为它分配空间
 
-    也可以将上面的两个步骤合并，在声明数组的同时为它分配空间
+```java
+int[] scores = new int[5];
+```
 
-    ```java
-    int[] scores = new int[5];
-    ```
+### 赋值
 
-3. 赋值
+```java
+scores[0] = 100;
+scores[1] = 99;
+```
 
-    ```java
-    scores[0] = 100;
-    scores[1] = 99;
-    ```
+### 处理数组中数据
 
-4. 处理数组中数据
+```java
+System.out.println(scores[1]); // 99
+```
 
-    ```java
-    System.out.println(scores[1]); // 99
-    ```
+同时声明数组、分配空间和赋值：
 
-    同时声明数组、分配空间和赋值：
-
-    ```java
-    int[] scores = {89, 90, 100, 78};
-    ```
+```java
+int[] scores = {89, 90, 100, 78};
+```
 
 ```java
 public class HelloWorld {
@@ -156,13 +154,12 @@ public class Array {
 
 `Arrays` 类是 Java 中提供的一个工具类，在 `java.util` 包中。该类中包含了一些方法用来直接操作数组，比如可直接实现数组的排序、搜索等
 
-1. 排序
+排序
 
-   语法：
-
-   ```
-   Arrays.sort(数组名);
-   ```
+```java
+// 语法：
+Arrays.sort(数组名);
+```
 
 ```java
 public class Array {
@@ -176,12 +173,12 @@ public class Array {
 }
 ```
 
-2. 将数组转换为字符串
+将数组转换为字符串
 
-   语法：
-   ```
-   Arrays.toString(数组名);
-   ```
+```java
+// 语法：
+Arrays.toString(数组名);
+```
 
 ### foreach
 
@@ -210,7 +207,7 @@ for (int i : nums) {
 
 或
 
-````
+```
 数据类型[][] 数组名;
 数组名 = new 数据类型[行数][列数];
 ```
