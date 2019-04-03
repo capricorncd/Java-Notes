@@ -34,7 +34,7 @@ public void print(String str) {
 }
 ```
 
-example
+Example
 
 ```java
 // Func.java
@@ -53,7 +53,7 @@ public class Func {
 }
 ```
 
-无参带返回值方法:
+#### 无参带返回值方法
 
 ```java
 public int sum() {
@@ -69,7 +69,7 @@ public int sum() {
 
 3. 方法返回值的类型必须兼容，例如，如果返回值类型为 int ，则不能返回 String 型值。
 
-带参无返回值方法:
+#### 带参无返回值方法
 
 ```
 public int sum(int a, int b) {
@@ -85,7 +85,7 @@ public int sum(int a, int b) {
 
 4. 当方法参数有多个时，多个参数间以逗号分隔。
 
-带参有返回值方法:
+#### 带参有返回值方法
 
 ```
 public int sum(int a, int b) {
@@ -121,7 +121,7 @@ public void show(int age, String name) {
 }
 ```
 
-如何区分调用的是哪个重载方法呢？
+> [!TIP|style:flat|label:如何区分调用的是哪个重载方法呢？]
 
 > 当调用被重载的方法时， Java 会根据参数的个数和类型来判断应该调用哪个重载方法，参数完全匹配的方法将被执行。如：
 
@@ -134,15 +134,15 @@ public static void main(String[] args) {
 }
 ```
 
-判断方法重载的依据：
+#### 判断方法重载的依据：
 
-> 1、 必须是在同一个类中
+1、 必须是在同一个类中
 
-> 2、 方法名相同
+2、 方法名相同
 
-> 3、 方法参数的个数、顺序或类型不同
+3、 方法参数的个数、顺序或类型不同
 
-> 4、 与方法的修饰符或返回值没有关系
+4、 与方法的修饰符或返回值没有关系
 
 Test.java
 

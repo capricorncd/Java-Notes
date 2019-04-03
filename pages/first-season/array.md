@@ -104,7 +104,11 @@ for (int i = 0; i < arr.length; i++) {
 }
 ```
 
-`数组名.length`  用于获取数组的长度。
+#### 获取数组的长度语法
+
+```
+数组名.length
+```
 
 数组下标的范围是 `0` 至 `数组长度-1` ，如果越界访问，就会报错。
 
@@ -114,9 +118,9 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
 	at com.array.Array.main(Array.java:15)
 ```
 
-练习：
+#### 练习：
 
-`输出数组中的最大值、最小值和平均值`
+输出数组中的最大值、最小值和平均值
 
 ```java
 public class Array {
@@ -154,7 +158,7 @@ public class Array {
 
 `Arrays` 类是 Java 中提供的一个工具类，在 `java.util` 包中。该类中包含了一些方法用来直接操作数组，比如可直接实现数组的排序、搜索等
 
-排序
+#### 排序
 
 ```java
 // 语法：
@@ -173,7 +177,7 @@ public class Array {
 }
 ```
 
-将数组转换为字符串
+#### 将数组转换为字符串
 
 ```java
 // 语法：
@@ -184,12 +188,13 @@ Arrays.toString(数组名);
 
 foreach 并不是 Java 中的关键字，是 for 语句的特殊简化版本，在遍历数组、集合时， foreach 更简单便捷。
 
-```
-// 语法
-for (元素类型 元素变量 : 遍历对象) {
-  // do something
-}
-```
+> [!TIP|style:flat|label:语法]
+
+> for (元素类型 元素变量 : 遍历对象) {
+
+>   // do something
+
+> }
 
 ```java
 for (int i : nums) {

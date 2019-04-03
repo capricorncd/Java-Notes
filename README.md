@@ -1,12 +1,18 @@
 # Java
 
-* Java平台应用
+Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。
 
-* 核心概念：JVM/JDK/JRE
+Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。
 
-* 搭建Java开发环境
+Java具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点。
 
-* 使用工具开发Java程序
+Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等
+
+### Java基础文档
+
+入口：https://capricorncd.github.io/Java-Notes/
+
+### Java发展历程
 
 ![历史](pages/first-season/img/history.png)
 
@@ -18,19 +24,25 @@
 
 ### 核心概念：JVM/JDK/JRE
 
-JVM: Java Virtual Machine
+> [!TIP|label:JVM|style:flat]
+
+> Java Virtual Machine
 
 ![JVM](pages/first-season/img/jvm.png)
 
-JDK: Java Development Kit (Java开发工具包)
+> [!TIP|label:JDK|style:flat]
 
-JRE: Java Runtime Environment (Java运行时环境)
+> Java Development Kit (Java开发工具包)
 
 ![](pages/first-season/img/jdk-jre-jvm.png)
 
+> [!TIP|label:JRE|style:flat]
+
+> Java Runtime Environment (Java运行时环境)
+
 ### Java 开发环境搭建
 
-* 安装JDK
+1、安装JDK
 
 https://www.oracle.com/technetwork/java/javase/downloads/index.html
 
@@ -38,9 +50,11 @@ JDK8
 
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-库文件，以`.jar`结尾
+> [!TIP|style:flat]
 
-* window 10 配置环境变量（系统变量）
+> Java库文件，以 `.jar` 结尾
+
+2、window 10 配置环境变量（系统变量）
 
 ```bash
 # 配置JDK安装路径
@@ -57,7 +71,7 @@ C:\ProgramFiles\Java\jdk1.8.0_172\bin
 C:\Program Files\Java\jdk1.8.0_172\bin\jre\bin
 ```
 
-* Mac
+3、Mac
 
 直接装`jdk-8u201-macosx-x64.dmg`就可以了。
 
@@ -99,16 +113,24 @@ java HelloWorld
 
 开源免费的。下载地址 https://www.eclipse.org/downloads/
 
-开发流程:
+#### MyEclipse
 
-1 创建Java项目
+MyEclipse是对Eclipse的扩展，是一个十分优秀的用于开发Java、JavaEE的Eclipse插件集合。
+
+https://www.myeclipsecn.com
+
+### 开发流程
+
+以Eclipse为例
+
+#### 1 创建Java项目
 
 ```
 file -> New -> Java Project
 # Project name: hello
 ```
 
-2 创建程序包
+#### 2 创建程序包
 
 ```
 # src 目录
@@ -116,7 +138,7 @@ New -> Package
 # com.hello
 ```
 
-3 编写Java源程序
+#### 3 编写Java源程序
 
 ```
 com.hello -> New -> Class > Name: HelloTest
@@ -132,11 +154,15 @@ public class HelloTest {
 }
 ```
 
-> 注意：类名`class HelloTest`一定要与文件名`HelloTest.java`相同。
+> [!WARNING|style:flat|label:注意]
+
+> 类名 `class HelloTest` 一定要与文件名 `HelloTest.java` 相同。
+
+如下图：
 
 ![](pages/first-season/img/HelloTest.png)
 
-4 运行Java程序
+#### 4 运行Java程序
 
 ```
 代码编辑拦，空白处鼠标右键 -> Run As -> Java Application ...
@@ -144,13 +170,7 @@ public class HelloTest {
 
 ![](pages/first-season/img/HelloTestRun.png)
 
-> 或者点击编辑器左上角的"播放"图标，run ...
-
-#### MyEclipse
-
-MyEclipse是对Eclipse的扩展，是一个十分优秀的用于开发Java、JavaEE的Eclipse插件集合。
-
-https://www.myeclipsecn.com
+或者点击编辑器左上角的"播放"图标，run ...
 
 ### 程序的移植
 
