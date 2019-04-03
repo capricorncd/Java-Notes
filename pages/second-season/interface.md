@@ -4,7 +4,7 @@
 
 ![](img/interface-example.jpg)
 
-> [!TIP|style:flat|label:Concept]
+> [!TIP|style:flat|label:概念]
 
 > 类是一种具体实现，而接口定义了某一批类所需要遵守的 `规范`，接口不关心这些类的内部数据，及类里方法的实现细节，它只规定这些类必须提供某些方法。
 
@@ -21,17 +21,17 @@
 
 接口就是用来被继承、被实现的，修饰符一般建议用`public`
 
-> [!WARNING|style:flat]
+> [!WARNING|style:flat|label:注意]
 
 > 不能使用private和protected修饰接口
 
 ### 接口定义
 
-常量：
+1、常量：
 
 接口中的属性是常量，即使定义时不添加 `public static final` 修饰符，系统也会自动加上。
 
-方法：
+2、方法：
 
 接口中的方法只能是抽象方法，即使定义时不添加 `public abstract` 修饰符，系统也会自动加上。
 
@@ -49,11 +49,11 @@
 }
 ```
 
-> [!WARNING|style:flat]
+> [!WARNING|style:flat|label:注意]
 
-> 如果继承了抽象类，则必须实现继承的抽象方法
+> 如果 `继承`了 `抽象类`，则必须实现继承的类规定的抽象方法
 
-> 如果遵守了某个接口，则必须实现接口中的抽象方法
+> 如果 `遵守`了某个`接口`，则必须实现接口中的抽象方法
 
 > 如果要继承父类，则继承父类必须在实现接口以前，即extends与
 implements不能交换位置。

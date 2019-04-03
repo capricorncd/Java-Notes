@@ -4,11 +4,11 @@
 
 程序中：阻止当前方法或作用域正常运行的情况，称之为异常。
 
-> [!TIP|style:flat|Exception]
+> [!TIP|style:flat|label:Exception异常]
 
 > 异常指的是在程序运行过程中发生的异常事件，通常是由外部问题（如硬件错误、输入错误）所导致的。在Java等面向对象的编程语言中异常属于对象。
 
-导致的问题：
+### 导致的问题：
 
 1、程序得不到正常的运行，不能正常退出
 
@@ -16,7 +16,7 @@
 
 3、程序运行的资源得不到有效的释放
 
-异常处理作用：
+### 异常处理作用：
 
 1、对异常正确的处理，能将异常提示给编程人员或者是用户
 
@@ -28,7 +28,7 @@
 
 主要有两个儿子`Error`与`Exception`，即`Error`与`Exception`类继承`Throwable`类
 
-* Error
+* Error 错误
 
 > [!TIP|style:flat|label:Error]
 
@@ -42,7 +42,7 @@
 
 > 好比工厂停水/停电/机器挂了
 
-* Exception
+* Exception 异常
 
 > [!TIP|style:flat|label:Exception]
 
