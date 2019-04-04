@@ -2,7 +2,7 @@
 
 ### Java基础第一季
 
-* [Java](README.md)
+* [Java](pages/first-season/java.md)
 
 * [变量与常量](pages/first-season/variable-and-constant.md)
 
@@ -26,10 +26,12 @@
 
 * [Java中的抽象类](pages/second-season/abstract.md)
 
-* [接口](pages/second-season/interface.md)
+* [接口Interface](pages/second-season/interface.md)
 
 * [UML(Unified Modeling Language)](pages/second-season/UML.md)
 
 ### Java基础第三季
 
 * [异常与异常处理](pages/third-season/exception.md)
+
+* [异常抛出即自定义异常](pages/third-season/throw.md)

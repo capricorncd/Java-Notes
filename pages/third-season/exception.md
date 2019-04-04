@@ -98,7 +98,7 @@ System.out.println(a / b);
 
 5、等等...
 
-> [!TIP|style:flat]
+> [!TIP|style:flat|label:RuntimeException]
 
 > `运行时异常` 会由Java虚拟机自动抛出，并自动捕获。
 
@@ -113,6 +113,186 @@ System.out.println(a / b);
 ```
 try-catch, try-catch-finally
 ```
+
+语法
+
+```java
+try {
+    // 一些会抛出异常的方法
+} catch (Exception e) {
+    // 处理该异常的代码块
+}
+```
+
+> [!WARNING|style:flat|label:如果try抛出异常将会发生什么？]
+
+> 抛出异常的方法会终止执行！
+
+> 程序的控制权将被移交给catch块中的异常处理程序
+
+##### catch中可以做的事情：
+
+根据业务情况，可以发出一些警告，提示用户或开发人员
+
+也可以记录错误日志等操作等等
+
+```java
+try {
+    System.out.print("请输入你的年龄：");
+    Scanner input = new Scanner(System.in);
+    int age = input.nextInt();
+    System.out.println("The ten years ago, you will" + (age + 10));
+} catch (InputMismatchException e) {
+    System.out.println("你应该输入整数！");
+}
+System.out.println("程序结束啦！");
+```
+
+try会抛出很多种类型的异常，该如何处理？
+
+```java
+Scanner input = new Scanner(System.in);
+try {
+    System.out.print("请输入第一个数：");
+    int one = input.nextInt(); // input 12
+    System.out.print("请输入第二个数：");
+    int tow = input.nextInt(); // input 0
+    System.out.println(one / tow);
+} catch (InputMismatchException e) {
+    // 输入不匹配异常
+    System.out.println("你应该输入整数！");
+} catch (ArithmeticException e) {
+    // 英 [əˈrɪθmətɪk]   美 [əˈrɪθmɪtɪk]
+    // 算术异常
+    System.out.println("除数不能为0！");
+} catch (Exception e) {
+    System.out.println("不知名异常！");
+} finally {
+    // 最终将要执行的一些代码
+}
+System.out.println("程序结束啦！");
+```
+
+#### 异常处理注意事项
+
+异常捕获顺序，一定要按先小后大，即先子类再父类：
+
+```
+子类 -> 父类
+```
+
+当异常发生时，异常处理系统会就近寻找匹配的异常处理的catch程序。子类继承于父类，针对于子类的处理程序，父类也是适用的。
+
+#### 善后工作处理 finally
+
+异常发生后，可以使用finally关闭连接，或关闭文件等善后操作。
+
+#### 例子
+
+```java
+package com.trycatch.test;
+
+public class TryCatchTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TryCatchTest tc = new TryCatchTest();
+		int result = tc.test();
+		System.out.println("result: " + result);
+	}
+
+	/**
+	 * test method
+	 * @return
+	 */
+	public int test() {
+		int divider = 10;
+		int result = 0;
+		try {
+			while (divider > -1) {
+				divider--;
+				result += 100 / divider;
+			}
+			return result;
+		} catch (Exception e) {
+			// 打印异常
+			e.printStackTrace();
+			System.out.println("程序抛出异常了！！");
+			return -1;
+		}
+	}
+}
+```
+
+结果
+
+```
+java.lang.ArithmeticException: / by zero
+	at com.trycatch.test.TryCatchTest.test(TryCatchTest.java:22)
+	at com.trycatch.test.TryCatchTest.main(TryCatchTest.java:8)
+程序抛出异常了！！
+result: -1
+```
+
+test2
+
+```java
+package com.trycatch.test;
+
+public class TryCatchTest {
+
+	public static void main(String[] args) {
+		TryCatchTest tc = new TryCatchTest();
+		int result2 = tc.test2();
+		System.out.println("test2返回值result为: " + result2);
+	}
+
+	/**
+	 * test method
+	 * @return
+	 */
+	public int test2() {
+		int divider = 10;
+		int result = 0;
+		try {
+			while (divider > -1) {
+				divider--;
+				result += 100 / divider;
+			}
+			return result;
+		} catch (Exception e) {
+			// 打印异常
+			e.printStackTrace();
+			System.out.println("Test2抛出异常了！！");
+			return 999;
+		} finally {
+			System.out.println("这是finally！");
+			System.out.println("Result值为：" + result);
+		}
+	}
+}
+
+```
+
+结果
+
+```
+java.lang.ArithmeticException: / by zero
+	at com.trycatch.test.TryCatchTest.test2(TryCatchTest.java:45)
+	at com.trycatch.test.TryCatchTest.main(TryCatchTest.java:10)
+Test2抛出异常了！！
+这是finally！
+Result值为：281
+test2返回值result为: 999
+```
+
+> [!TIP|style:flat|label:总结]
+
+> catch块跟在try语句后面，它可以是一个或多个
+
+> catch块有一个参数，该参数是某种异常类的对象
+
+> 多重catch语句中，异常类型必须子类在前，父类在后
 
 ### 原视频教程出处
 
