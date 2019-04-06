@@ -40,4 +40,6 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 * 异常与异常处理
 
+* 异常抛出及自定义异常
+
 文档：https://capricorncd.github.io/Java-Notes/

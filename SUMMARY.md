@@ -34,4 +34,4 @@
 
 * [异常与异常处理](pages/third-season/exception.md)
 
-* [异常抛出即自定义异常](pages/third-season/throw.md)
+* [异常抛出及自定义异常](pages/third-season/throw.md)
