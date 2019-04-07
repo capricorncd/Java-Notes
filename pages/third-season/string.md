@@ -89,7 +89,22 @@ public class StrTest {
 		System.out.print("Arrays.toString(): " + Arrays.toString(arr));
 		System.out.println();
 		// get children string by index[3, 7)
-		System.out.println("get children string by index[3, 7) , with substring(): " + str.substring(3, 7));
+		System.out.println("get the substring of index[3, 7), with substring(): " + str.substring(3, 7));
+		//
+		System.out.println("toLowerCase(): " + str.toLowerCase());
+		System.out.println("toUpperCase(): " + str.toUpperCase());
+		System.out.println("charAt(1): " + str.charAt(1));
+		// to byte[]
+		byte[] b = str.getBytes();
+		System.out.print("to bytes: ");
+		for (int i = 0; i < b.length; i++) {
+			System.out.print(b[i] + " ");
+		}
+		System.out.println();
+		// == equals
+		String str2 = new String("Hello World");
+		System.out.println("Are str and str2 memory addresses the same? " + (str == str2));
+		System.out.println("Is Str the same as str2? " + (str.equals(str2)));
 	}
 
 }
@@ -99,9 +114,15 @@ public class StrTest {
 
 ```
 length(): 11
-indexOf(w): 6
+indexOf('W'): 6
 Arrays.toString(): [Hello, World]
-get children string by index[3, 7) , width substring(): lo W
+get the substring of index[3, 7), with substring(): lo W
+toLowerCase(): hello world
+toUpperCase(): HELLO WORLD
+charAt(1): e
+to bytes: 72 101 108 108 111 32 87 111 114 108 100
+Are str and str2 memory addresses the same? false
+Is Str the same as str2? true
 ```
 
 > [!TIP|style:flat|label:总结]
@@ -111,3 +132,136 @@ get children string by index[3, 7) , width substring(): lo W
 > 2、使用 indexOf 进行字符或字符串查找时，如果匹配返回位置索引；如果没有匹配结果，返回 -1
 
 > 3、使用 substring(beginIndex , endIndex) 进行字符串截取时，包括 beginIndex 位置的字符，不包括 endIndex 位置的字符
+
+##### “==” 和 equals() 有什么区别呢？
+
+`==` : 判断两个字符串在内存中首地址是否相同，即判断是否是同一个字符串对象
+
+`equals()` : 比较存储在两个字符串对象中的内容是否一致
+
+```java
+package com.string;
+
+public class CNStrTest {
+
+	public static void main(String[] args) {
+		String str = "String类常用方法。";
+		byte[] b = str.getBytes();
+		for (int i = 0; i < b.length; i++) {
+			System.out.print(b[i] + " ");
+		}
+	}
+
+}
+```
+
+运行结果：
+
+```
+83 116 114 105 110 103 -25 -79 -69 -27 -72 -72 -25 -108 -88 -26 -106 -71 -26 -77 -107 -29 -128 -126
+```
+
+> [!TIP|style:flat|label:PS?待验证...]
+
+> 字节是计算机存储信息的基本单位，1 个字节等于 8 位， gbk 编码中 1 个汉字字符存储需要 2 个字节，1 个英文字符存储需要 1 个字节。
+
+> 所以我们看到上面的程序运行结果中，每个汉字对应两个字节值，如“类”对应 “-25 -79 -69” ，而英文字母 “S” 对应 “83” 。
+
+> 同时，我们还发现汉字对应的字节值为负数，原因在于每个字节是 8 位，最大值不能超过 127，而汉字转换为字节后超过 127，如果超过就会溢出，以负数的形式显示。
+
+```java
+package com.string;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+		// 定义一个字符串
+		String s = "aljlkdsflkjsadjfklhasdkjlflkajdflwoiudsafhaasdasd";
+
+        // 出现次数
+		int num = 0;
+
+         // 循环遍历每个字符，判断是否是字符 a ，如果是，累加次数
+		for ( int i = 0; i < s.length(); i++ ) {
+            // 获取每个字符，判断是否是字符a
+			if ( s.charAt(i) == 'a' ) {
+                // 累加统计次数
+				num++;
+			}
+		}
+		System.out.println("字符a出现的次数：" + num);
+	}
+}
+```
+
+### StringBuilder 类
+
+在Java中，除了可以使用 String 类来存储字符串，还可以使用 StringBuilder 类或 StringBuffer 类存储字符串，那么它们之间有什么区别呢？
+
+```java
+String str = "Hello";
+System.out.println(str + " World");
+System.out.println(str);
+```
+
+结果
+
+```
+Hello World
+Hello
+```
+
+从运行结果中我们可以看到，程序运行时会额外创建一个对象，保存 "Hello World"。当频繁操作字符串时，就会额外产生很多临时变量。
+
+使用 StringBuilder 或 StringBuffer 就可以避免这个问题。
+
+> [!TIP|style:flat|label:StringBuilder和StringBuffer]
+
+> 它们基本相似，不同之处，StringBuffer 是 `线程安全的`，而 StringBuilder 则没有实现线程安全功能，所以性能略高。
+
+> 因此一般情况下，如果需要创建一个内容可变的字符串对象，应优先考虑使用 StringBuilder 类。
+
+##### 定义
+
+```java
+// 创建一个StringBuilder对象
+StringBuilder str1 = new StringBuilder();
+// 创建一个字符串"Hello World"
+StringBuilder str2 = new StringBuilder("Hello World");
+System.out.println(str2);
+```
+
+##### 常用方法
+
+|方法|说明|
+|:--|:--|
+|StringBuilder append(参数)|追加内容到当前StringBuilder对象的末尾|
+|StringBuilder insert(位置, 参数)|将内容插入到StringBuilder对象的指定位置|
+|String toString()|将StringBuilder对象转换为String对象|
+|int length()|获取字符串的长度|
+
+练习：将一个由英文字母组成的字符串转换成指定格式---从右边开始每三个字母用逗号分隔的形式。
+
+```java
+package com.string;
+
+public class StringBuilderTest {
+
+	public static void main(String[] args) {
+		// 创建一个空的StringBuilder对象
+		StringBuilder str = new StringBuilder();
+		// 追加字符串
+		str.append("jaewkjldfxmopzdm");
+
+        // 从后往前每隔三位插入逗号
+		for (int i = str.length() - 1, j = 0; i >= 0; i--, j++) {
+			if (j > 0 && j % 3 == 2) {
+				str.insert(i, ",");
+			}
+		}
+
+        // 将StringBuilder对象转换为String对象并输出
+		System.out.print(str.toString());
+	}
+
+}
+```
