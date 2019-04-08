@@ -145,12 +145,16 @@ package com.string;
 public class CNStrTest {
 
 	public static void main(String[] args) {
-		String str = "String类常用方法。";
-		byte[] b = str.getBytes();
-		for (int i = 0; i < b.length; i++) {
-			System.out.print(b[i] + " ");
-		}
-	}
+        String str = "String类常用方法。";
+        try {
+            byte[] b = str.getBytes("GBK");
+            for (int i = 0; i < b.length; i++) {
+                System.out.print(b[i] + " ");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 ```
@@ -158,20 +162,51 @@ public class CNStrTest {
 运行结果：
 
 ```
-83 116 114 105 110 103 -25 -79 -69 -27 -72 -72 -25 -108 -88 -26 -106 -71 -26 -77 -107 -29 -128 -126
+83 116 114 105 110 103 -64 -32 -77 -93 -45 -61 -73 -67 -73 -88 -95 -93
 ```
 
-> [!TIP|style:flat|label:PS?待验证...]
+> [!TIP|style:flat|label:PS]
 
 > 字节是计算机存储信息的基本单位，1 个字节等于 8 位， gbk 编码中 1 个汉字字符存储需要 2 个字节，1 个英文字符存储需要 1 个字节。
 
-> 所以我们看到上面的程序运行结果中，每个汉字对应两个字节值，如“类”对应 “-25 -79 -69” ，而英文字母 “S” 对应 “83” 。
+> 所以我们看到上面的程序运行结果中，每个汉字对应两个字节值，如“类”对应 “-64 -32 ” ，而英文字母 “S” 对应 “83” 。
 
 > 同时，我们还发现汉字对应的字节值为负数，原因在于每个字节是 8 位，最大值不能超过 127，而汉字转换为字节后超过 127，如果超过就会溢出，以负数的形式显示。
 
-```java
-package com.string;
+##### 在java中，一个英文字符占多少字节，一个中文字符占多少字节？
 
+by 慕课网友：Yesabella
+
+> [!WARNING|style:flat|label:字节补充]
+
+> Java采用unicode来表示字符，java中的一个char是2个字节，一个中文或英文字符的unicode编码都占2个字节，但如果采用其他编码方式，一个字符占用的字节数则各不相同。
+
+> 在 GB 2312 编码或 GBK 编码中，一个英文字母字符存储需要1个字节，一个汉子字符存储需要2个字节。
+
+> 在UTF-8编码中，一个英文字母字符存储需要1个字节，一个汉字字符储存需要3到4个字节。
+
+> 在UTF-16编码中，一个英文字母字符存储需要2个字节，一个汉字字符储存需要3到4个字节（Unicode扩展区的一些汉字存储需要4个字节）。
+
+> 在UTF-32编码中，世界上任何字符的存储都需要4个字节。
+
+> 如果编码方式为GBK，对于字符串“测试test”，字符长度为6，字节长度为8。
+
+> 如果编码方式为UTF_8，对于字符串“测试test”，字符长度为6，字节长度为10。
+
+```java
+String aa = "学";
+System.out.println("UTF-8编码长度:"+aa.getBytes("UTF-8").length);
+System.out.println("GBK编码长度:"+aa.getBytes("GBK").length);
+System.out.println("GB2312编码长度:"+aa.getBytes("GB2312").length);
+// 运行结果
+// UTF-8编码长度:3
+// GBK编码长度:2
+// GB2312编码长度:2
+```
+
+练习
+
+```java
 public class HelloWorld {
     public static void main(String[] args) {
 		// 定义一个字符串
