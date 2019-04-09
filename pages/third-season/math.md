@@ -42,3 +42,29 @@ random()：0.5485492457892083
 > [!TIP|style:flat|label:PS]
 
 > Math 类还提供了许多其他方法，各位小伙伴们可以注意关注 wiki ，查阅更多信息。
+
+练习
+
+```java
+public class MathTest2 {
+
+	public static void main(String[] args) {
+		// 定义一个整型数组，长度为10
+		int[] nums = new int[10];
+
+        // 通过循环给数组赋值
+		for (int i = 0; i < nums.length; i++) {
+            // 产生10以内的随机数
+			int x = (int) (10 * Math.random());
+			// 为元素赋值
+			nums[i] = x;
+		}
+
+		// 使用foreach循环输出数组中的元素
+		for (int num : nums) {
+			System.out.print(num + " ");
+		}
+	}
+
+}
+```

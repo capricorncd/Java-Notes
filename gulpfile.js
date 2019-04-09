@@ -27,14 +27,11 @@ const htmlMinOptions = {
     minifyCSS: true // 压缩页面CSS
 }
 
-// const googleapisReg = /https:\/\/storage\.googleapis\.com\/app\.klipse\.tech\/plugin\/js|https:\/\/storage\.googleapis\.com\/app\.klipse\.tech\/css/g
-
 function html1 () {
     return gulp.src('./_book/*.html')
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
         .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
-        // .pipe(replace(googleapisReg, '/Java-Notes/static'))
         .pipe(gulp.dest('./_book'))
 }
 
@@ -43,7 +40,6 @@ function html2 () {
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
         .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
-        // .pipe(replace(googleapisReg, '/Java-Notes/static'))
         .pipe(gulp.dest('./_book/pages'))
 }
 

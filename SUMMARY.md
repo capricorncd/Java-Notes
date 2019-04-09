@@ -24,7 +24,7 @@
 
 * [面向对象特性：多态](pages/second-season/polymorphic.md)
 
-* [Java中的抽象类](pages/second-season/abstract.md)
+* [抽象类](pages/second-season/abstract.md)
 
 * [接口Interface](pages/second-season/interface.md)
 
@@ -36,7 +36,7 @@
 
 * [异常抛出及自定义异常](pages/third-season/throw.md)
 
-* [Java 中的字符串](pages/third-season/string.md)
+* [字符串](pages/third-season/string.md)
 
 * [thread-safe 线程安全](pages/third-season/thread-safe.md)
 
@@ -47,3 +47,5 @@
 * [Calendar类的应用](pages/third-season/calendar.md)
 
 * [Math类](pages/third-season/math.md)
+
+* [集合框架](pages/third-season/set.md)
