@@ -54,6 +54,6 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 * Math类
 
-
+* 集合框架Collection、Map
 
 文档：https://capricorncd.github.io/Java-Notes/
