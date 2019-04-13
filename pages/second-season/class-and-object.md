@@ -428,19 +428,19 @@ public class TestStaticBlock {
 
 	public TestStaticBlock() {
 		num1 = 1000;
-		System.out.println("通过构造方法为变量num1赋值");
+		System.out.println("通过【构造方法】为变量num1赋值");
 	}
 
 	// 初始化块
 	{
 		num2 = 2000;
-		System.out.println("通过初始化块为变量num2赋值");
+		System.out.println("通过【初始化块】为变量num2赋值");
 	}
 
 	// 静态初始化块
 	static {
 		num3 = 3000;
-		System.out.println("通过静态初始化块为变量num3赋值");
+		System.out.println("通过【静态初始化块】为变量num3赋值");
 	}
 
 	public static void main(String[] args) {
@@ -460,15 +460,15 @@ public class TestStaticBlock {
 结果：
 
 ```
-通过静态初始化块为变量num3赋值
-通过初始化块为变量num2赋值
-通过构造方法为变量num1赋值
+通过【静态初始化块】为变量num3赋值
+通过【初始化块】为变量num2赋值
+通过【构造方法】为变量num1赋值
 num1: 1000
 num2: 2000
 num3: 3000
 ---- 华丽的分割线 ------------------------------
-通过初始化块为变量num2赋值
-通过构造方法为变量num1赋值
+通过【初始化块】为变量num2赋值
+通过【构造方法】为变量num1赋值
 ```
 
 > [!WARNING|style:flat|label:通过输出结果，我们可以看到]

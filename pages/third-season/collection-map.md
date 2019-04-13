@@ -122,8 +122,6 @@ public class Course {
 CourseStorage.java
 
 ```java
-package com.test.collection;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -135,7 +133,7 @@ import java.util.Iterator;
  */
 public class CourseStorage {
 	// 用于存放课程的List
-	public static List coursesToSelect;
+	public List coursesToSelect;
 
 	// constructor
 	public CourseStorage () {
@@ -340,7 +338,7 @@ public class CourseStorage {
 		cs.testItetator();
 		// 删除元素
 //		cs.testRemove(6);
-		Course[] removeAllItems = { (Course) coursesToSelect.get(4), (Course) coursesToSelect.get(5) };
+		Course[] removeAllItems = { (Course) cs.coursesToSelect.get(4), (Course) cs.coursesToSelect.get(5) };
 		cs.testRemoveAll(removeAllItems);
 	}
 }

@@ -49,3 +49,9 @@
 * [Math类](pages/third-season/math.md)
 
 * [集合框架Collection、Map](pages/third-season/collection-map.md)
+
+* [泛型](pages/third-season/generic.md)
+
+* [Set接口，及其实现类HashSet](pages/third-season/set.md)
+
+* [Map & HashMap](pages/third-season/map.md)
