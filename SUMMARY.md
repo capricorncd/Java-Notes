@@ -55,3 +55,9 @@
 * [Set接口，及其实现类HashSet](pages/third-season/set.md)
 
 * [Map & HashMap](pages/third-season/map.md)
+
+* [- 问题思考](pages/third-season/questions.md)
+
+* [Collections工具类](pages/third-season/collections.md)
+
+* [综合练习——洗牌发牌Easy版](pages/third-season/game-test.md)

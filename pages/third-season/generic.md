@@ -168,6 +168,10 @@ public class TestGeneric {
 3:我是子类的对象实例
 ```
 
+> [!WARNING|style:flat|label:注意]
+
+> 不能使用 `基本类型` 作为泛型，可以使用对应的**包装类**。
+
 ### 扩张阅读
 
 https://www.cnblogs.com/coprince/p/8603492.html

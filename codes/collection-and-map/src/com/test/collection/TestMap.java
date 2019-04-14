@@ -1,59 +1,5 @@
-# Map & HashMap
+package com.test.collection;
 
-## Map接口
-
-Map提供了一种 `映射关系`，其中的元素以键值对（key-value）的形式存储，能够实现根据key快速查找value。
-
-key/value可以是任意类型的对象。并且可以根据key值，快速找查找到对应的value值。
-
-Map中的键值对以Entry类型的对象实例形式存在。
-
-键（key值）不可重复，value值可以。每个键最多只能映射到一个值。
-
-![](img/set-example.jpg)
-
-Map支持泛型，形式如：`Map<K, V>`
-
-## HashMap类
-
-HashMap是Map的一个重要实现类，也是最常用的，基于哈希表实现。
-
-HashMap中的Entry对象是无序排列的。
-
-Key值和Value值都可以为null，但是一个HashMap只能有一个key值的null的映射（key值不可重复）。
-
-![](img/hash-map-methods.png)
-
-> [!NOTE|label:案例功能说明]
-
-> 通过Map<String, Student>进行学生信息管理，其中key为学生ID，value为学生对象。
-
-> 通过键盘输入学生信息。
-
-> 对集合中的学生信息进行增/删/改/查操作。
-
-Student2类
-
-```java
-import java.util.HashSet;
-import java.util.Set;
-
-public class Student2 {
-	public String id;
-	public String name;
-	public Set<Course> courses;
-
-	public Student2(String id, String name) {
-		this.id = id;
-		this.name = name;
-		this.courses = new HashSet<Course>();
-	}
-}
-```
-
-TestMap类
-
-```java
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -61,17 +7,17 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class TestMap {
-
+	
 	// 承装学生类型对象
 	public Map<String, Student2> students;
-
+	
 	/**
 	 * 创建构造函数，并初始化students属性
 	 */
 	public TestMap() {
 		this.students = new HashMap<String, Student2>();
 	}
-
+	
 	/**
 	 * 添加学生数据：输入学生ID，判断是否被占用
 	 * 若未被占用，则输入姓名，创建新学生对象，
@@ -101,7 +47,7 @@ public class TestMap {
 			}
 		}
 	}
-
+	
 	/**
 	 * 参数Map的keySet方法
 	 */
@@ -118,7 +64,7 @@ public class TestMap {
 		}
 		System.out.println("------ 共有" + students.size() + "位学生。");
 	}
-
+	
 	/**
 	 * 测试Map的remove方法
 	 */
@@ -138,7 +84,7 @@ public class TestMap {
 			}
 		}
 	}
-
+	
 	/**
 	 * 测试Map的entrySet方法
 	 */
@@ -150,7 +96,7 @@ public class TestMap {
 			System.out.println("取得键值对：" + entry.getKey() + "=>" + entry.getValue().name);
 		}
 	}
-
+	
 	/**
 	 * 测试put修改内容
 	 */
@@ -173,6 +119,31 @@ public class TestMap {
 			break;
 		}
 	}
+	
+	/**
+	 * 测试containsKey and containsValue方法
+	 */
+	public void testContainsKeyOrValue() {
+		// 提示输入学生ID
+		System.out.println("请输入要查询的学生ID：");
+		Scanner console = new Scanner(System.in);
+		String id = console.next();
+		// 在Map中，用containsKey()方法，判断是否包含某个key值
+		System.out.println("您输入的学生ID为：" + id + ", 在学生映射表中是否存在：" +
+			students.containsKey(id));
+		if (students.containsKey(id)) {
+			System.out.println("对应的学生是：" + students.get(id).name);
+		}
+		// 提示用户按姓名查询
+		System.out.println("请输入要查询的学生姓名：");
+		String name = console.next();
+		// 使用containsValue()方法，判断是否包含某个Value值
+		if (students.containsValue(new Student(0, name))) {
+			System.out.println("学生映射表中包含学生：" + name);
+		} else {
+			System.out.println("学生" + name + "不存在!");
+		}
+	}
 
 	public static void main(String[] args) {
 		TestMap tm = new TestMap();
@@ -182,7 +153,7 @@ public class TestMap {
 		tm.testEntrySet();
 		tm.testModify();
 		tm.testEntrySet();
+		tm.testContainsKeyOrValue();
 	}
 
 }
-```
