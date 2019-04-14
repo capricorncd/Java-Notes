@@ -143,3 +143,7 @@ public class TestSet {
 > 因为Set是无序的，不能通过索引去查找元素，只能通过foreach或iterator一个个循环迭代出来。而且每次迭代出来的结果顺序都可能不同。
 
 > Set中可以添加 `null` 空对象，不过在实际应用中不常见。
+
+### 代码
+
+https://github.com/capricorncd/Java-Notes/tree/master/codes/collection-and-map/src/com/test/collection

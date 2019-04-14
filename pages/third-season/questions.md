@@ -156,4 +156,6 @@ public boolean equals(Object obj) {
 }
 ```
 
-完整代码：[[地址]](https://github.com/capricorncd/Java-Notes/codes/collection-and-map/)
+### 代码
+
+https://github.com/capricorncd/Java-Notes/tree/master/codes/collection-and-map/src/com/test/collection
