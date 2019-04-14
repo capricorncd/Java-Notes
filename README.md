@@ -4,9 +4,11 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 文档：https://capricorncd.github.io/Java-Notes/
 
-### 目录
+文档中类或接口类方法截图为 `JavaSE-1.8` 版本
 
-##### Java基础第一季
+## 目录
+
+#### Java基础第一季
 
 * Java发展历程、Java平台应用、JVM/JDK/JRE、开发环境搭建
 
@@ -20,7 +22,7 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 * 方法
 
-##### Java基础第二季
+#### Java基础第二季
 
 * 类和对象
 
@@ -36,7 +38,7 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 * UML
 
-##### Java基础第三季
+#### Java基础第三季
 
 * 异常与异常处理
 
@@ -55,5 +57,11 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 * Math类
 
 * 集合框架Collection、Map
+
+* 泛型
+
+* Set接口，及其实现类HashSet
+
+* Map & HashMap
 
 文档：https://capricorncd.github.io/Java-Notes/

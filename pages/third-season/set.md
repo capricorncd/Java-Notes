@@ -2,7 +2,11 @@
 
 Set是元素无序，并且不可以重复的集合，被称为**集**。
 
+![](img/set-methods.png)
+
 HashSet：哈希集，是Set的一个重要实现类。
+
+![](img/hash-set-methods.png)
 
 > [!NOTE|label:案例功能说明]
 
