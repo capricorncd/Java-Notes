@@ -4,7 +4,9 @@ Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点�
 
 文档：https://capricorncd.github.io/Java-Notes/
 
-文档中类或接口类方法截图为 `JavaSE-1.8` 版本
+> [!TIP|style:flat|label:注意]
+
+> 文档中类或接口类方法截图为 `JavaSE-1.8` 版本
 
 ## 目录
 
