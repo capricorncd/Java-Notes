@@ -537,7 +537,135 @@ create table user_info4 (
     password varchar(64),
     constraint pk_id_username primary key (id, username)
 );
+# pk_id_username 可任意，取合法名称都行
 ```
 
 ![create-table-constraint](img/create-table-constraint.png)
 
+创建完成后，忘记了主键的名称，则可以通过 `user_constraints`
+
+![user-constraints](img/user-constraints.png)
+
+```
+# 在修改表时添加主键约束
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name
+PRIMARY KEY (column_name1, ...);
+```
+
+![](img/add-constraint-primary-key.png)
+
+```
+# 更改约束的名称constraint_name
+ALTER TABLE table_name
+RENAME CONSTRAINT old_name
+TO new_name
+```
+
+![rename-constraint-name](img/rename-constraint-name.png)
+
+> [!TIP|style:flat|label:删除主键约束]
+
+> 禁用与启用
+
+> 直接删除
+
+```
+# 暂时禁用，后期可能还会启用的情况
+DISABLE|ENABLE CONSTRAINT constraint_name
+
+# 禁用new_pk_id
+# alter table user_info disable constraint new_pk_id;
+# 查看禁用状态
+# select constraint_name, status from user_constraints where table_name='USER_INFO';
+```
+
+```
+# 直接删除1
+DROP CONSTRAINT constraint_name
+
+# alter table user_info drop constraint new_pk_id;
+# 查看删除后的状态
+# select constraint_name, status from user_constraints where table_name='USER_INFO';
+# 结果：未选定行
+```
+
+```
+# 直接删除2
+DROP PRIMARY KEY [CASCADE]
+# CASCADE 其他表引用该字段的地方，也一起删掉约束
+# alter table user_info3 drop primary key;
+```
+
+> [!TIP|style:flat|label:外键约束]
+
+> 唯一一个涉及两个表当中字段关系约束。
+
+> 又称**主从表关系**
+
+在创建表时设置外键约束、在修改表时添加外键约束、删除外键约束
+
+```
+# 在创建表时设置外键约束1
+CREATE TABLE table1
+(
+    column_name datatype REFERENCES
+    table2 (column_name), ...
+);
+# table2 为主表
+# table1 为从表
+```
+
+> [!WARNING|style:flat|label:注意]
+
+> 设置外键约束时，主表的字段必须是主键。
+
+> 主从表中相应字段必须是同一个数据类型。
+
+> 从表中外键字段的值，必须来自主表中的相应字段的值，或者为null值。
+
+![table-main-slave](img/table-main-slave.png)
+
+```
+# 在创建表时设置外键约束2
+CONSTRAINT constraint_name FOREIGN
+KEY (column_name) REFERENCES
+main_table_name (column_name) [ON DELETE CASCADE]
+# constraint_name通常以fk开头(FOREIGN KEY首字母)，且不能重名。
+# ON DELETE CASCADE级联删除，即主表中某条数据被删除，在从表中使用了该数据的行也将被删除。从而确保主从表的完整性。
+```
+
+![constraint-foreign-key](img/constraint-foreign-key.png)
+
+```
+# 在修改表时添加外键约束
+ADD CONSTRAINT constraint_name FOREIGN
+KEY (column_name) REFERENCES
+table_name (column_name) [ON DELETE CASCADE]
+```
+
+![alter-table-slave-table4](img/alter-table-slave-table4.png)
+
+> [!TIP|style:flat|label:删除外键约束]
+
+> 禁用与启用
+
+> 直接删除
+
+```
+# 禁用与启用
+DISABLE|ENABLE CONSTRAINT constraint_name
+```
+
+![disable-constraint](img/disable-constraint.png)
+
+```
+#直接删除
+DROP CONSTRAINT constraint_name;
+```
+
+![drop-constraint](img/drop-constraint.png)
+
+> [!TIP|style:flat|label:唯一约束]
+
+> ...
