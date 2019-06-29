@@ -48,4 +48,111 @@ tablespace_name [INCLUDING CONTENTS]
 # &#x5220;&#x9664;&#x8868;&#x7A7A;&#x95F4;&#x548C;&#x6587;&#x4EF6; drop tablespace test1_tablespace including contents
 </code></pre><h2 id="&#x7BA1;&#x7406;&#x8868;">&#x7BA1;&#x7406;&#x8868;</h2><blockquote><p>[!TIP|style:flat|label:&#x8BA4;&#x8BC6;&#x8868;]</p><p>&#x8868;&#x662F;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x57FA;&#x672C;&#x5B58;&#x50A8;&#x5355;&#x4F4D;</p><p>&#x8868;&#x662F;&#x4E8C;&#x7EF4;&#x7ED3;&#x6784;&#xFF0C;&#x7531;&#x884C;(&#x8BB0;&#x5F55;)&#x548C;&#x5217;(&#x57DF;&#x548C;&#x5B57;&#x6BB5;)&#x7EC4;&#x6210;</p></blockquote><h3 id="&#x7EA6;&#x5B9A;">&#x7EA6;&#x5B9A;</h3><p>1&#x3001;&#x6BCF;&#x4E00;&#x5217;&#x6570;&#x636E;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p><p>2&#x3001;&#x5217;&#x540D;&#x662F;&#x552F;&#x4E00;&#x7684;</p><p>3&#x3001;&#x6BCF;&#x4E00;&#x884C;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6027;</p><h3 id="&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><p>&#x5B57;&#x7B26;&#x578B;&#x3001;&#x6570;&#x503C;&#x578B;&#x3001;&#x65E5;&#x671F;&#x578B;&#x3001;&#x5176;&#x4ED6;&#x7C7B;&#x578B;</p><table><thead><tr><th style="text-align:left">&#x5B57;&#x7B26;&#x578B;</th><th style="text-align:left">n&#x6700;&#x5927;&#x503C;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">CHAR(n)</td><td style="text-align:left">2000</td><td style="text-align:left">n&#x4E3A;10&#x65F6;&#xFF0C;&#x8F93;&#x5165;&#x957F;&#x5EA6;3&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x5C06;&#x8865;&#x9F50;7&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x6613;&#x9020;&#x6210;&#x7A7A;&#x95F4;&#x6D6A;&#x8D39;</td></tr><tr><td style="text-align:left">NCHAR(n)</td><td style="text-align:left">1000</td><td style="text-align:left">&#x6309;Unicode&#x683C;&#x5F0F;&#x5B58;&#x653E;&#x6570;&#x636E;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6C49;&#x5B57;</td></tr><tr><td style="text-align:left">VARCHAR2(n)</td><td style="text-align:left">4000</td><td style="text-align:left">&#x5B58;&#x50A8;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x76F8;&#x5BF9;CHAR&#x66F4;&#x8282;&#x7EA6;&#x7A7A;&#x95F4;</td></tr><tr><td style="text-align:left">NVARCHAR2(n)</td><td style="text-align:left">2000</td><td style="text-align:left">&#x652F;&#x6301;Unicode&#x683C;&#x5F0F;&#x5B58;&#x653E;</td></tr></tbody></table><table><thead><tr><th style="text-align:left">&#x6570;&#x503C;&#x578B;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">NUMBER(p,s)</td><td style="text-align:left">p&#x6709;&#x6548;&#x6570;&#x5B57;&#xFF1B;s&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x4F4D;&#x6570;&#xFF0C;&#x652F;&#x6301;&#x6B63;&#x8D1F;&#x6570;</td></tr><tr><td style="text-align:left">FLOAT(n)</td><td style="text-align:left">&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x80FD;&#x8868;&#x793A;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x6570;1-126&#x4F4D;&#x3002;&#x8F6C;&#x6362;&#x6210;10&#x8FDB;&#x5236;&#xFF0C;&#x5219;&#x9700;&#x4E58;&#x4EE5;0.30103</td></tr></tbody></table><pre><code>NUMBER(5, 2)
 # &#x6709;&#x6548;&#x6570;&#x5B57;5&#x4F4D;&#xFF0C;&#x4FDD;&#x7559;2&#x4F4D;&#x5C0F;&#x6570;&#xFF0C;&#x5982;123.45
-</code></pre><table><thead><tr><th style="text-align:left">&#x65E5;&#x671F;&#x578B;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">DATE</td><td style="text-align:left">&#x8303;&#x56F4;&#xFF1A;&#x516C;&#x5143;&#x524D;4712&#x5E74;1&#x6708;1&#x65E5;&#xFF0C;&#x81F3;&#x516C;&#x5143;9999&#x5E74;12&#x6708;31&#x65E5;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x79D2;</td></tr><tr><td style="text-align:left">TIMESTAMP</td></tr></tbody></table><table><thead><tr><th style="text-align:left">&#x5176;&#x4ED6;&#x7C7B;&#x578B;</th><th style="text-align:left">&#x6700;&#x5927;&#x80FD;&#x5B58;&#x50A8;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">BLOB</td><td style="text-align:left">4GB&#x6570;&#x636E;</td><td style="text-align:left">&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x5B58;&#x50A8;</td></tr><tr><td style="text-align:left">CLOB</td><td style="text-align:left">4GB&#x6570;&#x636E;</td><td style="text-align:left">&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;</td></tr></tbody></table><footer class="page-footer"><span class="copyright">&#xA9; 2019 Capricorncd.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-06-29 14:27:19</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="../java-web/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: JavaWeb应用程序"><i class="fa fa-angle-left"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Oracle",level:"5.1",depth:1,previous:{title:"JavaWeb应用程序",level:"4.1",depth:1,path:"pages/java-web/README.md",ref:"pages/java-web/README.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:"&copy 2019 Capricorncd",modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/oracle/README.md",mtime:"2019-06-29T05:27:19.340Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-06-29T05:27:59.317Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
+</code></pre><table><thead><tr><th style="text-align:left">&#x65E5;&#x671F;&#x578B;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">DATE</td><td style="text-align:left">&#x8303;&#x56F4;&#xFF1A;&#x516C;&#x5143;&#x524D;4712&#x5E74;1&#x6708;1&#x65E5;&#xFF0C;&#x81F3;&#x516C;&#x5143;9999&#x5E74;12&#x6708;31&#x65E5;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x79D2;</td></tr><tr><td style="text-align:left">TIMESTAMP</td></tr></tbody></table><table><thead><tr><th style="text-align:left">&#x5176;&#x4ED6;&#x7C7B;&#x578B;</th><th style="text-align:left">&#x6700;&#x5927;&#x80FD;&#x5B58;&#x50A8;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">BLOB</td><td style="text-align:left">4GB&#x6570;&#x636E;</td><td style="text-align:left">&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x5B58;&#x50A8;</td></tr><tr><td style="text-align:left">CLOB</td><td style="text-align:left">4GB&#x6570;&#x636E;</td><td style="text-align:left">&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;</td></tr></tbody></table><h3 id="&#x7BA1;&#x7406;&#x8868;">&#x7BA1;&#x7406;&#x8868;</h3><p>&#x521B;&#x5EFA;&#x8868;&#x3001;&#x4FEE;&#x6539;&#x8868;&#x3001;&#x5220;&#x9664;&#x8868;</p><pre><code># &#x521B;&#x5EFA;&#x8868;&#x8BED;&#x6CD5;
+CREATE TABLE table_name
+(
+    column_name datatype [default value], ...
+)
+# default &#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;value&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x65F6;&#x95F4;sysdate
+</code></pre><p><img src="img/create-table-user-info.png" alt="create-table-user-info"></p><blockquote><p>[!TIP|style:flat|label:&#x4FEE;&#x6539;&#x8868;]</p><p>&#x6DFB;&#x52A0;&#x5B57;&#x6BB5;&#x3001;&#x66F4;&#x6539;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3001;&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x540D;&#x3001;&#x5220;&#x9664;&#x5B57;&#x6BB5;&#x3001;&#x4FEE;&#x6539;&#x8868;&#x540D;</p></blockquote><pre><code># &#x6DFB;&#x52A0;&#x5B57;&#x6BB5;
+ALTER TABLE table_name
+ADD column_name datatype [default value];
+# alter table user_info add remark varchar2(500);
+</code></pre><pre><code># &#x66F4;&#x6539;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x7C7B;&#x578B;
+ALTER TABLE table_name
+MODIFY column_name datatype [default value];
+# alter table user_info modify remark varchar2(300);
+# alter table user_info modify password number(10, 0);
+</code></pre><pre><code># &#x5220;&#x9664;&#x5B57;&#x6BB5;
+ALTER TABLE table_name
+DROP COLUMN column_name;
+# alter table user_info drop column remark;
+</code></pre><pre><code># &#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x540D;&#x79F0;
+ALTER TABLE table_name
+RENAME COLUMN column_name TO new_column_name;
+# alter table user_info rename column user_name to username;
+</code></pre><pre><code># &#x4FEE;&#x6539;&#x8868;&#x540D;
+RENAME table_name TO new_table_name;
+# rename user_info to userinfo;
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x5220;&#x9664;&#x8868;]</p><p>&#x5220;&#x9664;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x6570;&#x636E;</p><p>&#x5220;&#x9664;&#x8868;</p></blockquote><pre><code># &#x5220;&#x9664;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x6570;&#x636E;
+TRUNCATE TABLE table_name
+</code></pre><pre><code># &#x5220;&#x9664;&#x8868;
+DROP TABLE table_name
+</code></pre><h3 id="&#x64CD;&#x4F5C;&#x8868;&#x4E2D;&#x6570;&#x636E;">&#x64CD;&#x4F5C;&#x8868;&#x4E2D;&#x6570;&#x636E;</h3><p>&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF1A;INSERT&#x8BED;&#x53E5;&#x3001;&#x64CD;&#x4F5C;&#x5B9E;&#x4F8B;&#x3001;&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;</p><ul><li>INSERT&#x8BED;&#x53E5;</li></ul><pre><code># INSERT&#x8BED;&#x53E5;
+INSERT INTO table_name
+(column1, column2, ...)
+VALUES(value1, value2, ...)
+# column1 ...&#x680F;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#xFF0C;&#x4F46;value&#x680F;&#x7684;&#x987A;&#x5E8F;&#x5FC5;&#x987B;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x8868;&#x5B57;&#x6BB5;&#x987A;&#x5E8F;&#x4E00;&#x81F4;
+</code></pre><p>&#x5B9E;&#x4F8B;</p><pre><code># &#x5411;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;
+insert into user_info values(1, &apos;jock&apos;, &apos;123456&apos;, &apos;1522@qq.com&apos;, sysdate);
+# sysdate &#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x65F6;&#x95F4;
+</code></pre><pre><code># &#x5411;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x503C;
+insert into user_info (id, user_name, password) values(2, &apos;tom&apos;, &apos;123456&apos;);
+</code></pre><ul><li>&#x590D;&#x5236;&#x8868;&#x6570;&#x636E;</li></ul><pre><code># &#x5728;&#x521B;&#x5EFA;&#x65F6;&#x590D;&#x5236;
+CREATE TABLE table_new
+AS
+SELECT column1, ...|* FROM table_old
+# column &#x6307;&#x5B9A;&#x9700;&#x8981;&#x590D;&#x5236;&#x7684;&#x5B57;&#x6BB5;
+# * &#x4EE3;&#x8868;&#x590D;&#x5236;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x6570;&#x636E;
+# create table new_userinfo as select * from user_info;
+# create table new_userinfo2 as select id, user_name from user_info;
+</code></pre><pre><code># &#x5728;&#x6DFB;&#x52A0;&#x65F6;&#x590D;&#x5236;
+INSERT INTO table_new
+[(column1, ...)]
+SELECT column1, ...|* FROM table_old
+# &#x63D2;&#x5165;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#x987A;&#x5E8F;&#x53CA;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x4E0E;table_old&#x8868;&#x4E00;&#x81F4;&#x3002;
+# insert into new_userinfo select * from user_info;
+# insert into new_userinfo (id, user_name) select id, user_name from user_info;
+</code></pre><ul><li>&#x4FEE;&#x6539;&#x6570;&#x636E;</li></ul><pre><code># UPDATE&#x8BED;&#x53E5;
+UPDATE table_name
+SET column1=value1, ... 
+[WHERE conditions]
+</code></pre><pre><code># &#x65E0;&#x6761;&#x4EF6;&#x66F4;&#x65B0;
+update user_info set password=&apos;1111111&apos;;
+</code></pre><pre><code># &#x6709;&#x6761;&#x4EF6;&#x66F4;&#x65B0;
+update user_info set password=&apos;222222&apos;, email=&apos;8888@xx.com&apos; where id=&apos;2&apos;;
+</code></pre><ul><li>&#x5220;&#x9664;&#x6570;&#x636E;</li></ul><pre><code># DELETE&#x8BED;&#x53E5;
+DELETE FROM table_name
+[WHERE conditions]
+# drop&#x5220;&#x9664;&#x8868;&#x6570;&#x636E;&#xFF0C;&#x8981;&#x6BD4;delete&#x5FEB;&#x3002;
+</code></pre><pre><code># &#x65E0;&#x6761;&#x4EF6;&#x5220;&#x9664;
+delete from user_info_copy;
+</code></pre><pre><code># &#x6709;&#x6761;&#x4EF6;&#x5220;&#x9664;
+delete from user_info where id=&apos;1&apos;;
+</code></pre><h3 id="&#x7EA6;&#x675F;">&#x7EA6;&#x675F;</h3><blockquote><p>[!TIP|style:flat|label:&#x7EA6;&#x675F;&#x7684;&#x4F5C;&#x7528;]</p><p>&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#xFF1A;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;&#x8BE5;&#x8F93;&#x5165;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x503C;</p><p>&#x786E;&#x4FDD;&#x5B8C;&#x6574;&#x6027;&#xFF1A;&#x6570;&#x636E;&#x7684;&#x7CBE;&#x786E;&#x6027;&#x3001;&#x53EF;&#x9760;&#x6027;&#x3002;</p></blockquote><p>&#x975E;&#x7A7A;&#x7EA6;&#x675F;&#x3001;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x3001;&#x5916;&#x952E;&#x7EA6;&#x675F;&#x3001;&#x552F;&#x4E00;&#x7EA6;&#x675F;&#x3001;&#x68C0;&#x67E5;&#x7EA6;&#x675F;</p><blockquote><p>[!TIP|style:flat|label:&#x975E;&#x7A7A;&#x7EA6;&#x675F;]</p><p>&#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x975E;&#x7A7A;&#x7EA6;&#x675F; <code>NOT NULL</code></p><p>&#x5728;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x6DFB;&#x52A0;&#x975E;&#x7A7A;&#x7EA6;&#x675F;</p><p>&#x5728;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x53BB;&#x9664;&#x975E;&#x7A7A;&#x7EA6;&#x675F;</p></blockquote><pre><code># &#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x975E;&#x7A7A;&#x7EA6;&#x675F;
+CREATE TABLE table_name (
+    column_nae datatype NOT NULL, ...
+)
+</code></pre><pre><code>create table user_info2 (
+    id number(10, 0),
+    username varchar2(32) not null,
+    password varchar2(64) not null
+);
+</code></pre><pre><code># &#x5728;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x6DFB;&#x52A0;&#x975E;&#x7A7A;&#x7EA6;&#x675F;
+ALTER TABLE table_name
+MODIFY column_name datatype NOT NULL;
+# &#x5982;&#x679C;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5728;&#x8868;&#x4E2D;&#x5DF2;&#x6709;&#x7A7A;&#x503C;&#x5C06;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;
+</code></pre><pre><code># &#x5728;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#xFF0C;&#x53BB;&#x9664;&#x975E;&#x7A7A;&#x7EA6;&#x675F;
+ALTER TABLE table_name
+MODIFY column_name datatype NULL;
+# alter table user_info modify user_name varchar2(64) null;
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x4E3B;&#x952E;&#x7EA6;&#x675F;]</p><p>&#x4F5C;&#x7528;&#xFF1A;&#x786E;&#x4FDD;&#x8868;&#x5F53;&#x4E2D;&#x6BCF;&#x4E00;&#x884C;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6027;</p><p>&#x4E00;&#x5F20;&#x8868;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</p><p>&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x53EF;&#x4EE5;&#x7531;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6784;&#x6210;&#xFF08;&#x8054;&#x5408;&#x4E3B;&#x952E;&#x6216;&#x590D;&#x5408;&#x4E3B;&#x952E;&#xFF09;</p></blockquote><p>&#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#x8BBE;&#x7F6E;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x3001;&#x5728;&#x4FEE;&#x6539;&#x8868;&#x65F6;&#x6DFB;&#x52A0;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#x3001;&#x66F4;&#x6539;&#x7EA6;&#x675F;&#x7684;&#x540D;&#x79F0;&#x3001;&#x5220;&#x9664;&#x4E3B;&#x952E;&#x7EA6;&#x675F;</p><pre><code># &#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#x8BBE;&#x7F6E;&#x4E3B;&#x952E;&#x7EA6;&#x675F;
+CREATE TABLE table_name (
+    column_name datatype PRIMARY KEY, ...
+)
+</code></pre><pre><code># &#x4F8B;&#x5B50;
+create table user_info3 (
+    id number(10, 0) primary key,
+    username varchar2(32),
+    password varchar2(64)
+);
+</code></pre><pre><code># &#x8054;&#x5408;&#x4E3B;&#x952E;&#x6216;&#x590D;&#x5408;&#x4E3B;&#x952E;
+CONSTRAINT constraint_name
+PRIMARY KEY(column_name1, ...)
+</code></pre><pre><code>create table user_info4 (
+    id number(10, 0),
+    username varchar2(64),
+    password varchar(64),
+    constraint pk_id_username primary key (id, username)
+);
+</code></pre><p><img src="img/create-table-constraint.png" alt="create-table-constraint"></p><footer class="page-footer"><span class="copyright">&#xA9; 2019 Capricorncd.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-06-29 17:20:24</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="../java-web/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: JavaWeb应用程序"><i class="fa fa-angle-left"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Oracle",level:"5.1",depth:1,previous:{title:"JavaWeb应用程序",level:"4.1",depth:1,path:"pages/java-web/README.md",ref:"pages/java-web/README.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:"&copy 2019 Capricorncd",modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/oracle/README.md",mtime:"2019-06-29T08:20:24.967Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-06-29T08:21:27.586Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
