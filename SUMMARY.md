@@ -79,3 +79,5 @@
 * [约束constraint](pages/oracle/constraint.md)
 
 * [查询语句sql](pages/oracle/sql.md)
+
+* [PL/SQL程序设计](pages/oracle/pl-sql.md)

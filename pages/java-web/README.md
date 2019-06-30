@@ -32,6 +32,10 @@ JavaEE方向需求一直较大，也就是就业比较容易和稳定。
 
 * Tomcat7.0+
 
+Tomcat服务器目录结构：
+
+![tomcat-dirs](img/tomcat-dirs.png)
+
 * MyEclipse or eclipse
 
 手动编写第一个Web程序，步骤：
