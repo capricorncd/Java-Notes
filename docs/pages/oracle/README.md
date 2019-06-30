@@ -15,7 +15,7 @@ https://www.oracle.com/downloads/
 deinstall/deinstall.bat
 ```
 
-## 用户与表空间
+### 用户与表空间
 
 > [!TIP|style:flat|label:系统用户]
 
@@ -72,6 +72,8 @@ alter user uesename account unlock
 ```
 
 **ORA-01918: 用户 'SCOTT' 不存在**
+
+# 表空间
 
 > [!TIP|style:flat|label:表空间]
 
@@ -246,7 +248,7 @@ tablespace_name [INCLUDING CONTENTS]
 # 删除表空间和文件 drop tablespace test1_tablespace including contents
 ```
 
-## 管理表
+# 管理表
 
 > [!TIP|style:flat|label:认识表]
 
@@ -451,7 +453,7 @@ delete from user_info_copy;
 delete from user_info where id='1';
 ```
 
-### 约束
+# 约束
 
 > [!TIP|style:flat|label:约束的作用]
 
@@ -460,6 +462,8 @@ delete from user_info where id='1';
 > 确保完整性：数据的精确性、可靠性。
 
 非空约束、主键约束、外键约束、唯一约束、检查约束
+
+### 非空约束
 
 > [!TIP|style:flat|label:非空约束]
 
@@ -497,6 +501,8 @@ ALTER TABLE table_name
 MODIFY column_name datatype NULL;
 # alter table user_info modify user_name varchar2(64) null;
 ```
+
+### 主键约束
 
 > [!TIP|style:flat|label:主键约束]
 
@@ -597,6 +603,8 @@ DROP PRIMARY KEY [CASCADE]
 # alter table user_info3 drop primary key;
 ```
 
+### 外键约束
+
 > [!TIP|style:flat|label:外键约束]
 
 > 唯一一个涉及两个表当中字段关系约束。
@@ -666,6 +674,146 @@ DROP CONSTRAINT constraint_name;
 
 ![drop-constraint](img/drop-constraint.png)
 
-> [!TIP|style:flat|label:唯一约束]
+### 唯一约束
 
-> ...
+> [!TIP|style:flat|label:唯一约束 UNIQUE]
+
+> 作用：保证字段值的唯一性。
+
+> 与主键约束的区别：主键字段值必须是非空的；唯一约束允许有一个空值。主键在每张表中只有一个，唯一约束在每张表中可以由多个。
+
+在创建表时设置唯一约束、在修改表时添加唯一约束、删除唯一约束
+
+```
+# 在创建表时设置唯一约束，分列级和表级
+# 列级
+CREATE TABLE table_name
+(column_name datatype UNIQUE, ...)
+
+# 表级
+CONSTRAINT constraint_name
+UNIQUE (column_name)
+# constraint_name 约束名必须是唯一的。
+```
+
+![create-table-unique](img/create-table-unique.png)
+
+```
+# 在修改表时添加唯一约束
+ADD CONSTRAINT constraint_name
+UNIQUE (column_name);
+```
+
+![add-constraint-unique](img/add-constraint-unique.png)
+
+删除唯一约束
+
+```
+# 禁用/启用
+ALTER TABLE table_name
+DISABLE|ENABLE CONSTRAINT constraint_name
+
+# 删除唯一约束
+ALTER TABLE table_name
+DROP CONSTRAINT constraint_name
+```
+
+![disable-constraint-unique.png](img/disable-constraint-unique.png)
+
+### 检查约束
+
+作用：使表中的值更具有实际意义。
+
+一张表中可以有多个检查约束。
+
+```
+例子，员工信息：
+年龄：1000 工资：-50 电话号码：080-2222-3333
+# 年龄、工资不符合（没有）实际意义。
+```
+
+在创建表时设置检查约束、在修改表时添加检查约束、删除检查约束
+
+```
+# 在创建表时设置检查约束：列级
+CREATE TABLE table_name
+(column_name datatype CHECK(expressions), ...)
+```
+
+![create-table-check](img/create-table-check.png)
+
+```
+# 在创建表时设置检查约束：表级
+CONSTRAINT constraint_name CHECK(expressions)
+```
+
+![constraint-check](img/constraint-check.png)
+
+```
+# 在修改表时添加检查约束
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name
+CHECK (expressions);
+```
+
+```
+# 禁用、启用
+ALTER TABLE table_name
+DISABLE|ENABLE CONSTRAINT constraint_name
+
+# 删除检查约束
+ALTER TABLE table_name
+DROP CONSTRAINT constraint_name
+```
+
+### 总结
+
+* 非空约束
+
+* 主键约束：每张表只能有一个，可以由多个字段构成。
+
+* 外键约束： 涉及两个表之间的关系
+
+* 唯一约束
+
+* 检查约束
+
+> [!TIP|style:flat|label:具体操作]
+
+> **在创建表时设置约束：**
+
+> 非空约束只能在**列级**设置，不能再**表级**设置；
+
+> 其他约束既可以在**列级**设置，也可以在**表级**设置；
+
+> 并且设置非空约束是没有名字的。
+
+> **在修改表时添加约束：**
+
+> 与其他不同的还是 `非空约束`，使用的是修改字段方法 ALTER TABLE table_name MODIFY column_name datatype NOT NULL;
+
+> **更改约束的名称：**
+
+> 非空约束没有名称，所有不能改名；
+
+> 其他约束可以修改约束名称；
+
+> 通过数据字典 `user_constraints`查看约束名称、类型等信息；
+
+> ALTER TABLE table_name RENAME CONSTRAINT old_name TO new_name;
+
+> **删除约束：**
+
+> 非空约束比较特殊，使用的是修改字段方法，即将NOT NULL改为可以为空NULL即可。ALTER TABLE table_name MODIFY column_name datatype NULL;
+
+> 其他约束`启用enable或禁用disable`，DISABLE|ENABLE CONSTRAINT constraint_name；彻底删除 DROP CONSTRAINT constraint_name
+
+> 删除主键约束: DROP PRIMARY KEY
+
+
+
+
+
+
+
+------
