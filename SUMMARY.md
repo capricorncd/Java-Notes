@@ -74,7 +74,7 @@
 
 * [表空间](pages/oracle/tablespaces.md)
 
-* [管理表](pages/oracle/management-table.md)
+* [管理表，数据增删改](pages/oracle/management-table.md)
 
 * [约束constraint](pages/oracle/constraint.md)
 

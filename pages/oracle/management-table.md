@@ -115,13 +115,11 @@ TRUNCATE TABLE table_name
 DROP TABLE table_name
 ```
 
-
-
 ### 操作表中数据
 
 添加数据：INSERT语句、操作实例、复制表数据
 
-* INSERT语句
+**INSERT语句**
 
 ```
 # INSERT语句
@@ -144,7 +142,7 @@ insert into user_info values(1, 'jock', '123456', '1522@qq.com', sysdate);
 insert into user_info (id, user_name, password) values(2, 'tom', '123456');
 ```
 
-* 复制表数据
+**复制表数据**
 
 ```
 # 在创建时复制
@@ -167,7 +165,7 @@ SELECT column1, ...|* FROM table_old
 # insert into new_userinfo (id, user_name) select id, user_name from user_info;
 ```
 
-* 修改数据
+**修改数据**
 
 ```
 # UPDATE语句
@@ -186,7 +184,7 @@ update user_info set password='1111111';
 update user_info set password='222222', email='8888@xx.com' where id='2';
 ```
 
-* 删除数据
+**删除数据**
 
 ```
 # DELETE语句
