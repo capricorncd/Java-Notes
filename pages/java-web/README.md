@@ -73,6 +73,55 @@ web.xml
 
 > Eclipse 免费开源，不包含任何附加功能的插件
 
-MyEclipse 配置JRE
+**MyEclipse 配置JRE**
 
-Eclipse
+```
+# 软件菜单栏
+windows -> Preference -> Java -> Installed JREs
+# 自定义JDK，默认为1.6
+Add... -> Standard VM -> JDK安装目录 -> 勾选并确定
+```
+
+MyEclipse集成Tomcat服务器
+
+```
+# 软件菜单栏
+Windows -> Preference -> MyEclipse -> Servers -> Tomcat
+# 选择Tomcat服务器
+Tomcat 7.x -> Enable -> Brower -> Tomcat安装目录
+# 展开Tomcat 7.x
+JDK -> 选择自己安装的JDK
+```
+
+![myeclipse-tomcat](img/myeclipse-tomcat.png)
+
+创建Web项目
+
+```
+New -> Web Project -> Project Name: Test0703
+```
+
+发布代码
+
+```
+点击发布按钮 -> 选择发布服务器 -> 启动服务器
+# 浏览器中访问项目
+http://localhost:8080/Test0703
+# 注意名称大小写
+```
+
+![myeclipse-publish-tomcat](img/myeclipse-publish-tomcat.png)
+
+Web项目目录结构
+
+![myeclipse-dir](img/myeclipse-dir.png)
+
+项目的虚拟路径：默认与项目名称相同
+
+```
+右键单击项目根目录名称 -> Properties
+```
+
+![myeclipse-web-context-root](img/myeclipse-web-context-root.png)
+
+**Eclipse**
