@@ -66,6 +66,8 @@
 
 * [JavaWeb应用程序](pages/java-web/README.md)
 
+* [Jsp基本语法](pages/java-web/jsp.md)
+
 ### Oracle
 
 * [介绍与安装](pages/oracle/README.md)
