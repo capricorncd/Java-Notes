@@ -66,7 +66,9 @@
 
 * [JavaWeb应用程序](pages/java-web/README.md)
 
-* [Jsp基本语法](pages/java-web/jsp.md)
+* [JSP基本语法](pages/java-web/jsp.md)
+
+* [JSP内置对象](pages/java-web/built-in-object.md)
 
 ### Oracle
 
