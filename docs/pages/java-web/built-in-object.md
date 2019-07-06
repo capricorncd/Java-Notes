@@ -367,10 +367,164 @@ response.jsp
 
 ![session-server](img/session-server.jpg)
 
+> [!COMMENT|style:flat|label:session对象]
+
+> 是一个JSP内置对象
+
+> 在第一个JSP页面被装载时自动创建，完成会话期管理。
+
+> 从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离开这个服务器结束，被称为**一个会话**。
+
+> 当一个客户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要session对象。
+
+> session对象时HttpSession类的实例
+
+session对象常用方法：
+
+**long getCreationTime()** 返回SESSION创建时间（单位毫秒）
+
+**public String getId()** 返回SESSION创建时JSP引擎为它设的唯一ID值
+
+**public Object setAttribute(String name, Object value)** 使用指定名称将对象绑定到此会话
+
+**public Object getAttribute(String name)** 返回与此会话中的指定名称绑定在一起的对象，如果没有则返回null
+
+**String[] getValueNames()** 返回一个包含此SESSION中所有可能属性的数组
+
+**void setMaxInactiveInterval(int second)** 设置SESSION过期时间(单位秒)
+
+**int getMaxInactiveInterval()** 返回两次请求间隔多长时间此SESSION被取消(单位秒)，即SESSION过期时间
+
+```
+<body>
+    <dl>
+    	<dt>session内置对象</dt>
+    	<%
+    		long sessionCreatedMsec = session.getCreationTime();
+    		// 转换为包装类，方法使用其方法获取字符串长度
+    		Long scm = new Long(sessionCreatedMsec);
+    		// 日期格式化
+    		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    		// 创建日期对象，接收长整型参数
+    		Date d = new Date(sessionCreatedMsec);
+    		// session中设置自定义属性
+    		session.setAttribute("username", "master");
+    	%>
+    	<dd>getId: <%=session.getId() %></dd>
+    	<dd>Session创建时间：<%=sessionCreatedMsec %>毫秒</dd>
+    	<dd>时间长度：<%=scm.toString().length() %>位</dd>
+    	<dd>格式化后的时间：<%=sdf.format(d) %></dd>
+    	<dd>获取自定义属性：<%=session.getAttribute("username") %></dd>
+    </dl>
+</body>
+```
+
+结果：
+
+```
+session内置对象
+getId: FBBE1BF8A1502240D4DC31EED0BD5EBA
+Session创建时间：1562411220284毫秒
+时间长度：13位
+格式化后的时间：2019-07-06 20:07:00
+获取自定义属性：master
+```
+
+**session的生命周期**
+
+* 创建：
+
+客户端第一次访问当前网站某个jsp或Servlet的时候，服务器会为当前会话创建一个SessionId。客户端每次向服务器发送请求时，都会带上此SessionId，服务器端会对该SessionId进行校验。
+
+* 活动：
+
+某次会话当中，通过超链接打开的同域新页面，则属于同一次会话。
+
+只要当前会话页面没有全部关闭，重新打开新的浏览器窗口访问同一个项目资源时属于同一次会话。
+
+除非本次会话的所有页面都关闭后，再重新访问某个Jsp或者Servlet将会创建新的会话。
+
+注意：旧的Session仍然存在于服务器内存当中
+
+* 销毁
+
+Session的销毁有3种方式：
+
+1. 调用session.invalidate()方法
+
+2. Session过期
+
+3. 服务器重启（？相当于清空内存）
+
+Tomcat web.xml中配置过期时间：(默认为30分钟)
+
+```
+<session-config>
+    <session-timeout>30</session-timeout>
+</session-config>
+```
+
+### application
+
+* application 对象实现了用户间数据的共享，可以存放全局变量
+
+* application开始于服务器的启动，终止于服务器的关闭
+
+* 在用户的前后连接或不同用户之间的连接中，可以对application对象的同一属性进行操作。
+
+* 在任何地方对application对象属性的操作，都将影响到其他用户对此的访问。
+
+* 服务器的启动和关闭决定了application对象的生命周期
+
+* application对象是ServletContext类的实例
+
+**常用方法**
+
+**public void setAttribute(String name, Object value)** 设置属性及值
+
+**public Object getAttribute(String name)** 获取属性值，无则返回null
+
+**Enumeration getAttributeNames()** 返回所有可用属性名的枚举
+
+**String getServerInfo()** 返回JSP（Servlet）引擎及版本号
+
+```
+<body>
+    <h1>APPLICATION</h1>
+   	<%
+   		application.setAttribute("PROJECT_NAME", "TEST_SERVER");
+   		application.setAttribute("systemName", "JSP_SERVER");
+   		application.setAttribute("systemEmail", "admin@xxx.com");
+   	%>
+   	<p>gePROJECT_NAME: <%=application.getAttribute("PROJECT_NAME") %></p>
+   	<h2>所有属性：</h2>
+   	<p><%
+   	Enumeration attrs = application.getAttributeNames();
+   	while(attrs.hasMoreElements()) {
+   		out.println(attrs.nextElement() + "&nbsp;&nbsp;&nbsp;&nbsp;");
+   	}
+   	%></p>
+   	<p>getServerInfo：<%=application.getServerInfo() %></p>
+</body>
+```
+
+结果：
+
+```
+APPLICATION
+gePROJECT_NAME: TEST_SERVER
+
+所有属性：
+javax.servlet.context.tempdir     systemEmail     org.apache.catalina.resources     com.sun.faces.config.WebConfiguration     org.apache.tomcat.InstanceManager     org.apache.catalina.jsp_classpath     org.apache.jasper.compiler.ELInterpreter     org.apache.jasper.compiler.TldCache     PROJECT_NAME     org.apache.tomcat.JarScanner     systemName     javax.websocket.server.ServerContainer     org.apache.jasper.runtime.JspApplicationContextImpl    
+
+getServerInfo：Apache Tomcat/9.0.20
+```
+
+### page对象
+
 ### 四种作用域范围
 
 
-### application
 
 ### 其它内置对象
 
