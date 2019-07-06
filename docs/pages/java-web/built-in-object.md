@@ -49,23 +49,23 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 
 是JspWriter类的实例，是向客户端输出内容常用的对象。
 
-**常用方法：**
+常用方法：
 
-void println() 向客户端打印字符串。
+**void println()** 向客户端打印字符串。
 
-void clear() 清除缓冲区的内容。注意，如果在flush之后调用会抛出异常。
+**void clear()** 清除缓冲区的内容。注意，如果在flush之后调用会抛出异常。
 
-void clearBuffer() 清除缓冲区的内容，不会向客户端输出任何内容。在flush之后调用不会抛出异常。
+**void clearBuffer()** 清除缓冲区的内容，不会向客户端输出任何内容。在flush之后调用不会抛出异常。
 
-void flush() 将缓冲区内容输出到客户端。
+**void flush()** 将缓冲区内容输出到客户端。
 
-int getBufferSize() 获取缓冲区字节数的大小，如不设置缓冲区则为0。
+**int getBufferSize()** 获取缓冲区字节数的大小，如不设置缓冲区则为0。
 
-int getRemaining() 获取缓冲区剩余可用字节大小（可用空间）。
+**int getRemaining()** 获取缓冲区剩余可用字节大小（可用空间）。
 
-boolean isAutoFlush() 返回缓冲区满时，是自动清空还是抛出异常。
+**boolean isAutoFlush()** 返回缓冲区满时，是自动清空还是抛出异常。
 
-void close() 关闭输出流。
+**void close()** 关闭输出流。
 
 ```
 <body>
@@ -155,7 +155,7 @@ void close() 关闭输出流。
 </body>
 ```
 
-### request/response
+### request对象
 
 > [!TIP|style:flat|label:request对象]
 
@@ -167,19 +167,19 @@ void close() 关闭输出流。
 
 常用方法如下：
 
-String getParameter(String name) 返回name指定参数的值
+**String getParameter(String name)** 返回name指定参数的值
 
-String[] getParameterValues(String name) 返回包含参数name的所有值得数组
+**String[] getParameterValues(String name)** 返回包含参数name的所有值得数组
 
-void setAttribute(String name, Object obj); 存储此请求中的属性。
+**void setAttribute(String name, Object obj);** 存储此请求中的属性。
 
-Object getAttribute(String name) 返回指定属性的属性值
+**Object getAttribute(String name)** 返回指定属性的属性值
 
-String getContentType() 得到请求体的MIME类型
+**String getContentType()** 得到请求体的MIME类型
 
-String getProtocol() 获取请求用的协议类型及版本号
+**String getProtocol()** 获取请求用的协议类型及版本号
 
-String getServerName() 返回接受请求的服务器主机名
+**String getServerName()** 返回接受请求的服务器主机名
 
 ```
 <body>
@@ -234,9 +234,141 @@ regdo.jsp
                URIEncoding="utf-8"/>
 ```
 
-### 四种作用域范围
+```
+<%
+    // void setAttribute(String name, Object obj);
+    request.setAttribute("password", "123456789");
+%>
+<%
+    // Object getAttribute(String name)
+%>
+<%=request.getAttribute("password") %>
+```
+
+其他方法及结果
+
+```
+# 方法 结果
+getContentType null
+
+getProtocol HTTP/1.1
+
+getServerName localhost
+
+getServerPort 8080
+
+getContentLength -1
+
+getRemoteAddr 0:0:0:0:0:0:0:1
+
+getRealPath D:\Java\tomcat9\webapps\www\index.jsp
+
+getContextPath /www
+
+getScheme http
+```
+
+### response对象
+
+> [!TIP|style:flat|label:response对象]
+
+> response对象包含了响应客户端请求的相关信息，但在JSP中很少直接用到它。它是HttpServletResponse类的实例。
+
+> response对象具有页面作用域，即访问一个页面时，该页面内的response对象只能对这次访问有效。其他页面的response对象对当前页面无效。
+
+常用方法：
+
+**String getCharacterEncoding()** 返回响应应用的是何种字符编码
+
+**void setContentType(String type)** 设置响应的MIME类型
+
+**PrintWriter getWriter()** 返回可以向客户端输出字符的一个对象（注意比较PrintWriter与内置out对象的区别）
+
+> [!WARNING|style:flat|label:区别]
+
+> PrintWriter outer = response.getWriter();
+
+> 默认情况下，outer.println()该对象输出的内容，总是在内置对象out.println()之前。
+
+> 可以通过 `out.flush()` 方法，实现按文档流输出。（见代码部分）
+
+**sendRedirect(java.lang.String location)** 重新定向客户端的请求
+
+response.jsp
+
+```
+<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
+<%
+	response.setContentType("text/html; charset=utf-8");
+	
+	out.println("<h2>response内置对象</h2>");
+	out.println("<hr>");
+	
+	PrintWriter outer = response.getWriter();
+	outer.println("这是response.getWriter()对象输出流");
+%>
+```
+
+结果：
+
+```
+这是response.getWriter()对象输出流
+
+<h2>response内置对象</h2>
+<hr>
+```
+
+通过 `out.flush()` 方法，实现按文档流输出
+
+```
+<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
+<%
+	response.setContentType("text/html; charset=utf-8");
+	
+	out.println("<h2>response内置对象</h2>");
+	out.println("<hr>");
+	out.flush();
+	
+	PrintWriter outer = response.getWriter();
+	outer.println("这是response.getWriter()对象输出流");
+%>
+```
+
+结果：
+
+```
+<h2>response内置对象</h2>
+<hr>
+这是response.getWriter()对象输出流
+```
+
+### 请求重定向和请求转发
+
+|名称|区别|
+|:--|:--|
+|请求重定向|客户端行为，response.sendRedirect()，从本质将等同于两次请求。前一次的请求对象不会保存，地址栏的URL会改变为定向地址。|
+|请求转发|服务器行为，request.getRequestDispatcher().forward(req, res)。是一次请求，转发后请求对象会保存，URL地址不会改变。|
 
 ### session
+
+> [!TIP|style:flat|label:session]
+
+> session表示客户端与服务端的一次会话。
+
+> Web中的session指的是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。
+
+> 从上述定义中可以看到，session实际上是一个特定的时间概念。
+
+> 在服务器内存中，保存着不同用户(客户端)的session
+
+![session-shopping](img/session-shopping.jpg)
+
+在服务器内存中，保存着不同用户的session。
+
+![session-server](img/session-server.jpg)
+
+### 四种作用域范围
+
 
 ### application
 
