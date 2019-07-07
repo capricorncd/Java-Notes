@@ -522,10 +522,121 @@ getServerInfo：Apache Tomcat/9.0.20
 
 ### page对象
 
-### 四种作用域范围
+page对象就是指当前JSP页面本身，有点像类中的this指针，它是java.lang.Object类的实例。
 
+常用方法：
 
+**class getClass()** 返回Object的类
 
-### 其它内置对象
+**int hashCode()** 返回此Object的hash码
+
+**boolean equals(Object obj)** 判断此Object是否与指定的Object对象相等
+
+**void copy(Object obj)** 把此Object拷贝到指定的Object对象中
+
+**Object clone()** 克隆对象
+
+**String toString()** 把Object对象转换成String类的对象
+
+**void notify()** 唤醒一个等待的线程
+
+**void notifyAll()** 唤醒所有等待的进程
+
+**void wait(int timeout)** 使一个线程除于等待状态，指定timeout结束，或被唤醒
+
+**void wait()** 使一个线程处于等待直到被唤醒
+
+### pageContext对象
+
+pageContext对象提供了对JSP页面内所有的对象及名字空间的访问
+
+pageContext对象可以访问到本页面所在的session，也可以取本页面所在的application的某一属性值
+
+pageContext对象相当于页面中所有功能的集大成者，即权限较大
+
+pageContext对象的本类名也叫pageContext
+
+|常用方法|说明|
+|:--|:--|
+|JspWriter getOut()|返回当前客户端响应被使用的JspWriter流(out)|
+|HttpSession getSession()|返回当前页中的HttpSession对象session|
+|Object getPage()|返回当前页的Object对象page|
+|ServletReuest getRequest()|返回当前页的ServletRequest对象request|
+|ServletResponse getResponse()|返回当前页的ServletResponse对象response|
+|void setAttribute(String name, Object attr)|设置属性及值|
+|Object getAttribute(String name, int scope)|获取指定范围内的属性值|
+|int getAttributeScope(String name)|返回某属性的作用范围|
+|void forward(String relativeUrlPath)|使当前页面重导到另一个页面|
+|void include(String relativeUrlPath)|在当前位置包含另一个文件|
+
+### config对象
+
+**config对象**是一个Servlet初始化时，JSP引擎向它传递信息用的，此信息包含Servlet初始化时所要用到的参数（通过属性名和值构成），以及服务器的有关信息（通过传递一个ServletContext对象），常用方法如下：
+
+**ServletContext getServletContext()** 返回含有服务器相关信息的ServletContext对象
+
+**String getInitParameter(String name)** 返回初始化参数的值
+
+**Enumeration getInitParameterNames()** 返回Servlet初始化所需所有参数的枚举
+
+### Exception对象
+
+**exception对象**是一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。如果一个JSP页面要应用此对象，就必须把isErrorPage设为true，否则无法编译。它实际上是java.lang.Throwable的对象，常用方法如下：
+
+**String getMessage()** 返回描述异常的消息
+
+**String toString()** 返回关于异常的简短描述消息
+
+**void printStackTrace()** 显示异常及其栈轨迹
+
+**Throwable FillInStackTrace()** 重写异常的执行栈轨迹
+
+```
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" errorPage="exception-handler.jsp"%>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>exception-test</title>
+  </head>
+  
+  <body>
+  	<h1>exception-test.jsp</h1>
+    <%
+    	out.println(10/0);
+    %>
+  </body>
+</html>
+```
+
+**errorPage="exception-handler.jsp"**表示页面发生异常时，异常交给 `exception-handler.jsp` 页面处理。
+
+exception-handler.jsp
+
+```
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" isErrorPage="true"%>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>exception-handler.jsp</title>
+  </head>
+  
+  <body>
+  	<h1>exception-handler.jsp</h1>
+    <p>异常消息是：<%=exception.getMessage() %></p>
+    <p>toString() <%=exception.toString() %></p>
+  </body>
+</html>
+```
+
+结果：
+
+```
+exception-handler.jsp
+异常消息是：/ by zero
+
+toString() java.lang.ArithmeticException: / by zero
+```
 
 ### 项目案例
+
+模拟登录，登录成功提示“登录成功，用户名为XXX”；登录失败跳转至登录失败页面。
