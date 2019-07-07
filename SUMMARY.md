@@ -70,7 +70,7 @@
 
 * [JSP内置对象](pages/java-web/built-in-object.md)
 
-* [JavaBean](pages/java-web/java-bean.md.md)
+* [JavaBean](pages/java-web/java-bean.md)
 
 ### Oracle
 

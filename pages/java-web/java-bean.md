@@ -79,3 +79,90 @@ JSP动作元素(action elements)为请求处理阶段提供信息。动作元素
 <jsp:invoke>
 <jsp:dobody>
 ```
+
+### 在JSP页面中使用JavaBean
+
+1.像使用普通java一样，创建javabean实例。
+
+src/com.test/Users.java
+
+```
+package com.test;
+
+public class Users {
+	// private properties
+	private String username;
+	private String password;
+	// constructor
+	public Users() {
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}	
+}
+```
+
+bean-users.jsp
+
+```
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%@ page import="com.test.Users"%>
+<!DOCTYPE HTML>
+<html>
+  <head>    
+    <title>像使用普通java一样，创建javabean实例</title>
+  </head>
+  <body>
+    <%
+	    Users u = new Users();
+	    u.setUsername("admin");
+	    u.setPassword("123465");
+    %>
+    <p>用户名：<%=u.getUsername() %></p>
+    <p>密码：<%=u.getPassword() %></p>
+  </body>
+</html>
+```
+
+2.在JSP页面中通常使用JSP动作标签使用JavaBean。
+
+useBeans/setProperty/getProperty
+
+> [!TIP|style:flat|label:useBeans]
+
+> `<jsp:useBeans>`
+
+> 作用：在jsp页面中实例化或者在指定范围内使用JavaBean
+
+```
+<jsp:useBean id="标识符" class="java类名" scope="作用范围" />
+```
+
+> [!TIP|style:flat|label:setProperty]
+
+> `<jsp:setProperty>`
+
+> 作用：给已实例化的JavaBean对象的属性赋值，一共有4种形式。
+
+```
+#  跟表单关联
+<jsp:setProperty name="JavaBean实例名" property="*" />
+
+# 跟表单关联
+<jsp:setProperty name="JavaBean实例名" property="JavaBean属性名" />
+
+# 手动设置
+<jsp:setProperty name="JavaBean实例名" property="JavaBean属性名" value="BeanValue" />
+
+# 跟request参数关联
+<jsp:setProperty name="JavaBean实例名" property="propertyName" param="request对象中的参数名" />
+```
