@@ -86,7 +86,7 @@ JSP动作元素(action elements)为请求处理阶段提供信息。动作元素
 
 src/com.test/Users.java
 
-```
+```java
 package com.test;
 
 public class Users {
@@ -113,7 +113,7 @@ public class Users {
 
 bean-users.jsp
 
-```
+```jsp
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 <%@ page import="com.test.Users"%>
 <!DOCTYPE HTML>
@@ -147,6 +147,21 @@ useBeans/setProperty/getProperty
 <jsp:useBean id="标识符" class="java类名" scope="作用范围" />
 ```
 
+```jsp
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE HTML>
+<html>
+  <head>    
+    <title>2.在JSP页面中通常使用JSP动作标签使用JavaBean</title>
+  </head>
+  <body>
+    <jsp:useBean id="myUsers" class="com.test.Users" scope="page"></jsp:useBean>
+    <p>用户名：<%=u.getUsername() %></p>
+    <p>密码：<%=u.getPassword() %></p>
+  </body>
+</html>
+```
+
 > [!TIP|style:flat|label:setProperty]
 
 > `<jsp:setProperty>`
@@ -154,15 +169,219 @@ useBeans/setProperty/getProperty
 > 作用：给已实例化的JavaBean对象的属性赋值，一共有4种形式。
 
 ```
-#  跟表单关联
+# 1.跟表单关联
 <jsp:setProperty name="JavaBean实例名" property="*" />
 
-# 跟表单关联
+# 2.跟表单关联
 <jsp:setProperty name="JavaBean实例名" property="JavaBean属性名" />
 
-# 手动设置
+# 3.手动设置
 <jsp:setProperty name="JavaBean实例名" property="JavaBean属性名" value="BeanValue" />
 
-# 跟request参数关联
+# 4.跟request参数关联
 <jsp:setProperty name="JavaBean实例名" property="propertyName" param="request对象中的参数名" />
+```
+
+实例1
+
+```jsp
+# login.jsp
+<form action="do-login.jsp" method="post">
+    <p>用户名: <input type="text" name="username"></p>
+    <p>密 &nbsp;&nbsp;码: <input type="password" name="password"></p>
+    <p><input type="submit" value="登 录"></p>
+</form>
+```
+
+```jsp
+# 1.跟表单关联
+# do-login.jsp
+<body>
+    <jsp:useBean id="testUsers" class="com.test.Users" scope="page"/>
+    <jsp:setProperty name="testUsers" property="*"/>
+    <p>用户名：<%=testUsers.getUsername() %></p>
+    <p>密码：<%=testUsers.getPassword() %></p>
+</body>
+```
+
+```jsp
+# 2.跟表单关联
+# do-login.jsp
+<body>
+    <jsp:useBean id="testUsers" class="com.test.Users" scope="page"/>
+    <jsp:setProperty name="testUsers" property="username"/>
+    <p>用户名：<%=testUsers.getUsername() %></p>
+    <p>密码：<%=testUsers.getPassword() %></p>
+</body>
+```
+
+```jsp
+# 3.手动设置
+# do-login.jsp
+<body>
+    <jsp:useBean id="testUsers" class="com.test.Users" scope="page"/>
+    <jsp:setProperty name="testUsers" property="username" value="Jock"/>
+    <jsp:setProperty name="testUsers" property="password" value="1234679"/>
+    <p>用户名：<%=testUsers.getUsername() %></p>
+    <p>密码：<%=testUsers.getPassword() %></p>
+</body>
+```
+
+```jsp
+# 跟request参数关联
+# do-login.jsp?queryUserName=Tom&queryPassWord=999999
+<body>
+    <jsp:useBean id="testUsers" class="com.test.Users" scope="page"/>
+    <jsp:setProperty name="testUsers" property="username" param="queryUserName"/>
+    <jsp:setProperty name="testUsers" property="password" param="queryPassWord"/>
+    <!-- 使用传统的方式获取用户名、密码 -->
+    <p>用户名：<%=testUsers.getUsername() %></p>
+    <p>密码：<%=testUsers.getPassword() %></p>
+</body>
+```
+
+> [!TIP|style:flat|label:getProperty]
+
+> `<jsp:getProperty>`
+
+> 作用：获取指定JavaBean对象的属性值。
+
+```
+<jsp:getProperty name="JavaBean实例名" property="属性名" />
+```
+
+```jsp
+# 跟request参数关联
+# do-login.jsp?queryUserName=Tom&queryPassWord=999999
+<body>
+    <jsp:useBean id="testUsers" class="com.test.Users" scope="page"/>
+    <jsp:setProperty name="testUsers" property="username" param="queryUserName"/>
+    <jsp:setProperty name="testUsers" property="password" param="queryPassWord"/>
+    <!-- 使用getProperty方式获取用户名、密码 -->
+    <p>用户名：<jsp:getProperty name="testUsers" property="username"/></p>
+    <p>密码：<jsp:getProperty name="testUsers" property="password"/></p>
+</body>
+```
+
+### JavaBean的4个作用域
+
+使用useBean的scope属性，可以用来指定JavaBean的作用域。
+
+|作用域|说明|
+|:--|:--|
+|**page**|仅在当前页面有效|
+|**request**|可以通过HttpRequest.getAttribute() 方法取得JavaBean对象。|
+|**session**|可以通过HttpSession.getAttribute() 方法获取JavaB对象。|
+|**application**|可以通过application.getAttribute() 方法取得JavaBean对象|
+
+### Model 1
+
+**Model 1** 模型出现前，整个Web应用的情况：几乎全部由JSP页面组成，JSP页面接收处理客户端请求，对请求处理后直接作出相应。
+
+**弊端**：在界面层充斥着大量的业务逻辑代码和数据访问层的代码，Web程序的可扩展性和可维护性非常差。
+
+**JavaBean**的出现，可以使jsp页面中使用JavaBean封装的数据或者调用JavaBean的业务逻辑代码，这样大大提升了程序的可维护性。
+
+![java-bean-model-1](img/java-bean-model-1.jpg)
+
+### 总结
+
+JavaBean就是符合某种设计规范的Java类
+
+在Model 1中，由Jsp页面去调用JavaBean。
+
+JavaBean一般把属性设计为私有，使用setter和getter访问属性。
+
+### 实例
+
+使用jsp + JavaBean完成用户登录功能
+
+src/com.dao/UsersDao.java
+
+```java
+package com.dao;
+
+import com.test.Users;
+
+public class UsersDao {
+	private String userName = "admin"; 
+	private String passWord = "admin"; 
+	
+	// 用户登录验证
+	public boolean checkLoginUserInfo(Users user) {
+		return userName.equals(user.getUsername()) && passWord.equals(user.getPassword());
+	}
+}
+```
+
+bean-login.jsp
+
+```jsp
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE>
+<html>
+  <head>    
+    <title>Login</title>
+  </head>
+  
+  <body>
+    <form action="bean-do-login.jsp" method="post">
+    	<p>用户名: <input type="text" name="username"></p>
+    	<p>密 &nbsp;&nbsp;码: <input type="password" name="password"></p>
+    	<p><input type="submit" value="登 录"></p>
+    </form>
+  </body>
+</html>
+```
+
+bean-do-login.jsp
+
+```jsp
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<jsp:useBean id="loginUser" class="com.test.Users" scope="page"/>
+<jsp:useBean id="userDao" class="com.dao.UsersDao" scope="page"/>
+<jsp:setProperty property="*" name="loginUser"/>
+
+<%
+	if (userDao.checkLoginUserInfo(loginUser)) {
+		session.setAttribute("username", loginUser.getUsername());
+		request.getRequestDispatcher("bean-login-success.jsp").forward(request, response);
+	} else {
+		response.sendRedirect("bean-login-failure.jsp");
+	}
+%>
+```
+
+bean-login-success.jsp
+
+```jsp
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE>
+<html>
+  <head>    
+    <title>Login Success</title>
+  </head>
+  
+  <body>
+    <h1>登录成功</h1>
+    <p>用户名：<%=session.getAttribute("username") %></p>
+  </body>
+</html>
+```
+
+bean-login-failure.jsp
+
+```jsp
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE>
+<html>
+  <head>    
+    <title>Login Failure</title>
+  </head>
+  
+  <body>
+    <h1>登录失败</h1>
+    <p>--</p>
+  </body>
+</html>
 ```

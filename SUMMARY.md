@@ -72,6 +72,8 @@
 
 * [JavaBean](pages/java-web/java-bean.md)
 
+* [Jsp状态管理](pages/java-web/state-management.md)
+
 ### Oracle
 
 * [介绍与安装](pages/oracle/README.md)
