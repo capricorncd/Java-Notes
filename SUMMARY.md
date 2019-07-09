@@ -74,6 +74,8 @@
 
 * [Jsp状态管理](pages/java-web/state-management.md)
 
+* [指令与动作](pages/java-web/commands-and-actions.md)
+
 ### Oracle
 
 * [介绍与安装](pages/oracle/README.md)
