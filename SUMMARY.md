@@ -66,7 +66,9 @@
 
 * [Spring框架简介](pages/spring/README.md)
 
-* [IOC容器](pages/spring/ioc.md)
+* [JUnit4](pages/spring/j-unit.md)
+
+* [IoC及bean容器](pages/spring/ioc.md)
 
 * [Bean装配](pages/spring/bean.md)
 

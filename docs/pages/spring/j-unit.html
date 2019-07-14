@@ -1,0 +1,249 @@
+<!DOCTYPE HTML><html><head><meta charset="UTF-8"><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>JUnit4 · Java Basic Tutorial Notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content=""><meta name="generator" content="GitBook 3.2.3"><meta name="author" content="Capricorncd"><link rel="stylesheet" href="../../gitbook/style.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-flexible-alerts/style.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css"><link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css"><meta name="HandheldFriendly" content="true"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png"><link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon"><link rel="next" href="ioc.html"><link rel="prev" href="./"></head><body><div class="book"><div class="book-summary"><div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div><nav role="navigation"><ul class="summary"><li class="header">Java基础第一季</li><li class="chapter" data-level="1.1" data-path="../../"><a href="../../">Introduction</a></li><li class="chapter" data-level="1.2" data-path="../first-season/java.html"><a href="../first-season/java.html">Java</a></li><li class="chapter" data-level="1.3" data-path="../first-season/variable-and-constant.html"><a href="../first-season/variable-and-constant.html">变量与常量</a></li><li class="chapter" data-level="1.4" data-path="../first-season/operator.html"><a href="../first-season/operator.html">运算符</a></li><li class="chapter" data-level="1.5" data-path="../first-season/flow-control-statement.html"><a href="../first-season/flow-control-statement.html">流程控制语句</a></li><li class="chapter" data-level="1.6" data-path="../first-season/array.html"><a href="../first-season/array.html">数组</a></li><li class="chapter" data-level="1.7" data-path="../first-season/function.html"><a href="../first-season/function.html">方法</a></li><li class="header">Java基础第二季</li><li class="chapter" data-level="2.1" data-path="../second-season/class-and-object.html"><a href="../second-season/class-and-object.html">类与对象</a></li><li class="chapter" data-level="2.2" data-path="../second-season/encapsulation.html"><a href="../second-season/encapsulation.html">面向对象特性：封装</a></li><li class="chapter" data-level="2.3" data-path="../second-season/inheritance.html"><a href="../second-season/inheritance.html">面向对象特性：继承</a></li><li class="chapter" data-level="2.4" data-path="../second-season/polymorphic.html"><a href="../second-season/polymorphic.html">面向对象特性：多态</a></li><li class="chapter" data-level="2.5" data-path="../second-season/abstract.html"><a href="../second-season/abstract.html">抽象类</a></li><li class="chapter" data-level="2.6" data-path="../second-season/interface.html"><a href="../second-season/interface.html">接口Interface</a></li><li class="chapter" data-level="2.7" data-path="../second-season/UML.html"><a href="../second-season/UML.html">UML(Unified Modeling Language)</a></li><li class="header">Java基础第三季</li><li class="chapter" data-level="3.1" data-path="../third-season/exception.html"><a href="../third-season/exception.html">异常与异常处理</a></li><li class="chapter" data-level="3.2" data-path="../third-season/throw.html"><a href="../third-season/throw.html">异常抛出及自定义异常</a></li><li class="chapter" data-level="3.3" data-path="../third-season/string.html"><a href="../third-season/string.html">字符串</a></li><li class="chapter" data-level="3.4" data-path="../third-season/thread-safe.html"><a href="../third-season/thread-safe.html">thread-safe 线程安全</a></li><li class="chapter" data-level="3.5" data-path="../third-season/wrapper-class.html"><a href="../third-season/wrapper-class.html">包装类</a></li><li class="chapter" data-level="3.6" data-path="../third-season/date.html"><a href="../third-season/date.html">Date和SimpleDateFormat类</a></li><li class="chapter" data-level="3.7" data-path="../third-season/calendar.html"><a href="../third-season/calendar.html">Calendar类的应用</a></li><li class="chapter" data-level="3.8" data-path="../third-season/math.html"><a href="../third-season/math.html">Math类</a></li><li class="chapter" data-level="3.9" data-path="../third-season/collection-map.html"><a href="../third-season/collection-map.html">集合框架Collection、Map</a></li><li class="chapter" data-level="3.10" data-path="../third-season/generic.html"><a href="../third-season/generic.html">泛型</a></li><li class="chapter" data-level="3.11" data-path="../third-season/set.html"><a href="../third-season/set.html">Set接口，及其实现类HashSet</a></li><li class="chapter" data-level="3.12" data-path="../third-season/map.html"><a href="../third-season/map.html">Map & HashMap</a></li><li class="chapter" data-level="3.13" data-path="../third-season/questions.html"><a href="../third-season/questions.html">- 问题思考</a></li><li class="chapter" data-level="3.14" data-path="../third-season/collections.html"><a href="../third-season/collections.html">Collections工具类</a></li><li class="chapter" data-level="3.15" data-path="../third-season/game-test.html"><a href="../third-season/game-test.html">综合练习——洗牌发牌Easy版</a></li><li class="header">Spring框架</li><li class="chapter" data-level="4.1" data-path="./"><a href="./">Spring框架简介</a></li><li class="chapter active" data-level="4.2" data-path="j-unit.html"><a href="j-unit.html">JUnit4</a></li><li class="chapter" data-level="4.3" data-path="ioc.html"><a href="ioc.html">IoC及bean容器</a></li><li class="chapter" data-level="4.4" data-path="bean.html"><a href="bean.html">Bean装配</a></li><li class="chapter" data-level="4.5" data-path="aspect-oriented-programming.html"><a href="aspect-oriented-programming.html">AOP基本概念</a></li><li class="chapter" data-level="4.6" data-path="aop-api.html"><a href="aop-api.html">AOP的API介绍</a></li><li class="chapter" data-level="4.7" data-path="aspect-j.html"><a href="aspect-j.html">Spring对AspectJ的支持</a></li><li class="header">JavaWeb应用程序</li><li class="chapter" data-level="5.1" data-path="../java-web/"><a href="../java-web/">JavaWeb应用程序</a></li><li class="chapter" data-level="5.2" data-path="../java-web/jsp.html"><a href="../java-web/jsp.html">JSP基本语法</a></li><li class="chapter" data-level="5.3" data-path="../java-web/built-in-object.html"><a href="../java-web/built-in-object.html">JSP内置对象</a></li><li class="chapter" data-level="5.4" data-path="../java-web/java-bean.html"><a href="../java-web/java-bean.html">JavaBean</a></li><li class="chapter" data-level="5.5" data-path="../java-web/state-management.html"><a href="../java-web/state-management.html">Jsp状态管理</a></li><li class="chapter" data-level="5.6" data-path="../java-web/commands-and-actions.html"><a href="../java-web/commands-and-actions.html">指令与动作</a></li><li class="header">Oracle</li><li class="chapter" data-level="6.1" data-path="../oracle/"><a href="../oracle/">介绍与安装</a></li><li class="chapter" data-level="6.2" data-path="../oracle/users.html"><a href="../oracle/users.html">用户</a></li><li class="chapter" data-level="6.3" data-path="../oracle/tablespaces.html"><a href="../oracle/tablespaces.html">表空间</a></li><li class="chapter" data-level="6.4" data-path="../oracle/management-table.html"><a href="../oracle/management-table.html">管理表，数据增删改</a></li><li class="chapter" data-level="6.5" data-path="../oracle/constraint.html"><a href="../oracle/constraint.html">约束constraint</a></li><li class="chapter" data-level="6.6" data-path="../oracle/sql.html"><a href="../oracle/sql.html">查询语句sql</a></li><li class="chapter" data-level="6.7" data-path="../oracle/pl-sql.html"><a href="../oracle/pl-sql.html">PL/SQL程序设计</a></li><li class="divider"></li><li><a href="https://www.gitbook.com" target="blank" class="gitbook-link">Published with GitBook</a></li></ul></nav></div><div class="book-body"><div class="body-inner"><div class="book-header" role="navigation"><h1><i class="fa fa-circle-o-notch fa-spin"></i> <a href="../..">JUnit4</a></h1></div><div class="page-wrapper" tabindex="-1" role="main"><div class="page-inner"><div id="book-search-results"><div class="search-noresults"><section class="normal markdown-section"><h1 id="junit4">JUnit4</h1><p><a href="https://github.com/junit-team/junit4" target="_blank">https://github.com/junit-team/junit4</a></p><p>Eclipse Jee 2018-12&#x4E2D;&#x81EA;&#x52A8;&#x7EE7;&#x627F;&#x4E86;JUnit4&#x3001;5&#x7B49;</p><blockquote><p>[!WARNING|style:flat|label:&#x6CE8;&#x610F;]</p><p>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x8BC1;&#x660E;&#x7A0B;&#x5E8F;&#x662F;&#x5BF9;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7528;&#x6765;&#x8BC1;&#x660E;&#x7A0B;&#x5E8F;&#x6CA1;&#x6709;&#x9519;&#x3002;</p><p>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7528;&#x6765;&#x8FBE;&#x5230;&#x60F3;&#x8981;&#x7684;&#x9884;&#x671F;&#x7ED3;&#x679C;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x903B;&#x8F91;&#x9519;&#x8BEF;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x3002;</p></blockquote><p>src/</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calculate</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+        <span class="hljs-keyword">return</span> a + b;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">subtract</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+        <span class="hljs-keyword">return</span> a - b;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">multiply</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+        <span class="hljs-keyword">return</span> a * b;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">divide</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+        <span class="hljs-keyword">return</span> a / b;
+    }
+}
+</code></pre><p>test/</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CalculateTest</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testAdd</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">6</span>, <span class="hljs-keyword">new</span> Calculate().add(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>));
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testSubtract</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">3</span>, <span class="hljs-keyword">new</span> Calculate().subtract(<span class="hljs-number">10</span>, <span class="hljs-number">7</span>));
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testMultiply</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">10</span>, <span class="hljs-keyword">new</span> Calculate().multiply(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>));
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testDivide</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">10</span>, <span class="hljs-keyword">new</span> Calculate().divide(<span class="hljs-number">80</span>, <span class="hljs-number">8</span>));
+    }
+}
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><ol><li><p>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E0A;&#x5FC5;&#x987B;&#x4F7F;&#x7528;@Test&#x8FDB;&#x884C;&#x4FEE;&#x9970;</p></li><li><p>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x4F7F;&#x7528;public void&#x8FDB;&#x884C;&#x4FEE;&#x9970;&#xFF0C;&#x4E0D;&#x80FD;&#x5E26;&#x4EFB;&#x4F55;&#x7684;&#x53C2;&#x6570;</p></li><li><p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6E90;&#x4EE3;&#x7801;&#x76EE;&#x5F55;&#x6765;&#x5B58;&#x653E;&#x6211;&#x4EEC;&#x7684;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;</p></li><li><p>&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x5305;&#xFF0C;&#x5E94;&#x548C;&#x88AB;&#x6D4B;&#x8BD5;&#x7C7B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</p></li><li><p>&#x6D4B;&#x8BD5;&#x5355;&#x5143;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x6D4B;&#x8BD5;&#xFF0C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x95F4;&#x4E0D;&#x80FD;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x4F9D;&#x8D56;</p></li><li><p>&#x6D4B;&#x8BD5;&#x7C7B;&#x4F7F;&#x7528;Test&#x4F5C;&#x4E3A;&#x7C7B;&#x540D;&#x7684;&#x540E;&#x7F00;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;</p></li><li><p>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;test&#x4F5C;&#x4E3A;&#x65B9;&#x6CD5;&#x524D;&#x7F00;&#xFF08;&#x975E;&#x5FC5;&#x987B;&#xFF09;</p></li></ol></blockquote><h3 id="&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x7684;&#x4E24;&#x79CD;&#x60C5;&#x51B5;">&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x7684;&#x4E24;&#x79CD;&#x60C5;&#x51B5;</h3><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ErrorAndFailureTest</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testAdd</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">5</span>, <span class="hljs-keyword">new</span> Calculate().add(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>));
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testDivide</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">10</span>, <span class="hljs-keyword">new</span> Calculate().divide(<span class="hljs-number">80</span>, <span class="hljs-number">0</span>));
+    }
+
+}
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><ol><li>Failure&#x4E00;&#x822C;&#x7531;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x65AD;&#x8A00;&#x65B9;&#x6CD5;&#x5224;&#x65AD;&#x5931;&#x8D25;&#x6240;&#x5F15;&#x8D77;&#x7684;&#xFF0C;&#x8FD9;&#x7ECF;&#x8868;&#x793A;&#x6D4B;&#x8BD5;&#x70B9;&#x53D1;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x548C;&#x6211;&#x4EEC;&#x9884;&#x671F;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#x3002;</li><li>Error&#x662F;&#x7531;&#x4EE3;&#x7801;&#x5F02;&#x5E38;&#x5F15;&#x8D77;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x672C;&#x8EAB;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x6216;&#x662F;&#x88AB;&#x6D4B;&#x4EE3;&#x7801;&#x4E2D;&#x6709;&#x9690;&#x85CF;bug</li><li>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x8BC1;&#x660E;&#x7A0B;&#x5E8F;&#x662F;&#x5BF9;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7528;&#x6765;&#x8BC1;&#x660E;&#x7A0B;&#x5E8F;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x3002;</li></ol></blockquote><h3 id="junit&#x8FD0;&#x884C;&#x6D41;&#x7A0B;">JUnit&#x8FD0;&#x884C;&#x6D41;&#x7A0B;</h3><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+
+<span class="hljs-keyword">import</span> org.junit.After;
+<span class="hljs-keyword">import</span> org.junit.AfterClass;
+<span class="hljs-keyword">import</span> org.junit.Before;
+<span class="hljs-keyword">import</span> org.junit.BeforeClass;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JUnitFlowTest</span> </span>{
+
+    <span class="hljs-meta">@BeforeClass</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUpBeforeClass</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        System.out.println(<span class="hljs-string">&quot;setUpBeforeClass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterClass</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tearDownAfterClass</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        System.out.println(<span class="hljs-string">&quot;tearDownAfterClass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Before</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUp</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        System.out.println(<span class="hljs-string">&quot;setUp&quot;</span>);
+    }
+
+    <span class="hljs-meta">@After</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tearDown</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        System.out.println(<span class="hljs-string">&quot;tearDown&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;test1&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;test2&quot;</span>);
+    }
+}
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;</p><pre><code>setUpBeforeClass
+setUp
+test1
+tearDown
+setUp
+test2
+tearDown
+tearDownAfterClass
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><ol><li><p>@BeforeClass&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x524D;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E14;&#x8BE5;&#x65B9;&#x6CD5;&#x65F6;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x6D4B;&#x8BD5;&#x7C7B;&#x88AB;&#x52A0;&#x8F7D;&#x540E;&#x63A5;&#x7740;&#x5C31;&#x4F1A;&#x8FD0;&#x884C;&#x5B83;&#x3002;&#x800C;&#x4E14;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5B83;&#x53EA;&#x4F1A;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5B83;&#x6BD4;&#x8F83;&#x9002;&#x5408;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</p></li><li><p>@AfterClass&#x6240;&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x7528;&#x6765;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x6E05;&#x7406;&#xFF0C;&#x5982;&#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p></li><li><p>@Before&#x548C;@After&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x524D;&#x540E;&#x5404;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</p></li></ol></blockquote><h3 id="junit4&#x5E38;&#x7528;&#x6CE8;&#x89E3;">JUnit4&#x5E38;&#x7528;&#x6CE8;&#x89E3;</h3><pre><code>a notation
+&#x82F1; [&#x259; n&#x259;&#x28A;&#x2C8;te&#x26A;&#x283;n]   &#x7F8E; [&#x259; no&#x28A;&#x2C8;te&#x26A;&#x283;n] &#x8BB0;&#x53F7;
+</code></pre><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+<span class="hljs-keyword">import</span> org.junit.Ignore;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnotationTest</span> </span>{
+
+    <span class="hljs-meta">@Test</span>(expected=ArithmeticException.class)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testDivide</span><span class="hljs-params">()</span> </span>{
+        assertEquals(<span class="hljs-number">10</span>, <span class="hljs-keyword">new</span> Calculate().divide(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>));
+    }
+
+    <span class="hljs-meta">@Ignore</span>
+    <span class="hljs-meta">@Test</span>(timeout=<span class="hljs-number">1000</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testWhile</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
+            System.out.println(<span class="hljs-string">&quot;run forevet &quot;</span> + i);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6211;&#x4EEC;&#x9884;&#x671F;&#x7684;&#x662F;3&#x79D2;&#xFF0C;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x65F6;&#x95F4;&#x662F;2&#x79D2;&#xFF0C;&#x8FBE;&#x5230;&#x4E86;&#x9884;&#x671F;
+     */</span>
+    <span class="hljs-meta">@Test</span>(timeout=<span class="hljs-number">3000</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testReadFile</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            Thread.sleep(<span class="hljs-number">2000</span>);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            <span class="hljs-comment">// TODO Auto-generated catch block</span>
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre><table><thead><tr><th style="text-align:left">&#x6CE8;&#x91CA;</th><th style="text-align:left">&#x8BF4;&#x660E;</th></tr></thead><tbody><tr><td style="text-align:left">@Test</td><td style="text-align:left">&#x5C06;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#x4FEE;&#x9970;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">@Test(expected=XX.class)&#x5F02;&#x5E38;&#x6355;&#x83B7;</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">@Test(timeout=&#x6BEB;&#x79D2;)&#x8D85;&#x65F6;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x5904;&#x7406;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x6216;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x7B49;</td></tr><tr><td style="text-align:left">@BeforeClass</td><td style="text-align:left">&#x5B83;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#x524D;&#x88AB;&#x6267;&#x884C;&#xFF0C;static&#x4FEE;&#x9970;</td></tr><tr><td style="text-align:left">@AfterClass</td><td style="text-align:left">&#x5B83;&#x4F1A;&#x5728;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x88AB;&#x6267;&#x884C;&#xFF0C;static&#x4FEE;&#x9970;</td></tr><tr><td style="text-align:left">@Before</td><td style="text-align:left">&#x4F1A;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#x524D;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;</td></tr><tr><td style="text-align:left">@After</td><td style="text-align:left">&#x4F1A;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#x540E;&#x88AB;&#x6267;&#x884C;&#x4E00;&#x6B21;</td></tr><tr><td style="text-align:left">@Ignore</td><td style="text-align:left">&#x6240;&#x4FEE;&#x9970;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x5668;&#x5FFD;&#x7565;</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">@Ignore(message)</td></tr><tr><td style="text-align:left">@RunWith</td><td style="text-align:left">&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x5668;org.junit.runner.Runner</td></tr></tbody></table><h3 id="junit4&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;">JUnit4&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;</h3><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> org.junit.runner.RunWith;
+<span class="hljs-keyword">import</span> org.junit.runners.Suite;
+
+<span class="hljs-meta">@RunWith</span>(Suite.class)
+<span class="hljs-meta">@Suite</span>.SuiteClasses({TaskTest1.class, TaskTest2.class, TaskTest3.class})
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SuiteTest</span> </span>{
+}
+</code></pre><p>TaskTest1, TaskTest2, TaskTest3</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TaskTest3</span> </span>{
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;This is TaskTest3&quot;</span>);
+    }
+}
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;</p><pre><code>This is TaskTest1
+This is TaskTest2
+This is TaskTest3
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><p><strong>&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;&#x5C31;&#x662F;&#x7EC4;&#x7EC7;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E00;&#x8D77;&#x8FD0;&#x884C;&#x7684;</strong></p><p>&#x5199;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;&#x7684;&#x5165;&#x53E3;&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x91CC;&#x4E0D;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;</p><p>&#x66F4;&#x6539;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x5668;Suite.class</p><p>&#x5C06;&#x8981;&#x6D4B;&#x8BD5;&#x7684;&#x7C7B;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x4F20;&#x5165;&#x5230;Suite.SuiteClasses({})</p></blockquote><h3 id="junit4&#x53C2;&#x6570;&#x5316;&#x8BBE;&#x7F6E;">JUnit4&#x53C2;&#x6570;&#x5316;&#x8BBE;&#x7F6E;</h3><p>&#x76EE;&#x7684;&#xFF1A;&#x89E3;&#x51B3;&#x4EE5;&#x4E0A;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#x7684;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x95EE;&#x9898;</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.util;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Collection;
+
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.junit.runner.RunWith;
+<span class="hljs-keyword">import</span> org.junit.runners.Parameterized;
+<span class="hljs-keyword">import</span> org.junit.runners.Parameterized.Parameters;
+
+<span class="hljs-meta">@RunWith</span>(Parameterized.class)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParameterTest</span> </span>{
+    <span class="hljs-keyword">int</span> expected = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> input1 = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> input2 = <span class="hljs-number">0</span>;
+
+    <span class="hljs-meta">@Parameters</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Collection&lt;Object[]&gt; t() {
+        <span class="hljs-keyword">return</span> Arrays.asList(<span class="hljs-keyword">new</span> Object[][] {
+            {<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>},
+            {<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>}
+        });
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ParameterTest</span><span class="hljs-params">(<span class="hljs-keyword">int</span> expected, <span class="hljs-keyword">int</span> input1, <span class="hljs-keyword">int</span> input2)</span> </span>{
+        <span class="hljs-keyword">this</span>.expected = expected;
+        <span class="hljs-keyword">this</span>.input1 = input1;
+        <span class="hljs-keyword">this</span>.input2 = input2;
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testAdd</span><span class="hljs-params">()</span> </span>{
+        assertEquals(expected, <span class="hljs-keyword">new</span> Calculate().add(input1, input2));
+    }
+}
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><ol><li><p>&#x66F4;&#x6539;&#x9ED8;&#x8BA4;&#x7684;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x5668;&#x4E3A;@RunWith(Parameterized.class)</p></li><li><p>&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x6765;&#x5B58;&#x653E;&#x9884;&#x671F;&#x503C;&#x548C;&#x7ED3;&#x679C;&#x503C;</p></li><li><p>&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;Collection&#x7684;&#x516C;&#x5171;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;@Parameters&#x8FDB;&#x884C;&#x4FEE;&#x9970;</p></li><li><p>&#x4E3A;&#x6D4B;&#x8BD5;&#x7C7B;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684;&#x516C;&#x5171;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x4E3A;&#x4E4B;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x8D4B;&#x503C;</p></li></ol></blockquote><h3 id="spring&#x4E0E;hibernate&#x7684;&#x6574;&#x5408;&#x6D4B;&#x8BD5;">spring&#x4E0E;hibernate&#x7684;&#x6574;&#x5408;&#x6D4B;&#x8BD5;</h3><p><img src="img/spring-junit-imported-jar.png" alt="spring-junit-imported-jar"></p><p><strong>spring&#x6D4B;&#x8BD5;</strong></p><p>src/application-context.xml</p><pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span>
+    <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xmlns:p</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/p&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;java.util.Date&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre><p>test/</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.conform;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.*;
+
+<span class="hljs-keyword">import</span> java.util.Date;
+
+<span class="hljs-keyword">import</span> org.junit.BeforeClass;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationContext;
+<span class="hljs-keyword">import</span> org.springframework.context.support.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpringTest</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ApplicationContext context = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-meta">@BeforeClass</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUpBeforeClass</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        context = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;application-context.xml&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{
+        Date date = (Date)context.getBean(<span class="hljs-string">&quot;date&quot;</span>);
+        System.out.println(date);
+    }
+
+}
+</code></pre><p>&#x7ED3;&#x679C;&#xFF1A;</p><pre><code>log4j:WARN No appenders could be found for logger (org.springframework.core.env.StandardEnvironment).
+log4j:WARN Please initialize the log4j system properly.
+Sun Jul 14 22:06:27 JST 2019
+</code></pre><p><strong>spring&#x4E0E;hibernate&#x7684;&#x6574;&#x5408;&#x6D4B;&#x8BD5;</strong></p><p>&#x672A;&#x5B9E;&#x73B0;&#xFF01;</p><footer class="page-footer"><span class="copyright">&#xA9; 2019 Capricorncd.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-07-14 22:10:36</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="./" class="navigation navigation-prev" aria-label="Previous page: Spring框架简介"><i class="fa fa-angle-left"></i> </a><a href="ioc.html" class="navigation navigation-next" aria-label="Next page: IoC及bean容器"><i class="fa fa-angle-right"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"JUnit4",level:"4.2",depth:1,next:{title:"IoC及bean容器",level:"4.3",depth:1,path:"pages/spring/ioc.md",ref:"pages/spring/ioc.md",articles:[]},previous:{title:"Spring框架简介",level:"4.1",depth:1,path:"pages/spring/README.md",ref:"pages/spring/README.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:"&copy 2019 Capricorncd",modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/spring/j-unit.md",mtime:"2019-07-14T13:10:36.948Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-07-14T13:13:30.494Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
