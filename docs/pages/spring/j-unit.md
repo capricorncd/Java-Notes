@@ -341,6 +341,8 @@ public class ParameterTest {
 
 ![spring-junit-imported-jar](img/spring-junit-imported-jar.png)
 
+**注意**：需要导入commons.logging的包，否则单元测试会失败。
+
 **spring测试**
 
 src/application-context.xml

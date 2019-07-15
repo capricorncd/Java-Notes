@@ -205,3 +205,135 @@ ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("cla
     <bean id="injectionDAO" class="com.test.injection.dao.InjectionDAOImpl"></bean>
 </beans>
 ```
+
+### 实例代码
+
+src/spring-injection.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="injectionService" class="com.test.injection.service.InjectionServiceImpl">
+        <!-- <property name="injectionDAO" ref="injectionDAO"></property> -->
+        <constructor-arg name="injectionDAO" ref="injectionDAO"></constructor-arg>
+    </bean>
+    <bean id="injectionDAO" class="com.test.injection.dao.InjectionDAOImpl"></bean>
+</beans>
+```
+
+test/
+
+```java
+package com.test.injection.service;
+
+public interface InjectionService {
+	public void save(String arg);
+}
+```
+
+```java
+package com.test.injection.service;
+
+import com.test.injection.dao.InjectionDAO;
+
+/**
+ * XxServiceImpl
+ *  主要用于处理业务逻辑部分
+ * @author capricorncd
+ *
+ */
+public class InjectionServiceImpl implements InjectionService {
+	
+	private InjectionDAO injectionDAO;
+	
+	// 构造器注入
+	// 对应xml文件：<constructor-arg name="injectionDAO" ref="injectionDAO"></constructor-arg>
+	public InjectionServiceImpl(InjectionDAO injectionDAO) {
+		this.injectionDAO = injectionDAO;
+	}
+	
+	// 设值注入
+	// 对应xml文件：<property name="injectionDAO" ref="injectionDAO"></property>
+	public void setInjectionDAO(InjectionDAO injectionDAO) {
+		this.injectionDAO = injectionDAO;
+	}
+
+	public void save(String arg) {
+		// 模拟业务操作
+		System.out.println("Service接收参数：" + arg);
+		arg = arg + ":" + this.hashCode();
+		injectionDAO.insert(arg);
+	}
+}
+```
+
+```java
+package com.test.injection.dao;
+
+public interface InjectionDAO {
+	public void insert(String arg);
+}
+```
+
+```java
+package com.test.injection.dao;
+
+/**
+ * XxDAOImpl
+ * 主要用于操作数据库部分
+ * @author capricorncd
+ *
+ */
+public class InjectionDAOImpl implements InjectionDAO {
+	// 模拟数据库保存操作
+	public void insert(String arg) {
+		System.out.println("保存数据：" + arg);
+	}
+}
+```
+
+Test
+
+```java
+package com.test.ioc.interfaces;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.test.injection.service.InjectionService;
+
+@RunWith(BlockJUnit4ClassRunner.class)
+public class InjectionTest {
+	
+	private static ApplicationContext context;
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		context = new ClassPathXmlApplicationContext("spring-injection.xml");
+	}
+	@Test
+	public void test() {
+		InjectionService service = (InjectionService)context.getBean("injectionService");
+		service.save("这是要被保存的数据");
+	}
+
+}
+```
+
+测试结果：
+
+```
+log4j:WARN No appenders could be found for logger (org.springframework.core.env.StandardEnvironment).
+log4j:WARN Please initialize the log4j system properly.
+Service接收参数：这是要被保存的数据
+保存数据：这是要被保存的数据:1177377518
+```
