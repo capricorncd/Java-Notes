@@ -78,6 +78,10 @@
 
 * [Spring对AspectJ的支持](pages/spring/aspect-j.md)
 
+### Spring MVC
+
+* [Spring MVC起步](pages/spring-mvc/README.md)
+
 ### JavaWeb应用程序
 
 * [JavaWeb应用程序](pages/java-web/README.md)
