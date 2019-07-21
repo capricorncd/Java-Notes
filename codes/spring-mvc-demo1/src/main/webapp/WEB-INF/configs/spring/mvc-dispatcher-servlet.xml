@@ -1,67 +1,3 @@
-# Spring MVC实操
-
-### 从配置文件开始
-
-src/main/webapp/WEB-INF/web.xml
-
-```xml
-<!-- 
-	Maven自动生成使用的2.3版本的标准，该标准默认会将jsp页面的el表达式语言关闭
--->
-<!--
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
--->
-<?xml verrsion="1.0" encoding="UTF-8"?>
-<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
-		http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-		
-  <display-name>Spring MVC DEMO</display-name>
-  
-  <!-- Spring应用上下文，理解层次化的ApplicationContext -->
-  <context-param>
-  	<param-name>contextConfigLocation</param-name>
-  	<param-value>/WEB-INF/configs/spring/applicationContext*.xml</param-value>
-  </context-param>
-  
-  <listener>
-  	<listener-class>
-  		org.springframework.web.context.ContextLoaderListener
-  	</listener-class>
-  </listener>
-  
-  <!-- DispatcherServlet, Spring MVC的核心 -->
-  <servlet>
-  	<servlet-name>mvc-dispatcher</servlet-name>
-  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  	<!-- DispatcherServlet对应的上下文配置，默认为/WEB-INF/$servlet-name$-servlet.xml -->
-  	<!-- 以下配置，改变默认参数 -->
-  	<init-param>
-  		<param-name>contextConfigLocation</param-name>
-  		<param-value>/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml</param-value>
-  	</init-param>
-  	<load-on-startup>1</load-on-startup>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>mvc-dispatcher</servlet-name>
-  	<!-- mvc-dispatcher拦截所有的请求  -->
-  	<url-pattern>/</url-pattern>
-  </servlet-mapping>
-  
-</web-app>
-```
-
-**Spring MVC的上下文层级**
-
-![spring-context](img/spring-context.png)
-
-src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
-
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -102,7 +38,7 @@ src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
 	<!-- 配置ViewResolver
 		可以用多个ViewResolver
 		使用order属性排序
-		InternalResourceViewResolve放在最后
+		InternalResourceViewResolve放在最后，因为它会返回一个对象，这个对象可能是我们不需要的
 	-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -111,8 +47,3 @@ src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
 	</bean>
 	
 </beans>
-```
-
-### 源码
-
-codes/spring-mvc-demo1
