@@ -367,7 +367,7 @@ response.jsp
 
 ![session-server](img/session-server.jpg)
 
-> [!COMMENT|style:flat|label:session对象]
+> [!NOTE|style:flat|label:session对象]
 
 > 是一个JSP内置对象
 
