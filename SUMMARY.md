@@ -82,6 +82,9 @@
 
 * [Spring MVC起步](pages/spring-mvc/README.md)
 
+* [Spring MVC实操](pages/spring-mvc/hands-on.md)
+
+
 ### JavaWeb应用程序
 
 * [JavaWeb应用程序](pages/java-web/README.md)
