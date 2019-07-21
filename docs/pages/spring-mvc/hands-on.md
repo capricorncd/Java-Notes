@@ -6,8 +6,7 @@ src/main/webapp/WEB-INF/web.xml
 
 ```xml
 <!-- 
-	Maven自动生成使用的2.3版本的标准，
-	该标准默认会将jsp页面的el语言关闭
+	Maven自动生成使用的2.3版本的标准，该标准默认会将jsp页面的el表达式语言关闭
 -->
 <!--
 <!DOCTYPE web-app PUBLIC
@@ -113,3 +112,7 @@ src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
 	
 </beans>
 ```
+
+### 源码
+
+codes/spring-mvc-demo1
