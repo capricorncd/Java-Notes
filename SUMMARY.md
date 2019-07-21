@@ -62,6 +62,8 @@
 
 * [综合练习——洗牌发牌Easy版](pages/third-season/game-test.md)
 
+* [Java反射机制](pages/third-season/reflect.md)
+
 ### Spring框架
 
 * [Spring框架简介](pages/spring/README.md)
