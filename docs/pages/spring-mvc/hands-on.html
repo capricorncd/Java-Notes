@@ -95,4 +95,88 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
-</code></pre><h3 id="&#x6E90;&#x7801;">&#x6E90;&#x7801;</h3><p>codes/spring-mvc-demo1</p><footer class="page-footer"><span class="copyright">&#xA9; 2019 Capricorncd.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-07-21 22:57:33</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="./" class="navigation navigation-prev" aria-label="Previous page: Spring MVC起步"><i class="fa fa-angle-left"></i> </a><a href="../java-web/" class="navigation navigation-next" aria-label="Next page: JavaWeb应用程序"><i class="fa fa-angle-right"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Spring MVC实操",level:"5.2",depth:1,next:{title:"JavaWeb应用程序",level:"6.1",depth:1,path:"pages/java-web/README.md",ref:"pages/java-web/README.md",articles:[]},previous:{title:"Spring MVC起步",level:"5.1",depth:1,path:"pages/spring-mvc/README.md",ref:"pages/spring-mvc/README.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:"&copy 2019 Capricorncd",modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/spring-mvc/hands-on.md",mtime:"2019-07-21T13:57:33.186Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-07-21T13:58:22.819Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
+</code></pre><h3 id="3&#x4E2D;&#x4E0D;&#x540C;&#x5F62;&#x5F0F;&#x7F16;&#x5199;controller&#x7C7B;">3&#x4E2D;&#x4E0D;&#x540C;&#x5F62;&#x5F0F;&#x7F16;&#x5199;Controller&#x7C7B;</h3><pre><code class="lang-java"><span class="hljs-keyword">package</span> com.test.mvcdemo.controller;
+
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;
+
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;
+<span class="hljs-keyword">import</span> org.springframework.ui.Model;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.PathVariable;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestParam;
+
+<span class="hljs-keyword">import</span> com.test.mvcdemo.model.Course;
+<span class="hljs-keyword">import</span> com.test.mvcdemo.service.CourseService;
+
+<span class="hljs-meta">@Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;/courses&quot;</span>)
+<span class="hljs-comment">// /courses/*</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CourseController</span> </span>{
+
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Logger log = LoggerFactory.getLogger(CourseController.class);
+
+  <span class="hljs-keyword">private</span> CourseService courseService;
+
+  <span class="hljs-meta">@Autowired</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCourseServiceImpl</span><span class="hljs-params">(CourseService courseService)</span> </span>{
+    <span class="hljs-keyword">this</span>.courseService = courseService;
+  }
+
+  <span class="hljs-comment">// &#x672C;&#x65B9;&#x6CD5;&#x4EC5;&#x5904;&#x7406; /course/view?courseId=123</span>
+  <span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/view&quot;</span>, method=RequestMethod.GET)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">viewCourse</span><span class="hljs-params">(@RequestParam(<span class="hljs-string">&quot;courseId&quot;</span>)</span> Integer courseId, Model model) </span>{
+
+    log.debug(<span class="hljs-string">&quot;In viewCourse, courseId = {}&quot;</span>, courseId);
+
+    Course course = courseService.getCourseById(courseId);
+    model.addAttribute(course);
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;jsp&#x7684;&#x6587;&#x4EF6;&#x540D;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;course-overview&quot;</span>;
+  }
+
+  <span class="hljs-comment">// /courses/view2/{courseId}</span>
+  <span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/view2/{courseId}&quot;</span>, method=RequestMethod.GET)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">viewCourse2</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;courseId&quot;</span>)</span> Integer courseId, Map&lt;String, Object&gt; model) </span>{
+    log.debug(<span class="hljs-string">&quot;In viewCourse2, courseId = {}&quot;</span>, courseId);
+    Course course = courseService.getCourseById(courseId);
+    model.put(<span class="hljs-string">&quot;course&quot;</span>, course);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;course-overview&quot;</span>;
+  }
+
+  <span class="hljs-comment">// /course/view?courseId=333</span>
+  <span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;view3&quot;</span>)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">viewCourse3</span><span class="hljs-params">(HttpServletRequest request)</span> </span>{
+    Integer courseId = Integer.valueOf(request.getParameter(<span class="hljs-string">&quot;courseId&quot;</span>));
+    Course course = courseService.getCourseById(courseId);
+    request.setAttribute(<span class="hljs-string">&quot;course&quot;</span>, course);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;course-overview&quot;</span>;
+  }
+}
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><p>&#x901A;&#x8FC7;@Controller&#x58F0;&#x660E;&#x4E00;&#x4E2A;Controller</p><p>&#x901A;&#x8FC7;@RequestMapping &#x6620;&#x5C04;URL&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x51FA;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x7C7B;&#x7EA7;&#x522B;&#x548C;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#xFF0C;&#x4E8C;&#x8005;&#x7EC4;&#x5408;&#x5B8C;&#x6210;&#x4E86;&#x5BF9;URL&#x6620;&#x5C04;&#x8BF7;&#x6C42;&#x7684;&#x62E6;&#x622A;</p><p>&#x901A;&#x8FC7;URL template(@RequestParam and @PathVariable)&#x5C06;URL&#x4E2D;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7ED1;&#x5B9A;&#x5230;Controller&#x4E2D;method&#x7684;&#x5165;&#x53C2;</p><p>&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;HTTPServletRequest and/or HttpSession&#x7B49;&#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x53D6;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;</p></blockquote><h3 id="binding-&#x6570;&#x636E;&#x7ED1;&#x5B9A;">Binding &#x6570;&#x636E;&#x7ED1;&#x5B9A;</h3><p>&#x5C06;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x6309;&#x7167;&#x540D;&#x5B57;&#x5339;&#x914D;&#x7684;&#x539F;&#x5219;&#x586B;&#x5165;&#x6A21;&#x578B;&#x5BF9;&#x8C61;&#x3002;</p><pre><code class="lang-java"><span class="hljs-comment">// CourseController.java</span>
+
+  <span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/admin&quot;</span>, method=RequestMethod.GET, params=<span class="hljs-string">&quot;add&quot;</span>)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">createCourse</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;admin/edit&quot;</span>;
+  }
+
+  <span class="hljs-comment">// &#x63A5;&#x6536;&#x5904;&#x7406;&#x8868;&#x5355;&#x6570;&#x636E;</span>
+  <span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/save&quot;</span>, method=RequestMethod.POST)
+<span class="hljs-comment">//  public String doSave(Course course) {</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">doSave</span><span class="hljs-params">(@ModelAttribute Course course)</span> </span>{
+
+    log.debug(<span class="hljs-string">&quot;Info of Course&quot;</span>);
+    log.debug(ReflectionToStringBuilder.toString(course));
+
+    System.out.println(course.toString());
+
+    <span class="hljs-comment">// &#x5728;&#x6B64;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x636E;&#x5E93;&#x6301;&#x4E45;&#x5316;</span>
+    course.setCourseId(<span class="hljs-number">555</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;redirect:view2/&quot;</span> + course.getCourseId();
+  }
+</code></pre><blockquote><p>[!TIP|style:flat|label:&#x603B;&#x7ED3;]</p><p>&#x5728;Controller&#x53C2;&#x6570;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;@ModelAttribute&#x5B9E;&#x73B0;&#x6A21;&#x578B;&#x4E0E;&#x9875;&#x9762;&#x6570;&#x636E;&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x53CA;&#x5982;&#x679C;&#x5728;MVC&#x4E2D;&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x6216;&#x8F6C;&#x53D1;redirect/forward</p></blockquote><h3 id="&#x6E90;&#x7801;">&#x6E90;&#x7801;</h3><p>codes/spring-mvc-demo1</p><footer class="page-footer"><span class="copyright">&#xA9; 2019 Capricorncd.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-07-22 22:33:22</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="./" class="navigation navigation-prev" aria-label="Previous page: Spring MVC起步"><i class="fa fa-angle-left"></i> </a><a href="../java-web/" class="navigation navigation-next" aria-label="Next page: JavaWeb应用程序"><i class="fa fa-angle-right"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Spring MVC实操",level:"5.2",depth:1,next:{title:"JavaWeb应用程序",level:"6.1",depth:1,path:"pages/java-web/README.md",ref:"pages/java-web/README.md",articles:[]},previous:{title:"Spring MVC起步",level:"5.1",depth:1,path:"pages/spring-mvc/README.md",ref:"pages/spring-mvc/README.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:"&copy 2019 Capricorncd",modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/spring-mvc/hands-on.md",mtime:"2019-07-22T13:33:22.422Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-07-22T13:33:50.962Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>

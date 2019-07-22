@@ -59,6 +59,14 @@
     	<version>${slf4j.version}</version>
     </dependency>
     
+    <!-- 在SpringMVC中，使用传统的HTTPServletRequest对象配置 -->
+    <!-- 对应 CourseController.java viewCourse3() -->
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>servlet-api</artifactId>
+    	<version>2.5</version>
+    </dependency>
+    
     <!-- 
     <dependency>
       <groupId>junit</groupId>
