@@ -223,6 +223,70 @@ public class CourseController {
 
 > 在Controller参数上，使用@ModelAttribute实现模型与页面数据的绑定，及如果在MVC中使用重定向或转发redirect/forward
 
+### FileUpload 单文件上传
+
+src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
+
+```xml
+<!-- 上传文件解析配置 -->
+<!-- 200 * 1024 * 1024 即200M，resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->
+<!-- 依赖org.apache.commons.fileupload包，所以在pom.xml中引入commons-fileupload -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="209715200"/>
+    <property name="defaultEncoding" value="UTF-8"/>
+    <property name="resolveLazily" value="true"/>
+</bean>
+```	
+
+/pom.xml
+
+```xml
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.6</version>
+	</dependency>
+```	
+
+admin/file.jsp
+
+```
+<form action="<%=request.getContextPath() %>/courses/do-upload" method="post" enctype="multipart/form-data">
+    <h1 class="course-title">文件上传</h1>
+    <div>
+        <input type="file" name="file">
+    </div>
+    <button type="submit">上传</button>
+</form>
+```
+
+Controller.java
+
+```java
+  @RequestMapping(value="/upload", method=RequestMethod.GET)
+  public String showUploadPage() {
+    return "admin/file";
+  }
+  
+  @RequestMapping(value="/do-upload", method=RequestMethod.POST)
+  public String doUploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+    
+    if (!file.isEmpty()) {
+      FileUtils.copyInputStreamToFile(file.getInputStream(), new File("D:/java/temp", System.currentTimeMillis() + "_" + file.getOriginalFilename()));
+    }
+    
+    return "home";
+  }
+```
+
 ### 源码
 
 codes/spring-mvc-demo1

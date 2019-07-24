@@ -1,9 +1,12 @@
 package com.test.mvcdemo.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.test.mvcdemo.model.Course;
 import com.test.mvcdemo.service.CourseService;
@@ -81,5 +85,20 @@ public class CourseController {
     // 在此进行业务操作，比如数据库持久化
     course.setCourseId(555);
     return "redirect:view2/" + course.getCourseId();
+  }
+  
+  @RequestMapping(value="/upload", method=RequestMethod.GET)
+  public String showUploadPage() {
+    return "admin/file";
+  }
+  
+  @RequestMapping(value="/do-upload", method=RequestMethod.POST)
+  public String doUploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+    
+    if (!file.isEmpty()) {
+      FileUtils.copyInputStreamToFile(file.getInputStream(), new File("D:/java/temp", System.currentTimeMillis() + "_" + file.getOriginalFilename()));
+    }
+    
+    return "home";
   }
 }
