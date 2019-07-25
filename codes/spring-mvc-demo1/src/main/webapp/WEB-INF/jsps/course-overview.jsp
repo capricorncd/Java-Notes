@@ -31,7 +31,7 @@
 					</div>
 				</li>
 			</c:forEach>
-			</ol>
+		</ol>
 	</div>
 </body>
 </html>

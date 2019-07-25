@@ -245,7 +245,7 @@ src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
 	<dependency>
 	    <groupId>commons-fileupload</groupId>
 	    <artifactId>commons-fileupload</artifactId>
-	    <version>1.2</version>
+	    <version>1.3.3</version>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -284,6 +284,71 @@ Controller.java
     }
     
     return "home";
+  }
+```
+
+### JSON
+
+**JSON** (JavaScript Object Notation) is a lightweight data-interchange format
+
+相同数据，不同呈现方式。JSPView, JsonView
+
+```
+ContentNegotiatingViewResolver
+```
+
+配置文件：src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
+
+```xml
+<!-- 配置ViewResolver。可以用多个ViewResolver。使用order属性排序。InternalResourceViewResolver放在最后。 -->
+<!-- 该配置可以让MVC将相同的数据，呈现成不同的形式 -->
+<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+    <property name="order" value="1"/>
+    <property name="mediaTypes">
+        <map>
+            <entry key="json" value="application/json"/>
+            <entry key="xml" value="application/xml"/>
+            <entry key="htm" value="text/html"/>
+        </map>
+    </property>
+    
+    <property name="defaultViews">
+        <list>
+            <!-- JSON View -->
+            <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"></bean>
+        </list>
+    </property>
+    <property name="ignoreAcceptHeader" value="true"/>
+</bean>
+```
+
+添加依赖：/pom.xml
+
+```xml
+<properties>
+  	<jackson.version>2.9.9.1</jackson.version>
+</properties>
+  
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>${jackson.version}</version>
+</dependency>
+```
+
+src/main/java/com/test/mvcdemo/controller/CourseController.java
+
+```java
+  @RequestMapping(value="/{courseId}", method=RequestMethod.GET)
+  public @ResponseBody Course getCourseInJson(@PathVariable Integer courseId) {
+    return courseService.getCourseById(courseId);
+  }
+  
+  @RequestMapping(value="/json/{courseId}", method=RequestMethod.GET)
+  public ResponseEntity<Course> getCourseInJson2(@PathVariable Integer courseId) {
+    Course course = courseService.getCourseById(courseId);
+    return new ResponseEntity<Course>(course, HttpStatus.OK);
   }
 ```
 

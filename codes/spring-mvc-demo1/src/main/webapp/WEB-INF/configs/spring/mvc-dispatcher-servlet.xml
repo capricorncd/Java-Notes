@@ -55,4 +55,25 @@
 		<property name="resolveLazily" value="true"/>
 	</bean>
 	
+	<!-- 配置ViewResolver。可以用多个ViewResolver。使用order属性排序。InternalResourceViewResolver放在最后。 -->
+	<!-- 该配置可以让MVC将相同的数据，呈现成不同的形式 -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1"/>
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json"/>
+				<entry key="xml" value="application/xml"/>
+				<entry key="htm" value="text/html"/>
+			</map>
+		</property>
+		
+		<property name="defaultViews">
+			<list>
+				<!-- JSON View -->
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"></bean>
+			</list>
+		</property>
+		<property name="ignoreAcceptHeader" value="true"/>
+	</bean>
+	
 </beans>
