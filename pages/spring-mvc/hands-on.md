@@ -352,6 +352,28 @@ src/main/java/com/test/mvcdemo/controller/CourseController.java
   }
 ```
 
+### 总结
+
+Work with JSON
+
+```
+ContentNegotiatingViewResolver
+
+ResponseEntity
+
+@ResponseBody/@RequestBody
+```
+
+[@RequestBody的使用](https://blog.csdn.net/justry_deng/article/details/80972817)
+
+Details
+
+![spring-mvc-summary1](img/spring-mvc-summary1.png)
+
 ### 源码
 
 codes/spring-mvc-demo1
+
+### 扩展阅读
+
+@RequestBody的使用 https://blog.csdn.net/justry_deng/article/details/80972817
