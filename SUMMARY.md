@@ -86,6 +86,8 @@
 
 * [Spring MVC实操](pages/spring-mvc/hands-on.md)
 
+* [Spring MVC拦截器](pages/spring-mvc/interceptor.md)
+
 
 ### JavaWeb应用程序
 
