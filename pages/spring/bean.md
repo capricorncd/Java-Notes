@@ -96,6 +96,8 @@ BeanScope say: 1045941616
 BeanScope say: 161960012
 ```
 
+实例代码见：codes/spring-bean-scope
+
 ### Bean的生命周期
 
 定义、初始化、使用、销毁

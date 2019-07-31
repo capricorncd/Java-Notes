@@ -138,6 +138,16 @@ public class ZxInterceptor implements HandlerInterceptor {
 
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
     System.out.println("进入了preHandle");
+    // 解决乱码问题
+    // request.setCharacterEncoding("utf-8");
+    
+    // 解决权限验证问题
+    if (request.getSession().getAttribute("user") == null) {
+        // 如果用户没有登录，就终止请求
+        // 并跳转只登录页面
+        request.getRequsetDispatcher("/login.jsp").forward(request, response);
+        return false;
+    }
     return true;
   }
 
@@ -233,4 +243,24 @@ public class ZxInterceptor2 implements WebRequestInterceptor {
 ```
 
 ### 拦截器的使用场景
+
+使用原则：处理所有请求的共同问题
+
+1. 解决乱码问题
+
+2. 解决权限验证问题
+
+### 拦截器和过滤器区别
+
+过滤器Filter依赖于Servlet容器，基于回调函数，过滤范围大。
+
+拦截器Interceptor依赖于框架容器，基于反射机制，只过滤请求。
+
+### 总结
+
+拦截器可以处理Web应用中请求的一些通用性问题。
+
+共性问题在拦截器中处理，可以减少重复代码，便于维护。
+
+
 
