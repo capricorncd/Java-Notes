@@ -89,7 +89,7 @@
 * [Spring MVC拦截器](pages/spring-mvc/interceptor.md)
 
 
-### JavaWeb应用程序
+### Java Web应用程序
 
 * [JavaWeb应用程序](pages/java-web/README.md)
 
