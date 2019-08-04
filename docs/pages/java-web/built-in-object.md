@@ -20,7 +20,8 @@
 
 是Web容器创建的一组对象，不使用new关键字就可以使用的内置对象。
 
-```
+```jsp
+<!-- out对象 -->
 <%
 int[] value = {50, 60, 70};
 for (int i : value) {
@@ -31,15 +32,17 @@ for (int i : value) {
 
 > [!TIP|style:flat|label:JSP九大内置对象]
 
-> **常用内置对象**
+> 常用内置对象：
 
-> out, request, response, session, application
+> **out, request, response, session, application**
 
-> **其它内置对象**
+> 其它内置对象
 
-> Page, pageContext, exception, config
+> **page, pageContext, exception, config**
 
-Web程序的请求响应模式：用户发送请求(request)，服务器给用户响应(response)。
+**Web程序的请求响应模式**：
+
+用户发送请求(request)，服务器给用户响应(response)。
 
 ### 什么是缓冲区
 
@@ -49,25 +52,18 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 
 是JspWriter类的实例，是向客户端输出内容常用的对象。
 
-常用方法：
+|常用方法|说明|
+|:--|:--|
+|void println()|向客户端打印字符串。|
+|void clear()| 清除缓冲区的内容。注意，如果在flush之后调用会抛出异常。|
+|void clearBuffer()| 清除缓冲区的内容，不会向客户端输出任何内容。在flush之后调用不会抛出异常。|
+|void flush()| 将缓冲区内容输出到客户端。|
+|int getBufferSize()| 获取缓冲区字节数的大小，如不设置缓冲区则为0。|
+|int getRemaining()| 获取缓冲区剩余可用字节大小（可用空间）。|
+|boolean isAutoFlush()| 返回缓冲区满时，是自动清空还是抛出异常。|
+|void close()| 关闭输出流。|
 
-**void println()** 向客户端打印字符串。
-
-**void clear()** 清除缓冲区的内容。注意，如果在flush之后调用会抛出异常。
-
-**void clearBuffer()** 清除缓冲区的内容，不会向客户端输出任何内容。在flush之后调用不会抛出异常。
-
-**void flush()** 将缓冲区内容输出到客户端。
-
-**int getBufferSize()** 获取缓冲区字节数的大小，如不设置缓冲区则为0。
-
-**int getRemaining()** 获取缓冲区剩余可用字节大小（可用空间）。
-
-**boolean isAutoFlush()** 返回缓冲区满时，是自动清空还是抛出异常。
-
-**void close()** 关闭输出流。
-
-```
+```jsp
 <body>
   <h1>out内置对象</h1>
   <%
@@ -99,7 +95,7 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 
 使用 `out.flush()`
 
-```
+```jsp
 <body>
   <h1>out内置对象</h1>
   <%
@@ -136,6 +132,14 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 <form name="regForm" action="动作" method="GET或POST"></form>
 ```
 
+**get**
+
+以明文的方式，通过URL提交数据，数据在URL中可以看到。提交的数据最多不超过2KB。安全性较低但效率比post高。适合提交数据量不大，安全性不高德数据。比如：搜索、查询等功能。
+
+**post**
+
+将用户提交的数据封装在**HTML HEADER**内。适合提交数据量大，安全要求高德用户信息。比如注册、修改、上传等功能。
+
 ```html
 <body>
     <h2>GET</h2>
@@ -167,21 +171,23 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 
 常用方法如下：
 
-**String getParameter(String name)** 返回name指定参数的值
+**String getParameter(String name)** 返回name指定参数的值，即获取单个值。
 
-**String[] getParameterValues(String name)** 返回包含参数name的所有值得数组
+**String[] getParameterValues(String name)** 返回包含参数name的所有值得数组，即获取所有参数的集合。
 
 **void setAttribute(String name, Object obj);** 存储此请求中的属性。
 
-**Object getAttribute(String name)** 返回指定属性的属性值
+**Object getAttribute(String name)** 返回指定属性的属性值。
 
-**String getContentType()** 得到请求体的MIME类型
+**String getContentType()** 得到请求体的MIME类型。
 
-**String getProtocol()** 获取请求用的协议类型及版本号
+**String getProtocol()** 获取请求用的协议类型及版本号。
 
-**String getServerName()** 返回接受请求的服务器主机名
+**String getServerName()** 返回接受请求的服务器主机名。
 
-```
+**setCharacterEncoding("utf-8")** 设置字符集编码格式，可用于解决中文乱码问题。
+
+```html
 <body>
     <h2>注册</h2>
     <form action="regdo.jsp" method="post">
@@ -204,7 +210,7 @@ Web程序的请求响应模式：用户发送请求(request)，服务器给用�
 
 regdo.jsp
 
-```
+```jsp
 <body>
     <%
     	// post中文乱码处理，编码转换
@@ -227,14 +233,16 @@ regdo.jsp
 
 > 通过URL传参中文乱码问题，可以在tomcat/conf/server.xml中设置编码。
 
-```
-<Connector port="8080" protocol="HTTP/1.1"
-               connectionTimeout="20000"
-               redirectPort="8443"
-               URIEncoding="utf-8"/>
+```xml
+<Connector
+    port="8080"
+    protocol="HTTP/1.1"
+    connectionTimeout="20000"
+    redirectPort="8443"
+    URIEncoding="utf-8"/>
 ```
 
-```
+```jsp
 <%
     // void setAttribute(String name, Object obj);
     request.setAttribute("password", "123456789");
@@ -245,26 +253,27 @@ regdo.jsp
 <%=request.getAttribute("password") %>
 ```
 
-其他方法及结果
+其他方法及结果：
 
 ```
 # 方法 结果
+# 获取请求体MIME类型
 getContentType null
-
+# 协议及版本
 getProtocol HTTP/1.1
-
+# 服务器主机名
 getServerName localhost
-
+# 服务器端口号
 getServerPort 8080
-
+# 请求文件长度
 getContentLength -1
-
+# 请求客户端的IP地址
 getRemoteAddr 0:0:0:0:0:0:0:1
-
+# 请求文件真实路径
 getRealPath D:\Java\tomcat9\webapps\www\index.jsp
-
+# 请求上下文路径
 getContextPath /www
-
+# 
 getScheme http
 ```
 
@@ -274,7 +283,7 @@ getScheme http
 
 > response对象包含了响应客户端请求的相关信息，但在JSP中很少直接用到它。它是HttpServletResponse类的实例。
 
-> response对象具有页面作用域，即访问一个页面时，该页面内的response对象只能对这次访问有效。其他页面的response对象对当前页面无效。
+> response对象具有**页面作用域**，即访问一个页面时，该页面内的response对象只能对这次访问有效。其他页面的response对象对当前页面无效。
 
 常用方法：
 
@@ -282,7 +291,7 @@ getScheme http
 
 **void setContentType(String type)** 设置响应的MIME类型
 
-**PrintWriter getWriter()** 返回可以向客户端输出字符的一个对象（注意比较PrintWriter与内置out对象的区别）
+**PrintWriter getWriter()** 返回可以向客户端输出字符的一个对象（注意**比较PrintWriter与内置out对象的区别**）
 
 > [!WARNING|style:flat|label:区别]
 
@@ -311,7 +320,7 @@ response.jsp
 
 结果：
 
-```
+```html
 这是response.getWriter()对象输出流
 
 <h2>response内置对象</h2>
@@ -320,7 +329,7 @@ response.jsp
 
 通过 `out.flush()` 方法，实现按文档流输出
 
-```
+```jsp
 <%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
 <%
 	response.setContentType("text/html; charset=utf-8");
@@ -336,7 +345,7 @@ response.jsp
 
 结果：
 
-```
+```html
 <h2>response内置对象</h2>
 <hr>
 这是response.getWriter()对象输出流
@@ -346,7 +355,7 @@ response.jsp
 
 |名称|区别|
 |:--|:--|
-|请求重定向|客户端行为，response.sendRedirect()，从本质将等同于两次请求。前一次的请求对象不会保存，地址栏的URL会改变为定向地址。|
+|请求重定向|客户端行为，response.sendRedirect()，从本质将等同于**两次请求**。前一次的请求对象不会保存，地址栏的URL会改变为定向地址。|
 |请求转发|服务器行为，request.getRequestDispatcher().forward(req, res)。是一次请求，转发后请求对象会保存，URL地址不会改变。|
 
 ### session
@@ -359,7 +368,7 @@ response.jsp
 
 > 从上述定义中可以看到，session实际上是一个特定的时间概念。
 
-> 在服务器内存中，保存着不同用户(客户端)的session
+> 在服务器内存中，保存着不同用户(客户端)的session。即**session存在于服务器内存中**。
 
 ![session-shopping](img/session-shopping.jpg)
 
@@ -395,7 +404,7 @@ session对象常用方法：
 
 **int getMaxInactiveInterval()** 返回两次请求间隔多长时间此SESSION被取消(单位秒)，即SESSION过期时间
 
-```
+```jsp
 <body>
     <dl>
     	<dt>session内置对象</dt>
@@ -430,13 +439,13 @@ Session创建时间：1562411220284毫秒
 获取自定义属性：master
 ```
 
-**session的生命周期**
+### session的生命周期
 
-* 创建：
+**创建：**
 
 客户端第一次访问当前网站某个jsp或Servlet的时候，服务器会为当前会话创建一个SessionId。客户端每次向服务器发送请求时，都会带上此SessionId，服务器端会对该SessionId进行校验。
 
-* 活动：
+**活动：**
 
 某次会话当中，通过超链接打开的同域新页面，则属于同一次会话。
 
@@ -446,7 +455,7 @@ Session创建时间：1562411220284毫秒
 
 注意：旧的Session仍然存在于服务器内存当中
 
-* 销毁
+**销毁：**
 
 Session的销毁有3种方式：
 
@@ -466,17 +475,19 @@ Tomcat web.xml中配置过期时间：(默认为30分钟)
 
 ### application
 
-* application 对象实现了用户间数据的共享，可以存放全局变量
+> [!TIP|style:flat|label:application]
 
-* application开始于服务器的启动，终止于服务器的关闭
+> **application对象**实现了用户间数据的共享，可以存放全局变量
 
-* 在用户的前后连接或不同用户之间的连接中，可以对application对象的同一属性进行操作。
+> **application**开始于服务器的启动，终止于服务器的关闭
 
-* 在任何地方对application对象属性的操作，都将影响到其他用户对此的访问。
+> 在用户的前后连接或不同用户之间的连接中，可以对**application对象**的同一属性进行操作。
 
-* 服务器的启动和关闭决定了application对象的生命周期
+> 在任何地方对**application对象**属性的操作，都将影响到其他用户对此的访问。
 
-* application对象是ServletContext类的实例
+> 服务器的启动和关闭决定了**application对象**的生命周期
+
+> application对象是**ServletContext类的实例**
 
 **常用方法**
 
@@ -488,7 +499,9 @@ Tomcat web.xml中配置过期时间：(默认为30分钟)
 
 **String getServerInfo()** 返回JSP（Servlet）引擎及版本号
 
-```
+例子：
+
+```jsp
 <body>
     <h1>APPLICATION</h1>
    	<%
@@ -522,39 +535,30 @@ getServerInfo：Apache Tomcat/9.0.20
 
 ### page对象
 
-page对象就是指当前JSP页面本身，有点像类中的this指针，它是java.lang.Object类的实例。
+**page对象**就是指当前JSP页面本身，有点像类中的this指针，它是java.lang.Object类的实例。
 
-常用方法：
-
-**class getClass()** 返回Object的类
-
-**int hashCode()** 返回此Object的hash码
-
-**boolean equals(Object obj)** 判断此Object是否与指定的Object对象相等
-
-**void copy(Object obj)** 把此Object拷贝到指定的Object对象中
-
-**Object clone()** 克隆对象
-
-**String toString()** 把Object对象转换成String类的对象
-
-**void notify()** 唤醒一个等待的线程
-
-**void notifyAll()** 唤醒所有等待的进程
-
-**void wait(int timeout)** 使一个线程除于等待状态，指定timeout结束，或被唤醒
-
-**void wait()** 使一个线程处于等待直到被唤醒
+|常用方法|说明|
+|:--|:--|
+|class getClass()| 返回Object的类|
+|int hashCode()| 返回此Object的hash码|
+|boolean equals(Object obj)| 判断此Object是否与指定的Object对象相等|
+|void copy(Object obj)| 把此Object拷贝到指定的Object对象中|
+|Object clone()| 克隆对象|
+|String toString()| 把Object对象转换成String类的对象|
+|void notify()| 唤醒一个等待的线程|
+|void notifyAll()| 唤醒所有等待的进程|
+|void wait(int timeout)| 使一个线程除于等待状态，指定timeout结束，或被唤醒|
+|void wait()| 使一个线程处于等待直到被唤醒|
 
 ### pageContext对象
 
-pageContext对象提供了对JSP页面内所有的对象及名字空间的访问
+**pageContext对象**提供了对JSP页面内所有的对象及名字空间的访问
 
-pageContext对象可以访问到本页面所在的session，也可以取本页面所在的application的某一属性值
+**pageContext对象**可以访问到本页面所在的session，也可以取本页面所在的application的某一属性值
 
-pageContext对象相当于页面中所有功能的集大成者，即权限较大
+**pageContext对象**相当于页面中所有功能的集大成者，即权限较大
 
-pageContext对象的本类名也叫pageContext
+**pageContext对象**的本类名也叫**pageContext**
 
 |常用方法|说明|
 |:--|:--|
@@ -571,27 +575,26 @@ pageContext对象的本类名也叫pageContext
 
 ### config对象
 
-**config对象**是一个Servlet初始化时，JSP引擎向它传递信息用的，此信息包含Servlet初始化时所要用到的参数（通过属性名和值构成），以及服务器的有关信息（通过传递一个ServletContext对象），常用方法如下：
+**config对象**是一个Servlet初始化时，JSP引擎向它传递信息用的，此信息包含Servlet初始化时所要用到的参数（通过属性名和值构成），以及服务器的有关信息（通过传递一个ServletContext对象）。
 
-**ServletContext getServletContext()** 返回含有服务器相关信息的ServletContext对象
-
-**String getInitParameter(String name)** 返回初始化参数的值
-
-**Enumeration getInitParameterNames()** 返回Servlet初始化所需所有参数的枚举
+|常用方法|说明|
+|:--|:--|
+|ServletContext getServletContext()| 返回含有服务器相关信息的ServletContext对象|
+|String getInitParameter(String name)| 返回初始化参数的值|
+|Enumeration getInitParameterNames()| 返回Servlet初始化所需所有参数的枚举|
 
 ### Exception对象
 
 **exception对象**是一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。如果一个JSP页面要应用此对象，就必须把isErrorPage设为true，否则无法编译。它实际上是java.lang.Throwable的对象，常用方法如下：
 
-**String getMessage()** 返回描述异常的消息
+|常用方法|说明|
+|:--|:--|
+|String getMessage()| 返回描述异常的消息|
+|String toString()| 返回关于异常的简短描述消息|
+|void printStackTrace()| 显示异常及其栈轨迹|
+|Throwable FillInStackTrace()| 重写异常的执行栈轨迹|
 
-**String toString()** 返回关于异常的简短描述消息
-
-**void printStackTrace()** 显示异常及其栈轨迹
-
-**Throwable FillInStackTrace()** 重写异常的执行栈轨迹
-
-```
+```jsp
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" errorPage="exception-handler.jsp"%>
 <!DOCTYPE HTML>
 <html>
@@ -612,7 +615,7 @@ pageContext对象的本类名也叫pageContext
 
 exception-handler.jsp
 
-```
+```jsp
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" isErrorPage="true"%>
 <!DOCTYPE HTML>
 <html>
