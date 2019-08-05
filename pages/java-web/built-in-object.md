@@ -42,7 +42,7 @@ for (int i : value) {
 
 **Web程序的请求响应模式**：
 
-用户发送请求(request)，服务器给用户响应(response)。
+用户发送**请求**(request)，服务器给用户**响应**(response)。
 
 ### 什么是缓冲区
 
@@ -50,7 +50,7 @@ for (int i : value) {
 
 ### out对象
 
-是JspWriter类的实例，是向客户端输出内容常用的对象。
+是**JspWriter类的实例**，是向客户端输出内容常用的对象。
 
 |常用方法|说明|
 |:--|:--|
@@ -583,9 +583,9 @@ getServerInfo：Apache Tomcat/9.0.20
 |String getInitParameter(String name)| 返回初始化参数的值|
 |Enumeration getInitParameterNames()| 返回Servlet初始化所需所有参数的枚举|
 
-### Exception对象
+### exception对象
 
-**exception对象**是一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。如果一个JSP页面要应用此对象，就必须把isErrorPage设为true，否则无法编译。它实际上是java.lang.Throwable的对象，常用方法如下：
+**exception对象**是一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。如果一个JSP页面要应用此对象，就必须把**isErrorPage设为true**，否则无法编译。它实际上是java.lang.Throwable的对象，常用方法如下：
 
 |常用方法|说明|
 |:--|:--|
@@ -643,3 +643,57 @@ toString() java.lang.ArithmeticException: / by zero
 ### 项目案例
 
 模拟登录，登录成功提示“登录成功，用户名为XXX”；登录失败跳转至登录失败页面。
+
+/first-eclipse-web-project/WebContent/login.jsp
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form method="post" action="do-login.jsp">
+	<div>用户 <input name="username" type="text"></div>
+	<div>密码 <input name="password" type="password"></div>
+	<div><input type="submit" value="submit"></div>
+</form>
+
+</body>
+</html>
+```
+
+/first-eclipse-web-project/WebContent/do-login.jsp
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>do login</title>
+</head>
+<body>
+<%
+	String username = "";
+	String password = "";
+	username = request.getParameter("username");
+	password = request.getParameter("password");
+	out.print(username + ", " + password);
+	if ("admin".equals(username) && "admin".equals(password)) {
+	  session.setAttribute("username", username);
+	  // 请求转发
+	  request.getRequestDispatcher("login-success.jsp").forward(request, response);
+	} else {
+	  // 重定向
+	  response.sendRedirect("login-failure.jsp");
+	}
+%>
+</body>
+</html>
+```
