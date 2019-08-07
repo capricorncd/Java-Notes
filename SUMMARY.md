@@ -95,13 +95,13 @@
 
 * [JSP基本语法](pages/java-web/jsp.md)
 
-* [JSP内置对象](pages/java-web/built-in-object.md)
+* [JSP内置对象out, request, response, session, application...](pages/java-web/built-in-object.md)
 
 * [JavaBean](pages/java-web/java-bean.md)
 
-* [Jsp状态管理](pages/java-web/state-management.md)
+* [Jsp状态管理Cookie](pages/java-web/state-management.md)
 
-* [指令与动作](pages/java-web/commands-and-actions.md)
+* [指令与动作include/forward](pages/java-web/commands-and-actions.md)
 
 ### Oracle
 

@@ -22,7 +22,6 @@
 
 * Cookie
 
-
 ### Cookie简介
 
 > [!TIP|style:flat|Cookie]
@@ -41,19 +40,19 @@
 
 创建Cookie对象：
 
-```
+```java
 Cookie cookie = new Cookie(String key, Object value);
 ```
 
 写入Cookie对象：
 
-```
+```java
 response.addCookie(cookie);
 ```
 
 读取Cookie对象：
 
-```
+```java
 Cookie[] cookie = request.getCookies();
 ```
 

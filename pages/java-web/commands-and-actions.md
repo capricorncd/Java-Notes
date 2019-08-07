@@ -10,13 +10,13 @@
 
 ### include指令
 
-```
+```jsp
 <%@ include file="PATH"%>
 ```
 
 ### include动作
 
-```
+```jsp
 <jsp:include page="PATH" flush="true|false"/>
 # flush 被包含的页面是否从缓冲区读取
 ```
@@ -31,6 +31,18 @@
 |执行时间|稍快|较慢，每次资源必须被解析|
 
 ### jsp:forward动作
+
+```jsp
+<jsp:forward page="URL" />
+```
+
+等同于：
+
+```jsp
+<!-- 转发 -->
+request.getRequestDispatcher("/url").forward(request, response);
+```
+
 
 ### jsp:param动作
 
