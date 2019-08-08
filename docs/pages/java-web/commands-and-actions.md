@@ -30,7 +30,11 @@
 |编译时间|较慢，资源必须被解析|较快|
 |执行时间|稍快|较慢，每次资源必须被解析|
 
+**总结**：页面内容经常变化时，更适合使用**\<jsp:include>动作**；不经常变化时，更适合使用**include指令**；**\<jsp:include>动作**包含的是执行结果，而**include指令**包含的是文件内容。
+
 ### jsp:forward动作
+
+语法：
 
 ```jsp
 <jsp:forward page="URL" />
@@ -39,11 +43,26 @@
 等同于：
 
 ```jsp
-<!-- 转发 -->
+<!-- 请求转发 -->
 request.getRequestDispatcher("/url").forward(request, response);
 ```
 
-
 ### jsp:param动作
 
+语法：
+
+```jsp
+<jsp:param page="参数名" value="参数值" />
+```
+
+常与 `<jsp:forward>` 一起使用，作为其的子标签。
+
+```jsp
+<jsp:forward page="URL">
+    <!-- 新增一个参数emial -->
+    <jsp:param value="admin@xxxx.com" name="email" />
+</jsp:forward>
+```
+
 ### jsp:plugin动作
+
