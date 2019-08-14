@@ -150,7 +150,7 @@ insert into user_info values(1, 'jock', '123456', '1522@qq.com', sysdate);
 
 **向表中指定字段添加值**
 
-```
+```sql
 insert into user_info (id, user_name, password) values(2, 'tom', '123456');
 ```
 
@@ -180,38 +180,38 @@ SELECT column1, ...|* FROM table_old
 
 **修改数据**
 
-```
+```sql
 # UPDATE语句
 UPDATE table_name
 SET column1=value1, ... 
 [WHERE conditions]
 ```
 
-```
+```sql
 # 无条件更新
 update user_info set password='1111111';
 ```
 
-```
+```sql
 # 有条件更新
 update user_info set password='222222', email='8888@xx.com' where id='2';
 ```
 
 **删除数据**
 
-```
+```sql
 # DELETE语句
 DELETE FROM table_name
 [WHERE conditions]
 # drop删除表数据，要比delete快。
 ```
 
-```
+```sql
 # 无条件删除
 delete from user_info_copy;
 ```
 
-```
+```sql
 # 有条件删除
 delete from user_info where id='1';
 ```

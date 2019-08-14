@@ -18,14 +18,17 @@
 
 > 在修改表时，去除非空约束
 
-```
-# 在创建表时，设置非空约束
+**在创建表时，设置非空约束**
+
+```sql
 CREATE TABLE table_name (
     column_nae datatype NOT NULL, ...
 )
 ```
 
-```
+实例：
+
+```sql
 create table user_info2 (
     id number(10, 0),
     username varchar2(32) not null,
@@ -33,15 +36,17 @@ create table user_info2 (
 );
 ```
 
-```
-# 在修改表时，添加非空约束
+**在修改表时，添加非空约束**
+
+```sql
 ALTER TABLE table_name
 MODIFY column_name datatype NOT NULL;
 # 如果被修改的字段，在表中已有空值将会抛出异常
 ```
 
-```
-# 在修改表时，去除非空约束
+**在修改表时，去除非空约束**
+
+```sql
 ALTER TABLE table_name
 MODIFY column_name datatype NULL;
 # alter table user_info modify user_name varchar2(64) null;
@@ -59,15 +64,17 @@ MODIFY column_name datatype NULL;
 
 在创建表时设置主键约束、在修改表时添加主键约束、更改约束的名称、删除主键约束
 
-```
-# 在创建表时设置主键约束
+**在创建表时设置主键约束**
+
+```sql
 CREATE TABLE table_name (
     column_name datatype PRIMARY KEY, ...
 )
 ```
 
-```
-# 例子
+实例
+
+```sql
 create table user_info3 (
     id number(10, 0) primary key,
     username varchar2(32),
@@ -75,13 +82,14 @@ create table user_info3 (
 );
 ```
 
-```
-# 联合主键或复合主键
+**联合主键或复合主键**
+
+```sql
 CONSTRAINT constraint_name
 PRIMARY KEY(column_name1, ...)
 ```
 
-```
+```sql
 create table user_info4 (
     id number(10, 0),
     username varchar2(64),
@@ -97,8 +105,9 @@ create table user_info4 (
 
 ![user-constraints](img/user-constraints.png)
 
-```
-# 在修改表时添加主键约束
+**在修改表时添加主键约束**
+
+```sql
 ALTER TABLE table_name
 ADD CONSTRAINT constraint_name
 PRIMARY KEY (column_name1, ...);
@@ -106,7 +115,7 @@ PRIMARY KEY (column_name1, ...);
 
 ![](img/add-constraint-primary-key.png)
 
-```
+```sql
 # 更改约束的名称constraint_name
 ALTER TABLE table_name
 RENAME CONSTRAINT old_name
@@ -121,7 +130,7 @@ TO new_name
 
 > 直接删除
 
-```
+```sql
 # 暂时禁用，后期可能还会启用的情况
 DISABLE|ENABLE CONSTRAINT constraint_name
 
@@ -131,7 +140,7 @@ DISABLE|ENABLE CONSTRAINT constraint_name
 # select constraint_name, status from user_constraints where table_name='USER_INFO';
 ```
 
-```
+```sql
 # 直接删除1
 DROP CONSTRAINT constraint_name
 
@@ -141,7 +150,7 @@ DROP CONSTRAINT constraint_name
 # 结果：未选定行
 ```
 
-```
+```sql
 # 直接删除2
 DROP PRIMARY KEY [CASCADE]
 # CASCADE 其他表引用该字段的地方，也一起删掉约束
@@ -158,8 +167,9 @@ DROP PRIMARY KEY [CASCADE]
 
 在创建表时设置外键约束、在修改表时添加外键约束、删除外键约束
 
-```
-# 在创建表时设置外键约束1
+**在创建表时设置外键约束1**
+
+```sql
 CREATE TABLE table1
 (
     column_name datatype REFERENCES
@@ -179,8 +189,9 @@ CREATE TABLE table1
 
 ![table-main-slave](img/table-main-slave.png)
 
-```
-# 在创建表时设置外键约束2
+**在创建表时设置外键约束2**
+
+```sql
 CONSTRAINT constraint_name FOREIGN
 KEY (column_name) REFERENCES
 main_table_name (column_name) [ON DELETE CASCADE]
@@ -190,8 +201,9 @@ main_table_name (column_name) [ON DELETE CASCADE]
 
 ![constraint-foreign-key](img/constraint-foreign-key.png)
 
-```
-# 在修改表时添加外键约束
+**在修改表时添加外键约束**
+
+```sql
 ADD CONSTRAINT constraint_name FOREIGN
 KEY (column_name) REFERENCES
 table_name (column_name) [ON DELETE CASCADE]
@@ -205,15 +217,17 @@ table_name (column_name) [ON DELETE CASCADE]
 
 > 直接删除
 
-```
-# 禁用与启用
+**禁用与启用**
+
+```sql
 DISABLE|ENABLE CONSTRAINT constraint_name
 ```
 
 ![disable-constraint](img/disable-constraint.png)
 
-```
-#直接删除
+**直接删除**
+
+```sql
 DROP CONSTRAINT constraint_name;
 ```
 
@@ -234,7 +248,7 @@ DROP CONSTRAINT constraint_name;
 
 在创建表时设置唯一约束、在修改表时添加唯一约束、删除唯一约束
 
-```
+```sql
 # 在创建表时设置唯一约束，分列级和表级
 # 列级
 CREATE TABLE table_name
@@ -248,17 +262,18 @@ UNIQUE (column_name)
 
 ![create-table-unique](img/create-table-unique.png)
 
-```
-# 在修改表时添加唯一约束
+**在修改表时添加唯一约束**
+
+```sql
 ADD CONSTRAINT constraint_name
 UNIQUE (column_name);
 ```
 
 ![add-constraint-unique](img/add-constraint-unique.png)
 
-删除唯一约束
+**删除唯一约束**
 
-```
+```sql
 # 禁用/启用
 ALTER TABLE table_name
 DISABLE|ENABLE CONSTRAINT constraint_name
@@ -284,7 +299,7 @@ DROP CONSTRAINT constraint_name
 
 在创建表时设置检查约束、在修改表时添加检查约束、删除检查约束
 
-```
+```sql
 # 在创建表时设置检查约束：列级
 CREATE TABLE table_name
 (column_name datatype CHECK(expressions), ...)
@@ -292,21 +307,21 @@ CREATE TABLE table_name
 
 ![create-table-check](img/create-table-check.png)
 
-```
+```sql
 # 在创建表时设置检查约束：表级
 CONSTRAINT constraint_name CHECK(expressions)
 ```
 
 ![constraint-check](img/constraint-check.png)
 
-```
+```sql
 # 在修改表时添加检查约束
 ALTER TABLE table_name
 ADD CONSTRAINT constraint_name
 CHECK (expressions);
 ```
 
-```
+```sql
 # 禁用、启用
 ALTER TABLE table_name
 DISABLE|ENABLE CONSTRAINT constraint_name
