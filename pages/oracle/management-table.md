@@ -2,9 +2,9 @@
 
 > [!TIP|style:flat|label:认识表]
 
-> 表是存储数据的基本存储单位
+> **表**是存储数据的基本存储单位
 
-> 表是二维结构，由行(记录)和列(域和字段)组成
+> **表**是**二维结构**，由行(记录)和列(域和字段)组成
 
 ### 约定
 
@@ -16,7 +16,7 @@
 
 ### 数据类型
 
-字符型、数值型、日期型、其他类型
+字符型、数值型、日期型、其他类型。
 
 |字符型|n最大值|说明|
 |:--|:--|:--|
@@ -30,7 +30,7 @@
 |NUMBER(p,s)|p有效数字；s小数点后位数，支持正负数|
 |FLOAT(n)|用于存储二进制数据，能表示二进制位数1-126位。转换成10进制，则需乘以0.30103|
 
-```
+```sql
 NUMBER(5, 2)
 # 有效数字5位，保留2位小数，如123.45
 ```
@@ -49,8 +49,9 @@ NUMBER(5, 2)
 
 创建表、修改表、删除表
 
-```
-# 创建表语法
+**创建表语法**
+
+```sql
 CREATE TABLE table_name
 (
     column_name datatype [default value], ...
@@ -58,43 +59,50 @@ CREATE TABLE table_name
 # default 添加默认值，默认value获取系统当前时间sysdate
 ```
 
+实例：
+
 ![create-table-user-info](img/create-table-user-info.png)
 
 > [!TIP|style:flat|label:修改表]
 
 > 添加字段、更改字段数据类型、修改字段名、删除字段、修改表名
 
-```
-# 添加字段
+**添加字段**
+
+```sql
 ALTER TABLE table_name
 ADD column_name datatype [default value];
 # alter table user_info add remark varchar2(500);
 ```
 
-```
-# 更改字段数据类型
+**更改字段数据类型**
+
+```sql
 ALTER TABLE table_name
 MODIFY column_name datatype [default value];
 # alter table user_info modify remark varchar2(300);
 # alter table user_info modify password number(10, 0);
 ```
 
-```
-# 删除字段
+**删除字段**
+
+```sql
 ALTER TABLE table_name
 DROP COLUMN column_name;
 # alter table user_info drop column remark;
 ```
 
-```
-# 修改字段名称
+**修改字段名称**
+
+```sql
 ALTER TABLE table_name
 RENAME COLUMN column_name TO new_column_name;
 # alter table user_info rename column user_name to username;
 ```
 
-```
-# 修改表名
+**修改表名**
+
+```sql
 RENAME table_name TO new_table_name;
 # rename user_info to userinfo;
 ```
@@ -105,13 +113,15 @@ RENAME table_name TO new_table_name;
 
 > 删除表
 
-```
-# 删除表中所有数据
+**删除表中所有数据**
+
+```sql
 TRUNCATE TABLE table_name
 ```
 
-```
-# 删除表
+**删除表**
+
+```sql
 DROP TABLE table_name
 ```
 
@@ -121,7 +131,7 @@ DROP TABLE table_name
 
 **INSERT语句**
 
-```
+```sql
 # INSERT语句
 INSERT INTO table_name
 (column1, column2, ...)
@@ -131,20 +141,22 @@ VALUES(value1, value2, ...)
 
 实例
 
-```
-# 向表中所有字段添加值
+**向表中所有字段添加值**
+
+```sql
 insert into user_info values(1, 'jock', '123456', '1522@qq.com', sysdate);
 # sysdate 获取系统当前时间
 ```
 
+**向表中指定字段添加值**
+
 ```
-# 向表中指定字段添加值
 insert into user_info (id, user_name, password) values(2, 'tom', '123456');
 ```
 
 **复制表数据**
 
-```
+```sql
 # 在创建时复制
 CREATE TABLE table_new
 AS
@@ -155,8 +167,9 @@ SELECT column1, ...|* FROM table_old
 # create table new_userinfo2 as select id, user_name from user_info;
 ```
 
-```
-# 在添加时复制
+**在添加时复制**
+
+```sql
 INSERT INTO table_new
 [(column1, ...)]
 SELECT column1, ...|* FROM table_old

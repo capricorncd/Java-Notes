@@ -35,7 +35,7 @@ dba_tablespaces
 user_tablespaces
 ```
 
-* 系统用户
+**系统用户**
 
 ![sql-plus-dba-tablespaces](img/sql-plus-dba-tablespaces.png)
 
@@ -51,7 +51,7 @@ TEMP:
 
 USERS: 
 
-* 普通用户
+**普通用户**
 
 ![sql-plus-users-tablespaces](img/sql-plus-users-tablespaces.png)
 
@@ -64,7 +64,7 @@ user_users
 
 ![select default_tablespace, temporary_tablespace from dba_users where username='SYSTEM'](img/sql-plus-select-default-from-dbasys.png)
 
-* 设置用户的默认或临时表空间
+### 设置用户的默认或临时表空间
 
 ```
 ALTER USER username DEFAULT|TEMPORARY TABLESPACE tablespace_name
