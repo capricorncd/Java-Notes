@@ -50,8 +50,8 @@ select username from dba_users;
 
 ```
 # 启用用户的语句
-alter user uesename account unlock
-# alter user username account lock
+alter user username account unlock
+# alter user scott account lock
 ```
 
 **ORA-01918: 用户 'SCOTT' 不存在**

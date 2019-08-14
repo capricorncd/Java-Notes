@@ -43,7 +43,7 @@
 等同于：
 
 ```jsp
-<!-- 请求转发 -->
+<!-- 服务器转发 -->
 request.getRequestDispatcher("/url").forward(request, response);
 ```
 
@@ -65,4 +65,10 @@ request.getRequestDispatcher("/url").forward(request, response);
 ```
 
 ### jsp:plugin动作
+
+略
+
+### 商品浏览记录实例
+
+
 
