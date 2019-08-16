@@ -51,6 +51,7 @@ public class DBHelper {
         System.out.println("数据库连接失败!");
       }
     } catch(Exception e) {
+      System.out.println("数据库连接失败，发生异常：");
       e.printStackTrace();
     }
   }

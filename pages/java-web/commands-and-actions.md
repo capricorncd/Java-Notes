@@ -70,5 +70,8 @@ request.getRequestDispatcher("/url").forward(request, response);
 
 ### 商品浏览记录实例
 
+源码位置：
 
-
+```
+codes/jsp-commands-and-actions
+```
