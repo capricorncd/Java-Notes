@@ -32,6 +32,8 @@ function html1 () {
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
         .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
+        // 还原表格中的竖线
+        .pipe(replace(/VERTICAL__LINE/g, '|'))
         .pipe(gulp.dest('./_book'))
 }
 
@@ -40,6 +42,8 @@ function html2 () {
         .pipe(htmlmin(htmlMinOptions))
         // 去除powered by Gitbook
         .pipe(replace(/ all right reserved&#xFF0C;powered by Gitbook/ig, '.'))
+        // 还原表格中的竖线
+        .pipe(replace(/VERTICAL__LINE/g, '|'))
         .pipe(gulp.dest('./_book/pages'))
 }
 
