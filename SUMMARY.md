@@ -14,6 +14,8 @@
 
 * [方法](pages/first-season/function.md)
 
+* [Java正则表达式](pages/regular-expression/README.md)
+
 ### Java基础第二季
 
 * [类与对象](pages/second-season/class-and-object.md)

@@ -115,4 +115,22 @@ public class JspCookieItemDAO {
     
     return null;
   }
+  
+  /**
+   * get 获取最近浏览的5条记录
+   * @param records
+   * @return
+   */
+  public ArrayList<JspCookieItem> getViewList(String records) {
+    ArrayList<JspCookieItem> list = new ArrayList<JspCookieItem>();
+    if (records != null && records.length() > 0) {
+      String[] arr = records.split("#");
+      int id;
+      for (int i = arr.length - 1; i >= 0; i--) {
+        id = arr[i] != "" ? Integer.parseInt(arr[i]) : 0;
+        if (id > 0) list.add(getDetailById(id));
+      }
+    }
+    return list;
+  }
 }
