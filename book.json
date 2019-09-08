@@ -22,7 +22,7 @@
       "copyButtons": false
     },
     "tbfed-pagefooter": {
-      "copyright": "&copy 2019 Capricorncd",
+      "copyright": "&copy 2019 <a href=\"https://github.com/capricorncd\" target=\"_blank\">Capricorncd</a>",
       "modify_label": "该文件修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     }
