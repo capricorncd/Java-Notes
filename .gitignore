@@ -84,11 +84,14 @@ dist
 .DS_Store
 
 # nodup
-
 dump.rdb
 nohup.out
 
 # upload
 public/**
 
+# Custom
 /_book
+
+# Java Project
+.metadata/

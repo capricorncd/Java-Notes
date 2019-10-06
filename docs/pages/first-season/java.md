@@ -50,6 +50,14 @@ https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.
 
 > Java库文件，以 `.jar` 结尾
 
+bin目录文件：
+
+![jdk-bin](img/jdk-bin.png)
+
+lib目录文件：
+
+![jdk-lib](img/jdk-lib.png)
+
 2、window 10 配置环境变量（系统变量）
 
 ```bash
@@ -66,6 +74,10 @@ path
 C:\ProgramFiles\Java\jdk1.8.0_172\bin
 C:\Program Files\Java\jdk1.8.0_172\bin\jre\bin
 ```
+
+测试配置是否成功：
+
+![cmd-java](img/cmd-java.png)
 
 3、Mac
 
@@ -187,6 +199,23 @@ public class HelloTest {
 ### 来自巨人的经验
 
 多练、多问、自己动手，调试错误、复习和总结。
+
+```
+Java中泛型的本质
+Java中静态变量的适用场景
+Java类加载原理及类加载器
+Java中对Clone的理解
+Java中HashMap的实现
+Java中Collection和Collections的区别
+Java数组浅析
+Java代码优化编程
+Java事件处理机制与“恋爱关系”
+Java中的JNDI（Java命令与目录接口）
+Java中Comparable和Comparator实现对象比较
+Java中String和StringBuffer的区别
+Java中反射机制
+Java中的synchronized
+```
 
 学虽容易，学好不易，且学且珍惜。
 
