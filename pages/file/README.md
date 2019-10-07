@@ -238,3 +238,163 @@ for (byte b : buf) {
 raf.close();
 ```
 
+### 字节流 FileInputStream
+
+IO流（输入流、输出流）
+
+字节流、字符流
+
+> [!TIP|style:flat|label: 1.字节流]
+
+> **InputStream、OutputStream**
+
+> InputStream抽象了应用程序读取数据的方式
+
+> OutputStream抽象了应用程序写出数据的方式
+
+> **EOF** = End 读到-1，即读到结尾
+
+**输入流基本方法**
+
+```java
+// 读取一个字节无符号填充到int低8位，-1是EOF
+int b = in.read();
+// 读取数据到字节数组buf
+in.read(byte[] buf);
+// 读取数据到字节数组buf，从buf的start位置开始，存放size长度的数据
+in.read(byte[] buf, int start, int size);
+```
+
+**输出流基本方法**
+
+```java
+// 写出一个byte到流，b的低8位（一个整型32位）
+out.write(int b);
+// 将buf字节数组都写入到流
+out.write(buf);
+// 字节数组buf从start位置开始写size长度的字节到流
+out.write(byte[] buf, int start, int size);
+```
+
+> [!TIP|style:flat|label: FileInputStream]
+
+> **FileInputStream**(InputStream的子类，及继承了InputStream)，具体实现了在文件上读取数据
+
+```java
+/**
+ * 读取指定文件内容，按照16进制输出到控制台
+ * 并且每输出10个byte换行
+ * @param fileName
+ * @throws IOException 
+ */
+public static void printHex(String fileName) throws IOException {
+    // 把文件作为字节流进行读取操作
+    FileInputStream in = new FileInputStream(fileName);
+    int b;
+    int count = 1;
+    while((b = in.read()) != -1) {
+        // 单位数前补0，及小于10的数
+        if (b <= 0xf) {
+            System.out.print("0");
+        }
+        System.out.print(Integer.toHexString(b) + " ");
+        if (count++ % 10 == 0) {
+            System.out.println();
+        }
+    }
+    in.close();
+}
+```
+
+```java
+/**
+ * printHexByByteArray
+ * @param fileName
+ * @throws IOException
+ */
+public static void printHexByByteArray(String fileName) throws IOException {
+    File file = new File(fileName);
+    FileInputStream in = new FileInputStream(file);
+    byte[] buf = new byte[(int)file.length()];
+    // 从in中排量读取字节，放入到buf这个字节数组中
+    // 从第0个位置开始放，最多放buf.length个
+    // 返回的是读到的字节的个数
+    int bytes = in.read(buf, 0, buf.length);
+    int count = 1;
+    for (int i = 0; i < bytes; i++) {
+        print(buf[i], count++);
+    }
+    in.close();
+}
+
+/**
+ * printHexByByteArray2
+ * @param fileName
+ * @throws IOException
+ */
+public static void printHexByByteArray2(String fileName) throws IOException {
+    File file = new File(fileName);
+    FileInputStream in = new FileInputStream(file);
+    byte[] buf = new byte[(int)file.length()];
+    int count = 1;
+    int bytes = 0;
+    while((bytes = in.read(buf, 0, buf.length)) != -1) {
+        for (int i = 0; i < bytes; i++) {
+            print(buf[i], count++);
+        }
+    }
+    in.close();
+}
+
+/**
+ * print
+ * @param b
+ * @param count
+ */
+private static void print(int b, int count) {
+    // 单位数前补0，及小于10的数
+    if (b <= 0xf) {
+        System.out.print("0");
+    }
+    System.out.print(Integer.toHexString(b & 0xff) + " ");
+    if (count % LINE_NUM == 0) {
+        System.out.println();
+    }
+}
+```
+
+Test
+
+```java
+String filePath = "D:\\java\\test.txt";
+IOUtils.printHex(filePath);
+System.out.println("\n");
+IOUtils.printHexByByteArray(filePath);
+System.out.println("\n");
+IOUtils.printHexByByteArray2(filePath);
+```
+
+> [!TIP|style:flat|label: FileOutputStream]
+
+> **FileOutputStream**(OutputStream的子类，及继承了OutputStream)，实现了向文件中写入byte数据的方法
+
+```java
+String filePath = "D:\\java\\temp\\out.dat";
+// 如果文件不存在，则直接创建；如果存在，删除后再创建
+FileOutputStream out = new FileOutputStream(filePath);
+// 写出了A的低8位
+out.write('A');
+// 写出了B的低8位
+out.write('B');
+// write只能写8位，即写一个int需要写4次
+int a = 10;
+out.write(a >>> 24);
+out.write(a >>> 16);
+out.write(a >>> 8);
+out.write(a);
+byte[] gbk = "中国".getBytes("GBK");
+out.write(gbk);
+out.close();
+
+IOUtils.printHex(filePath);
+```

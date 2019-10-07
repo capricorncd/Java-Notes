@@ -81,13 +81,13 @@ import com.test.music.MyClass;
 
 使用的时候不但可以加载某个包下面的所有文件
 
-```
+```java
 com.test.*;
 ```
 
 也可以加载某个具体包下的所有文件
 
-```
+```java
 com.test.music.*;
 ```
 
