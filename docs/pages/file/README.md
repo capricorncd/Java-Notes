@@ -254,7 +254,7 @@ IO流（输入流、输出流）
 
 > **EOF** = End 读到-1，即读到结尾
 
-**输入流基本方法**
+**输入流基本方法：**
 
 ```java
 // 读取一个字节无符号填充到int低8位，-1是EOF
@@ -265,7 +265,7 @@ in.read(byte[] buf);
 in.read(byte[] buf, int start, int size);
 ```
 
-**输出流基本方法**
+**输出流基本方法：**
 
 ```java
 // 写出一个byte到流，b的低8位（一个整型32位）
@@ -353,9 +353,11 @@ public static void printHexByByteArray2(String fileName) throws IOException {
  */
 private static void print(int b, int count) {
     // 单位数前补0，及小于10的数
-    if (b <= 0xf) {
+    if (b >= 0x0 && b <= 0xf) {
         System.out.print("0");
     }
+    // & 0xff：byte类型8位，int类型32位，
+    // 为了避免数据转换错误，通过&0xff将高24位清零
     System.out.print(Integer.toHexString(b & 0xff) + " ");
     if (count % LINE_NUM == 0) {
         System.out.println();
@@ -381,6 +383,7 @@ IOUtils.printHexByByteArray2(filePath);
 ```java
 String filePath = "D:\\java\\temp\\out.dat";
 // 如果文件不存在，则直接创建；如果存在，删除后再创建
+// #若有第二个参数：true往文件里追加内容
 FileOutputStream out = new FileOutputStream(filePath);
 // 写出了A的低8位
 out.write('A');
@@ -397,4 +400,126 @@ out.write(gbk);
 out.close();
 
 IOUtils.printHex(filePath);
+```
+
+IOUtils.java
+
+```java
+/**
+ * file copy
+ * @param srcFile
+ * @param destFile
+ * @throws IOException
+ */
+public static void fileCopy(File srcFile, File destFile) throws IOException {
+    if (!srcFile.exists()) {
+        throw new IllegalArgumentException("文件不存在。" + srcFile);
+    }
+    if (!srcFile.isFile()) {
+        throw new IllegalArgumentException("非文件对象。" + srcFile);
+    }
+    FileInputStream in = new FileInputStream(srcFile);
+    FileOutputStream out = new FileOutputStream(destFile);
+    byte[] buffers = new byte[(int)srcFile.length()];
+    int n;
+    while((n = in.read(buffers, 0, buffers.length)) != -1) {
+        out.write(buffers, 0, n);
+        out.flush();
+    }
+    in.close();
+    out.close();
+}
+```
+
+FileOutPutDemo.java
+
+```java
+File srcFile = new File("D:\\java\\temp\\out.dat");
+File destFile = new File("D:\\java\\temp\\copy.txt");
+IOUtils.fileCopy(srcFile, destFile);
+```
+
+### DataInputStream/DataOutputStream
+
+对“流”功能的扩展，可以更加方便的读取int、long、字符等数据类型的数据。
+
+```java
+# DataOutputStream
+writeInt()/writeDouble()/writeUTF()...
+```
+
+DataOutputStreamDemo.java
+
+```java
+package file.io;
+
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class DataOutputStreamDemo {
+
+	public static void main(String[] args) throws IOException {
+		String filePath = "D:\\java\\temp\\dos.dat";
+		FileOutputStream fos = new FileOutputStream(filePath);
+		DataOutputStream dos = new DataOutputStream(fos);
+		// write
+		dos.writeInt(10);
+		dos.writeInt(-10);
+		dos.writeLong(10l);
+		dos.writeDouble(10.5);
+		// 采用utf-8编码输出
+		dos.writeUTF("中国");
+		// 采用utf-16be编码输出
+		dos.writeChars("中国");
+		dos.close();
+		
+		IOUtils.printHex(filePath);
+		System.out.println("\n");
+		IOUtils.printHexByByteArray(filePath);
+		System.out.println("\n");
+		IOUtils.printHexByByteArray2(filePath);
+	}
+
+}
+```
+
+DataInputStreamDemo.java
+
+```java
+package file.io;
+
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class DataInputStreamDemo {
+
+	public static void main(String[] args) throws IOException {
+		String filePath = "D:\\java\\temp\\dos.dat";
+		IOUtils.printHex(filePath);
+		System.out.println("\n");
+		
+		FileInputStream inputFile = new FileInputStream(filePath);
+		DataInputStream dis = new DataInputStream(inputFile);
+		
+		// read
+		int i = dis.readInt();
+		System.out.println(i);
+		i = dis.readInt();
+		System.out.println(i);
+		
+		long l = dis.readLong();
+		System.out.println(l);
+		
+		double d = dis.readDouble();
+		System.out.println(d);
+		
+		String s = dis.readUTF();
+		System.out.println(s);
+		
+		dis.close();
+	}
+
+}
 ```

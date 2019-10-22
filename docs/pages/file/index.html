@@ -171,13 +171,13 @@ System.out.println(Arrays.toString(buf));
     System.out.print(Integer.toHexString(b &amp; <span class="hljs-number">0xff</span>) + <span class="hljs-string">&quot; &quot;</span>);
 }
 raf.close();
-</code></pre><h3 id="&#x5B57;&#x8282;&#x6D41;-fileinputstream">&#x5B57;&#x8282;&#x6D41; FileInputStream</h3><p>IO&#x6D41;&#xFF08;&#x8F93;&#x5165;&#x6D41;&#x3001;&#x8F93;&#x51FA;&#x6D41;&#xFF09;</p><p>&#x5B57;&#x8282;&#x6D41;&#x3001;&#x5B57;&#x7B26;&#x6D41;</p><blockquote><p>[!TIP|style:flat|label: 1.&#x5B57;&#x8282;&#x6D41;]</p><p><strong>InputStream&#x3001;OutputStream</strong></p><p>InputStream&#x62BD;&#x8C61;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;</p><p>OutputStream&#x62BD;&#x8C61;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5199;&#x51FA;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;</p><p><strong>EOF</strong> = End &#x8BFB;&#x5230;-1&#xFF0C;&#x5373;&#x8BFB;&#x5230;&#x7ED3;&#x5C3E;</p></blockquote><p><strong>&#x8F93;&#x5165;&#x6D41;&#x57FA;&#x672C;&#x65B9;&#x6CD5;</strong></p><pre><code class="lang-java"><span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x65E0;&#x7B26;&#x53F7;&#x586B;&#x5145;&#x5230;int&#x4F4E;8&#x4F4D;&#xFF0C;-1&#x662F;EOF</span>
+</code></pre><h3 id="&#x5B57;&#x8282;&#x6D41;-fileinputstream">&#x5B57;&#x8282;&#x6D41; FileInputStream</h3><p>IO&#x6D41;&#xFF08;&#x8F93;&#x5165;&#x6D41;&#x3001;&#x8F93;&#x51FA;&#x6D41;&#xFF09;</p><p>&#x5B57;&#x8282;&#x6D41;&#x3001;&#x5B57;&#x7B26;&#x6D41;</p><blockquote><p>[!TIP|style:flat|label: 1.&#x5B57;&#x8282;&#x6D41;]</p><p><strong>InputStream&#x3001;OutputStream</strong></p><p>InputStream&#x62BD;&#x8C61;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;</p><p>OutputStream&#x62BD;&#x8C61;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5199;&#x51FA;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;</p><p><strong>EOF</strong> = End &#x8BFB;&#x5230;-1&#xFF0C;&#x5373;&#x8BFB;&#x5230;&#x7ED3;&#x5C3E;</p></blockquote><p><strong>&#x8F93;&#x5165;&#x6D41;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF1A;</strong></p><pre><code class="lang-java"><span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x65E0;&#x7B26;&#x53F7;&#x586B;&#x5145;&#x5230;int&#x4F4E;8&#x4F4D;&#xFF0C;-1&#x662F;EOF</span>
 <span class="hljs-keyword">int</span> b = in.read();
 <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5230;&#x5B57;&#x8282;&#x6570;&#x7EC4;buf</span>
 in.read(<span class="hljs-keyword">byte</span>[] buf);
 <span class="hljs-comment">// &#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5230;&#x5B57;&#x8282;&#x6570;&#x7EC4;buf&#xFF0C;&#x4ECE;buf&#x7684;start&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#xFF0C;&#x5B58;&#x653E;size&#x957F;&#x5EA6;&#x7684;&#x6570;&#x636E;</span>
 in.read(<span class="hljs-keyword">byte</span>[] buf, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> size);
-</code></pre><p><strong>&#x8F93;&#x51FA;&#x6D41;&#x57FA;&#x672C;&#x65B9;&#x6CD5;</strong></p><pre><code class="lang-java"><span class="hljs-comment">// &#x5199;&#x51FA;&#x4E00;&#x4E2A;byte&#x5230;&#x6D41;&#xFF0C;b&#x7684;&#x4F4E;8&#x4F4D;&#xFF08;&#x4E00;&#x4E2A;&#x6574;&#x578B;32&#x4F4D;&#xFF09;</span>
+</code></pre><p><strong>&#x8F93;&#x51FA;&#x6D41;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF1A;</strong></p><pre><code class="lang-java"><span class="hljs-comment">// &#x5199;&#x51FA;&#x4E00;&#x4E2A;byte&#x5230;&#x6D41;&#xFF0C;b&#x7684;&#x4F4E;8&#x4F4D;&#xFF08;&#x4E00;&#x4E2A;&#x6574;&#x578B;32&#x4F4D;&#xFF09;</span>
 out.write(<span class="hljs-keyword">int</span> b);
 <span class="hljs-comment">// &#x5C06;buf&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x90FD;&#x5199;&#x5165;&#x5230;&#x6D41;</span>
 out.write(buf);
@@ -252,9 +252,11 @@ out.write(<span class="hljs-keyword">byte</span>[] buf, <span class="hljs-keywor
  */</span>
 <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> b, <span class="hljs-keyword">int</span> count)</span> </span>{
     <span class="hljs-comment">// &#x5355;&#x4F4D;&#x6570;&#x524D;&#x8865;0&#xFF0C;&#x53CA;&#x5C0F;&#x4E8E;10&#x7684;&#x6570;</span>
-    <span class="hljs-keyword">if</span> (b &lt;= <span class="hljs-number">0xf</span>) {
+    <span class="hljs-keyword">if</span> (b &gt;= <span class="hljs-number">0x0</span> &amp;&amp; b &lt;= <span class="hljs-number">0xf</span>) {
         System.out.print(<span class="hljs-string">&quot;0&quot;</span>);
     }
+    <span class="hljs-comment">// &amp; 0xff&#xFF1A;byte&#x7C7B;&#x578B;8&#x4F4D;&#xFF0C;int&#x7C7B;&#x578B;32&#x4F4D;&#xFF0C;</span>
+    <span class="hljs-comment">// &#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x9519;&#x8BEF;&#xFF0C;&#x901A;&#x8FC7;&amp;0xff&#x5C06;&#x9AD8;24&#x4F4D;&#x6E05;&#x96F6;</span>
     System.out.print(Integer.toHexString(b &amp; <span class="hljs-number">0xff</span>) + <span class="hljs-string">&quot; &quot;</span>);
     <span class="hljs-keyword">if</span> (count % LINE_NUM == <span class="hljs-number">0</span>) {
         System.out.println();
@@ -268,6 +270,7 @@ System.out.println(<span class="hljs-string">&quot;\n&quot;</span>);
 IOUtils.printHexByByteArray2(filePath);
 </code></pre><blockquote><p>[!TIP|style:flat|label: FileOutputStream]</p><p><strong>FileOutputStream</strong>(OutputStream&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x53CA;&#x7EE7;&#x627F;&#x4E86;OutputStream)&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5411;&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x5165;byte&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;</p></blockquote><pre><code class="lang-java">String filePath = <span class="hljs-string">&quot;D:\\java\\temp\\out.dat&quot;</span>;
 <span class="hljs-comment">// &#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#xFF1B;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5220;&#x9664;&#x540E;&#x518D;&#x521B;&#x5EFA;</span>
+<span class="hljs-comment">// #&#x82E5;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;true&#x5F80;&#x6587;&#x4EF6;&#x91CC;&#x8FFD;&#x52A0;&#x5185;&#x5BB9;</span>
 FileOutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(filePath);
 <span class="hljs-comment">// &#x5199;&#x51FA;&#x4E86;A&#x7684;&#x4F4E;8&#x4F4D;</span>
 out.write(<span class="hljs-string">&apos;A&apos;</span>);
@@ -284,4 +287,99 @@ out.write(gbk);
 out.close();
 
 IOUtils.printHex(filePath);
-</code></pre><footer class="page-footer"><span class="copyright">&#xA9; 2019 <a href="https://github.com/capricorncd" target="_blank">Capricorncd</a>.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-10-07 23:13:49</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="../oracle/pl-sql.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: PL/SQL程序设计"><i class="fa fa-angle-left"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Java I/O文件处理",level:"8.1",depth:1,previous:{title:"PL/SQL程序设计",level:"7.7",depth:1,path:"pages/oracle/pl-sql.md",ref:"pages/oracle/pl-sql.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:'&copy 2019 <a href="https://github.com/capricorncd" target="_blank">Capricorncd</a>',modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/file/README.md",mtime:"2019-10-07T14:13:49.961Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-10-07T14:14:06.623Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
+</code></pre><p>IOUtils.java</p><pre><code class="lang-java"><span class="hljs-comment">/**
+ * file copy
+ * <span class="hljs-doctag">@param</span> srcFile
+ * <span class="hljs-doctag">@param</span> destFile
+ * <span class="hljs-doctag">@throws</span> IOException
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fileCopy</span><span class="hljs-params">(File srcFile, File destFile)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    <span class="hljs-keyword">if</span> (!srcFile.exists()) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x3002;&quot;</span> + srcFile);
+    }
+    <span class="hljs-keyword">if</span> (!srcFile.isFile()) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;&#x975E;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x3002;&quot;</span> + srcFile);
+    }
+    FileInputStream in = <span class="hljs-keyword">new</span> FileInputStream(srcFile);
+    FileOutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(destFile);
+    <span class="hljs-keyword">byte</span>[] buffers = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[(<span class="hljs-keyword">int</span>)srcFile.length()];
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-keyword">while</span>((n = in.read(buffers, <span class="hljs-number">0</span>, buffers.length)) != -<span class="hljs-number">1</span>) {
+        out.write(buffers, <span class="hljs-number">0</span>, n);
+        out.flush();
+    }
+    in.close();
+    out.close();
+}
+</code></pre><p>FileOutPutDemo.java</p><pre><code class="lang-java">File srcFile = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;D:\\java\\temp\\out.dat&quot;</span>);
+File destFile = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;D:\\java\\temp\\copy.txt&quot;</span>);
+IOUtils.fileCopy(srcFile, destFile);
+</code></pre><h3 id="datainputstreamdataoutputstream">DataInputStream/DataOutputStream</h3><p>&#x5BF9;&#x201C;&#x6D41;&#x201D;&#x529F;&#x80FD;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#x7684;&#x8BFB;&#x53D6;int&#x3001;long&#x3001;&#x5B57;&#x7B26;&#x7B49;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;</p><pre><code class="lang-java"># DataOutputStream
+writeInt()/writeDouble()/writeUTF()...
+</code></pre><p>DataOutputStreamDemo.java</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> file.io;
+
+<span class="hljs-keyword">import</span> java.io.DataOutputStream;
+<span class="hljs-keyword">import</span> java.io.FileOutputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DataOutputStreamDemo</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        String filePath = <span class="hljs-string">&quot;D:\\java\\temp\\dos.dat&quot;</span>;
+        FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(filePath);
+        DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(fos);
+        <span class="hljs-comment">// write</span>
+        dos.writeInt(<span class="hljs-number">10</span>);
+        dos.writeInt(-<span class="hljs-number">10</span>);
+        dos.writeLong(<span class="hljs-number">10l</span>);
+        dos.writeDouble(<span class="hljs-number">10.5</span>);
+        <span class="hljs-comment">// &#x91C7;&#x7528;utf-8&#x7F16;&#x7801;&#x8F93;&#x51FA;</span>
+        dos.writeUTF(<span class="hljs-string">&quot;&#x4E2D;&#x56FD;&quot;</span>);
+        <span class="hljs-comment">// &#x91C7;&#x7528;utf-16be&#x7F16;&#x7801;&#x8F93;&#x51FA;</span>
+        dos.writeChars(<span class="hljs-string">&quot;&#x4E2D;&#x56FD;&quot;</span>);
+        dos.close();
+
+        IOUtils.printHex(filePath);
+        System.out.println(<span class="hljs-string">&quot;\n&quot;</span>);
+        IOUtils.printHexByByteArray(filePath);
+        System.out.println(<span class="hljs-string">&quot;\n&quot;</span>);
+        IOUtils.printHexByByteArray2(filePath);
+    }
+
+}
+</code></pre><p>DataInputStreamDemo.java</p><pre><code class="lang-java"><span class="hljs-keyword">package</span> file.io;
+
+<span class="hljs-keyword">import</span> java.io.DataInputStream;
+<span class="hljs-keyword">import</span> java.io.FileInputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DataInputStreamDemo</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        String filePath = <span class="hljs-string">&quot;D:\\java\\temp\\dos.dat&quot;</span>;
+        IOUtils.printHex(filePath);
+        System.out.println(<span class="hljs-string">&quot;\n&quot;</span>);
+
+        FileInputStream inputFile = <span class="hljs-keyword">new</span> FileInputStream(filePath);
+        DataInputStream dis = <span class="hljs-keyword">new</span> DataInputStream(inputFile);
+
+        <span class="hljs-comment">// read</span>
+        <span class="hljs-keyword">int</span> i = dis.readInt();
+        System.out.println(i);
+        i = dis.readInt();
+        System.out.println(i);
+
+        <span class="hljs-keyword">long</span> l = dis.readLong();
+        System.out.println(l);
+
+        <span class="hljs-keyword">double</span> d = dis.readDouble();
+        System.out.println(d);
+
+        String s = dis.readUTF();
+        System.out.println(s);
+
+        dis.close();
+    }
+
+}
+</code></pre><footer class="page-footer"><span class="copyright">&#xA9; 2019 <a href="https://github.com/capricorncd" target="_blank">Capricorncd</a>.</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-10-22 15:56:19</span></footer></section></div><div class="search-results"><div class="has-results"><h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1><ul class="search-results-list"></ul></div><div class="no-results"><h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1></div></div></div></div></div></div><a href="../oracle/pl-sql.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: PL/SQL程序设计"><i class="fa fa-angle-left"></i></a></div><script>var gitbook=gitbook||[];gitbook.push(function(){gitbook.page.hasChanged({page:{title:"Java I/O文件处理",level:"8.1",depth:1,previous:{title:"PL/SQL程序设计",level:"7.7",depth:1,path:"pages/oracle/pl-sql.md",ref:"pages/oracle/pl-sql.md",articles:[]},dir:"ltr"},config:{plugins:["-sharing","-lunr","-search","back-to-top-button","chapter-fold","expandable-chapters-small","flexible-alerts","insert-logo","search-pro","tbfed-pagefooter"],styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},pluginsConfig:{"tbfed-pagefooter":{copyright:'&copy 2019 <a href="https://github.com/capricorncd" target="_blank">Capricorncd</a>',modify_label:"该文件修订时间：",modify_format:"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search-pro":{},code:{copyButtons:!1},fontsettings:{theme:"white",family:"sans",size:2},highlight:{},"back-to-top-button":{},"expandable-chapters-small":{},"flexible-alerts":{style:"callout",note:{label:"Note",icon:"fa fa-info-circle",className:"info"},tip:{label:"Tip",icon:"fa fa-lightbulb-o",className:"tip"},warning:{label:"Warning",icon:"fa fa-exclamation-triangle",className:"warning"},danger:{label:"Attention",icon:"fa fa-ban",className:"danger"}},"theme-default":{styles:{website:"styles/website.css",pdf:"styles/pdf.css",epub:"styles/epub.css",mobi:"styles/mobi.css",ebook:"styles/ebook.css",print:"styles/print.css"},showLevel:!1},"insert-logo":{url:"/Java-Notes/logo.png",style:"background: none; max-height: 50px; min-height: 30px"}},theme:"default",author:"Capricorncd",pdf:{pageNumbers:!0,fontSize:12,fontFamily:"Arial",paperSize:"a4",chapterMark:"pagebreak",pageBreaksBefore:"/",margin:{right:62,left:62,top:56,bottom:56}},structure:{langs:"LANGS.md",readme:"README.md",glossary:"GLOSSARY.md",summary:"SUMMARY.md"},variables:{},title:"Java Basic Tutorial Notes",gitbook:"*"},file:{path:"pages/file/README.md",mtime:"2019-10-22T06:56:19.393Z",type:"markdown"},gitbook:{version:"3.2.3",time:"2019-10-22T12:56:16.626Z"},basePath:"../..",book:{language:""}})})</script></div><script src="../../gitbook/gitbook.js"></script><script src="../../gitbook/theme.js"></script><script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script><script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script><script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script><script src="../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script><script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script><script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script><script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script></body></html>
