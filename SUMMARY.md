@@ -119,6 +119,8 @@
 
 * [查询语句sql](pages/oracle/sql.md)
 
+* [Oracle高级查询](pages/oracle/3-Oracle高级查询.md)
+
 * [PL/SQL程序设计](pages/oracle/pl-sql.md)
 
 ### 文件处理
