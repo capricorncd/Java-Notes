@@ -126,3 +126,9 @@
 ### 文件处理
 
 * [Java I/O文件处理](pages/file/README.md)
+
+### 消息摘要算法及应用
+
+* [MD2/MD4/MD5](pages/message-digest/README.md)
+
+* [SHA-1/SHA-2](pages/message-digest/SHA.md)
