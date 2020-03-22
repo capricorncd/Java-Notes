@@ -6,11 +6,13 @@ SHA(Secure Hash Algorithm)
 
 MAC(Message Authentication Code)
 
+其他如：RipeMD, Tiger, Whirlpool, GOST3411等，均由Bouncy Castle实现。
+
+### 消息摘要算法--MD(Message Digest)
+
 作用：验证数据的完整性
 
 是数字签名核心算法
-
-### 消息摘要算法--Message Digest
 
 MD5
 
@@ -22,7 +24,7 @@ MD家族（128位摘要信息）-MD2，MD4
 |MD4|128|Bouncy Castle|
 |MD5|128|JDK|
 
-#### 代码实现
+### 代码实现
 
 ```java
 package md.test;

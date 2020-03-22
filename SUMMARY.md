@@ -132,3 +132,5 @@
 * [MD2/MD4/MD5](pages/message-digest/README.md)
 
 * [SHA-1/SHA-2](pages/message-digest/SHA.md)
+
+* [MAC/HMAC](pages/message-digest/MAC.md)
