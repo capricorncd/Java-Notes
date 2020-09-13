@@ -96,3 +96,6 @@ public/**
 # Java Project
 .metadata/
 .classpath
+
+package-lock.json
+yarn.lock
