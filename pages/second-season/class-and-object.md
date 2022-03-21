@@ -93,11 +93,11 @@ public class Telphone {
     float memory;
 
     // 3. 方法 干什么
-    vodi call() {
+    void call() {
       System.out.println("Telphone有打电话的功能");
     }
 
-    vodi sendMessage() {
+    void sendMessage() {
         System.out.println("Telphone有发短信的功能");
     }
 }
