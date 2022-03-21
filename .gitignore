@@ -104,4 +104,4 @@ yarn.lock
 
 # compiled temporary file
 # コンパイルされた一時ファイル
-codes/homework/*.class
+codes/homework/**/*.class
