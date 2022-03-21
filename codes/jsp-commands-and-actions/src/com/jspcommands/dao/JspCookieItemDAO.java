@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import com.jspcommands.entity.JspCookieItem;
 import com.jspcommands.util.DBHelper;
 
-// ÉÌÆ·ÒµÎñÂß¼­Àà
+// å•†å“ä¸šåŠ¡é€»è¾‘ç±»
 public class JspCookieItemDAO {
-  // »ñÈ¡ËùÓĞÉÌÆ·ÁĞ±í
+  // è·å–æ‰€æœ‰å•†å“åˆ—è¡¨
   public ArrayList<JspCookieItem> getAllItems() {
     Connection conn = null;
     PreparedStatement stat = null;
@@ -18,14 +18,14 @@ public class JspCookieItemDAO {
     
     ArrayList<JspCookieItem> list = new ArrayList<JspCookieItem>();
     
-    // System.out.println("=============ArrayListÏÂÃæ³¢ÊÔ»ñÈ¡Êı¾İ");
+    // System.out.println("=============ArrayListä¸‹é¢å°è¯•è·å–æ•°æ®");
     
     try {
       conn = DBHelper.getConnection();
       String sql = "select * from jsp_cookie_items";
       stat = conn.prepareStatement(sql);
       rs = stat.executeQuery();
-      // System.out.println("=============Ö´ĞĞtry");
+      // System.out.println("============= exec try");
       while(rs.next()) {
         JspCookieItem item = new JspCookieItem();
         item.setId(rs.getInt("id"));
@@ -34,14 +34,14 @@ public class JspCookieItemDAO {
         item.setPrice(rs.getDouble("price"));
         item.setStock(rs.getInt("stock"));
         item.setCover(rs.getString("cover"));
-        System.out.println("=========whileÑ­»·ÖĞ: " + rs.getString("name"));
+        System.out.println("========= while in loop: " + rs.getString("name"));
         list.add(item);
       }
       return list;
     } catch(Exception ex) {
       ex.printStackTrace();
     } finally {
-      // ÊÍ·ÅÊı¾İ¼¯¶ÔÏó
+      // é‡Šæ”¾æ•°æ®é›†å¯¹è±¡
       if (rs != null) {
         try {
           rs.close();
@@ -50,7 +50,7 @@ public class JspCookieItemDAO {
           ex.printStackTrace();
         }
       }
-      // ÊÍ·ÅÓï¾ä¶ÔÏó
+      // é‡Šæ”¾è¯­å¥å¯¹è±¡
       if (stat != null) {
         try {
           stat.close();
@@ -65,7 +65,7 @@ public class JspCookieItemDAO {
   }
   
   /**
-   * »ñÈ¡ÉÌÆ·ÏêÇé
+   * è·å–å•†å“è¯¦æƒ…
    * @param id
    * @return
    */
@@ -79,7 +79,7 @@ public class JspCookieItemDAO {
       stat = conn.prepareStatement(sql);
       stat.setInt(1, id);
       rs = stat.executeQuery();
-      // System.out.println("=============Ö´ĞĞtry");
+      // System.out.println("============= exec try");
       if(rs.next()) {
         JspCookieItem item = new JspCookieItem();
         item.setId(rs.getInt("id"));
@@ -93,7 +93,7 @@ public class JspCookieItemDAO {
     } catch(Exception ex) {
       ex.printStackTrace();
     } finally {
-      // ÊÍ·ÅÊı¾İ¼¯¶ÔÏó
+      // é‡Šæ”¾æ•°æ®é›†å¯¹è±¡
       if (rs != null) {
         try {
           rs.close();
@@ -102,7 +102,7 @@ public class JspCookieItemDAO {
           ex.printStackTrace();
         }
       }
-      // ÊÍ·ÅÓï¾ä¶ÔÏó
+      // é‡Šæ”¾è¯­å¥å¯¹è±¡
       if (stat != null) {
         try {
           stat.close();
@@ -117,7 +117,7 @@ public class JspCookieItemDAO {
   }
   
   /**
-   * get »ñÈ¡×î½üä¯ÀÀµÄ5Ìõ¼ÇÂ¼
+   * get è·å–æœ€è¿‘æµè§ˆçš„5æ¡è®°å½•
    * @param records
    * @return
    */

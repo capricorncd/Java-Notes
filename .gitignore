@@ -99,3 +99,9 @@ public/**
 
 package-lock.json
 yarn.lock
+
+.vscode
+
+# compiled temporary file
+# コンパイルされた一時ファイル
+codes/homework/*.class
