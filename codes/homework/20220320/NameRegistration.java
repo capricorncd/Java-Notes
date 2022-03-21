@@ -19,6 +19,13 @@ public class Cat {
     }
 }
  */
+class Test {
+    public static void main(String[] args) {
+        NameRegistration cat = new NameRegistration();
+        cat.setName("Abigail", "Doe");
+        System.out.println("Cat's name is " + cat.getName());
+    }
+} 
 
 public class NameRegistration {
     private String fullName;
@@ -30,9 +37,7 @@ public class NameRegistration {
         this.fullName = fullName;
     }
 
-    public static void main(String[] args) {
-        NameRegistration cat = new NameRegistration();
-        cat.setName("Abigail", "Doe");
-        System.out.println("Cat's name is " + cat.fullName);
+    public String getName() {
+        return this.fullName;
     }
 }

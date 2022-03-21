@@ -18,19 +18,32 @@ public class Cat {
     }
 }
  */
-
-public class Cat {
-    private static int catCount = 0;
-
-    public static void addNewCat() {
-        catCount++;
-    }
-
+class Test {
     public static void main(String[] args) {
         Cat.addNewCat();
         Cat.addNewCat();
         Cat.addNewCat();
-        System.out.println(Cat.catCount); // 3
+        System.out.println(Cat.getCount()); // 3
+    }
+}
+
+public class Cat {
+    // 已登记的猫的数量
+    private static int catCount = 0;
+
+    /**
+     * 登记猫的数量
+     */
+    public static void addNewCat() {
+        catCount++;
+    }
+
+    /**
+     * 使外部能获取到已登记的猫的数量
+     * @return total int
+     */
+    public static int getCount() {
+        return catCount;
     }
 }
 

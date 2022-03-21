@@ -26,7 +26,7 @@ public class Apple {
         }
 }
  */
-public class ApplePrice {
+public class Test {
     public static void main(String[] args) {
         Apple apple = new Apple();
         apple.addPrice(50);
@@ -35,13 +35,13 @@ public class ApplePrice {
         System.out.println("apple price is " + Apple.price);
         // apple price is 150
     }
+}
 
-    public static class Apple {
-        public static int price = 0;
+public class Apple {
+    public static int price = 0;
 
-        // 每次调用该方法，所有Apple实例的价格都会增加
-        public void addPrice(int applePrice) {
-            price += applePrice;
-        }
+    // 修改所有Apple实例的价格
+    public void addPrice(int applePrice) {
+        price = applePrice;
     }
 }

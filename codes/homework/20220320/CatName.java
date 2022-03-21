@@ -12,18 +12,30 @@ public static void main(String[] args) {
 创建Cat类，注意main方法中关于Cat类的相关内容。
  */
 
-public class CatName {
+public class Test {
     public static void main(String[] args) {
         Cat cat = new Cat();
         cat.setName("Shinba");
-        System.out.println(cat.name);
+        System.out.println(cat.getName());
+    }
+}
+
+public class Cat {
+    private String name;
+
+    /**
+     * 设置猫的名字
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static class Cat {
-        private String name;
-
-        public void setName(String name) {
-            this.name = name;
-        }
+    /**
+     * 获取猫的名字
+     * @return
+     */
+    public String getName() {
+        return this.name;
     }
 }

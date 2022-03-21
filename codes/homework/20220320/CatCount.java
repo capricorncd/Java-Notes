@@ -20,17 +20,23 @@ public class Cat {
 }
  */
 
-public class CatCount {
+class Test {
+    public static void main(String[] args) {
+        Cat.setCatCount(1);
+        Cat.setCatCount(2);
+        Cat.setCatCount(5);
+        System.out.println(Cat.getCatCount()); // 8
+    }
+}
+
+public class Cat {
     private static int catCount = 0;
 
     public static void setCatCount(int count) {
         catCount += count;
     }
 
-    public static void main(String[] args) {
-        CatCount.setCatCount(1);
-        CatCount.setCatCount(2);
-        CatCount.setCatCount(5);
-        System.out.println(CatCount.catCount); // 8
+    public static int getCatCount() {
+        return catCount;
     }
 }

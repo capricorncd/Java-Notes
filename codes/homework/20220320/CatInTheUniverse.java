@@ -24,8 +24,7 @@ public class 类名{
     }
 }
  */
-
-public class CatInTheUniverse {
+class Test {
     public static void main(String[] args) {
         Cat cat1 = new Cat();
         //在此编写你的代码
@@ -37,12 +36,12 @@ public class CatInTheUniverse {
 
         System.out.println("猫的计数为 " + Cat.count);
     }
+}
 
-    public static class Cat {
-        public static int count = 0;
+class Cat {
+    public static int count = 0;
 
-        public void setCount() {
-            count++;
-        }
+    public void setCount() {
+        count++;
     }
 }
