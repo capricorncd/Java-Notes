@@ -55,10 +55,10 @@ class Test {
         Cat cat1 = new Cat("Tom");
         System.out.println(cat1);
 
-        Cat cat2 = new Cat("Jack");
+        Cat cat2 = new Cat("Tyson");
         System.out.println(cat2);
 
-        Cat cat3 = new Cat("Jack");
+        Cat cat3 = new Cat("Stallone");
         System.out.println(cat3);
 
         // 5.猫类大屠杀
