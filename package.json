@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "dev": "vuepress dev pages",
-    "build": "vuepress build pages"
+    "build": "vuepress build pages && npm run fix:build",
+    "fix:build": "node scripts/after-build.cjs"
   },
   "repository": {
     "type": "git",
