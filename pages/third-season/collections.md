@@ -196,19 +196,24 @@ public class Student implements Comparable<Student> {
 
 注意：当id为String类型时，其结果：
 
-![](img/comparable-warning.jpg)
+![](/img/comparable-warning.jpg)
 
-> [!NOTE|style:flat|label:扩展练习]
+::: tip 扩展练习
 
-> 利用Collections.sort()方法，对泛型为String的List进行排序
+利用Collections.sort()方法，对泛型为String的List进行排序
+:::
 
-> * 创建完List<String>后，往其中添加10条随机字符串
+* 创建完List<String>后，往其中添加10条随机字符串
+:::
 
-> * 每条字符串长度为10以内的随机整数
+* 每条字符串长度为10以内的随机整数
+:::
 
-> * 每条字符串的每个字符都为随机生成的字符，字符可以重复
+* 每条字符串的每个字符都为随机生成的字符，字符可以重复
+:::
 
-> * 每条随机字符串不可重复
+* 每条随机字符串不可重复
+:::
 
 ### Comparator接口 —— 比较工具接口
 

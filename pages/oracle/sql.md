@@ -43,7 +43,7 @@ COLUMN column_name HEADING new_name
 
 **COLUMN** 可以简写为 `COL`
 
-![sql-column-heading](img/sql-column-heading.png)
+![sql-column-heading](/img/oracle/sql-column-heading.png)
 
 * 设置查询结果显示格式：
 
@@ -56,11 +56,12 @@ COLUMN column_name FORMAT dataformat
 |字符类型|a10|10代表字符显示长度|
 |数字类型|99.9|用9表示一个数字，10输出结果为10.0；加其他符号将被直接输出，如$99.9，输出为$10.0|
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 字符类型只能设置其显示长度。
+字符类型只能设置其显示长度。
+:::
 
-![sql-column-format](img/sql-column-format.png)
+![sql-column-format](/img/oracle/sql-column-format.png)
 
 * 清除已设置的格式：
 
@@ -82,11 +83,12 @@ select * from table_name;
 SELECT column_name AS new_name, ... FROM table_name
 ```
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> AS关键字可以省略，用空格隔开原来的字段名和新字段名即可。
+AS关键字可以省略，用空格隔开原来的字段名和新字段名即可。
+:::
 
-![sql-as-and-distinct](img/sql-as-and-distinct.png)
+![sql-as-and-distinct](/img/oracle/sql-as-and-distinct.png)
 
 ### 运算符和表达式
 
@@ -103,15 +105,17 @@ Oracle中的操作数可以有变量、常量和字段
 逻辑运算符：and, or, not，优先级按not、and、or顺序依次递减
 ```
 
-> [!TIP|style:flat|lable:优先级]
+::: tip 优先级
 
-> 逻辑运算符优先级按not、and、or顺序依次递减
+逻辑运算符优先级按not、and、or顺序依次递减
+:::
 
-> 比较运算符的优先级高于逻辑运算符
+比较运算符的优先级高于逻辑运算符
+:::
 
 ### 在SELECT语句中使用运算符
 
-![sql-operator](img/sql-operator.png)
+![sql-operator](/img/oracle/sql-operator.png)
 
 ### 带条件的查询
 
@@ -127,7 +131,7 @@ select * from users where id='2';
 select * from users where username='Jack' or salary>1000;
 ```
 
-![sql-select-conditions](img/sql-select-conditions.png)
+![sql-select-conditions](/img/oracle/sql-select-conditions.png)
 
 ### 模糊查询
 
@@ -144,7 +148,7 @@ select * from users where username='Jack' or salary>1000;
 select * from users where username like 't%';
 ```
 
-![sql-select-like](img/sql-select-like.png)
+![sql-select-like](/img/oracle/sql-select-like.png)
 
 ### 范围查询
 
@@ -155,7 +159,7 @@ BETWEEN ... AND ...
 IN/NO IN
 ```
 
-![sql-select-between-and-in](img/sql-select-between-and-in.png)
+![sql-select-between-and-in](/img/oracle/sql-select-between-and-in.png)
 
 ### 对查询结果排序
 
@@ -167,7 +171,7 @@ SELECT ... FROM ... [WHERE] ORDER BY column1 DESC/ASC, column2 DESC/ASC...
 # asc 降序
 ```
 
-![sql-select-order-by](img/sql-select-order-by.png)
+![sql-select-order-by](/img/oracle/sql-select-order-by.png)
 
 ### case...when语句的使用
 
@@ -177,7 +181,7 @@ WHEN value1 THEN result1, ...
 [ELSE result] END
 ```
 
-![sql-case-when1](img/sql-case-when1.png)
+![sql-case-when1](/img/oracle/sql-case-when1.png)
 
 ```
 CASE
@@ -185,7 +189,7 @@ WHEN column_name=value1
 THEN result1, ...[ELSE result] END
 ```
 
-![sql-case-when1](img/sql-case-when2.png)
+![sql-case-when1](/img/oracle/sql-case-when2.png)
 
 
 ### decode函数的使用
@@ -194,4 +198,4 @@ THEN result1, ...[ELSE result] END
 decode (column_name, value1, result1, ..., defaultvalue)
 ```
 
-![sql-decode](img/sql-decode.png)
+![sql-decode](/img/oracle/sql-decode.png)

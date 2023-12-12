@@ -14,27 +14,30 @@ UML 2.2一共定义了14种图示（diagrams）。
 
 用例图（The Use Case Diagram）
 
-> [!TIP|style:flat|label:The Use Case Diagram]
+::: tip The Use Case Diagram
 
-> 用例图能够以可视化的方式，表达系统如何满足所收集的业务规则，以及特定的用户需求等信息。
+用例图能够以可视化的方式，表达系统如何满足所收集的业务规则，以及特定的用户需求等信息。
+:::
 
-![](img/UML-Use-Case-Diagram.png)
+![](/img/UML-Use-Case-Diagram.png)
 
 序列图（The Sequence Diagram）
 
-> [!TIP|style:flat|label:The Sequence Diagram]
+::: tip The Sequence Diagram
 
-> 序列图用于安装交互发生的一系列顺序，显示对象之间的这些交互。
+序列图用于安装交互发生的一系列顺序，显示对象之间的这些交互。
+:::
 
-![](img/UML-Sequence-Diagram.jpg)
+![](/img/UML-Sequence-Diagram.jpg)
 
 类图（The Class Diagram）
 
-> [!TIP|style:flat|label:The Class Diagram]
+::: tip The Class Diagram
 
-> UML类图、业务逻辑和所有支持结构一同被用于定义全部的代码结构。
+UML类图、业务逻辑和所有支持结构一同被用于定义全部的代码结构。
+:::
 
-![](img/UML-Class-Diagram.jpg)
+![](/img/UML-Class-Diagram.jpg)
 
 UML建模工具
 
@@ -118,7 +121,7 @@ UML各种图的中文译名，因为翻译的原因可能会有所不一样，�
 
 ##### 类图(Class Diagram)
 
-![某模具系统类图](img/uml/class-diagram.jpg)
+![某模具系统类图](/img/uml/class-diagram.jpg)
 
 某模具系统类图
 
@@ -126,7 +129,7 @@ UML各种图的中文译名，因为翻译的原因可能会有所不一样，�
 
 再看下面这个Person类图，这时软件设计时用到的一个图：
 
-![Person类图](img/uml/class-diagram2.jpg)
+![Person类图](/img/uml/class-diagram2.jpg)
 
 Person类图
 
@@ -148,7 +151,7 @@ Person person = new Person();
 
 类(Class)实例化后就是对象(Object)，对象person是类Person的实例，上述代码可以用对象图表示如下：
 
-![Person类的对象图](img/uml/object-diagram.jpg)
+![Person类的对象图](/img/uml/object-diagram.jpg)
 
 Person类的对象图
 
@@ -162,7 +165,7 @@ Person类的对象图
 
 一辆汽车由轮子、发动机等物理部件组成，一个软件往往也是由很多“物理部件”(如：控件、重用构件等)组成的，构件图就是用来描述软件内部物理组成的一种图。下图是某权限构件设计图：
 
-![某权限构件设计图](img/uml/component-diagram.jpg)
+![某权限构件设计图](/img/uml/component-diagram.jpg)
 
 图1.4某权限构件设计图
 
@@ -180,7 +183,7 @@ Person类的对象图
 
 部署图是用来描述系统如何部署、本系统与其他系统是怎样的关系的一种图，如下图：
 
-![图 1.5 某24小时便利店的管理系统部署图](img/uml/deployment-diagram.jpg)
+![图 1.5 某24小时便利店的管理系统部署图](/img/uml/deployment-diagram.jpg)
 
 图 1.5 某24小时便利店的管理系统部署图
 
@@ -198,7 +201,7 @@ Package有“打包”的意思，包图的主要用途是“打包”类图。�
 
 下图是包图的一个示例：
 
-![包图](img/uml/package-diagram.jpg)
+![包图](/img/uml/package-diagram.jpg)
 
 包图
 
@@ -212,7 +215,7 @@ Package有“打包”的意思，包图的主要用途是“打包”类图。�
 
 我们将起床到出门上班这个过程画成活动图，可能是这样的：
 
-![起床到出门上班的活动图](img/uml/activity-diagram.jpg)
+![起床到出门上班的活动图](/img/uml/activity-diagram.jpg)
 
 图 1.7 起床到出门上班的活动图
 
@@ -224,7 +227,7 @@ Package有“打包”的意思，包图的主要用途是“打包”类图。�
 
 状态机图从某个物品的状态是如何变化的角度来展示流程，下图某请假条审批流程：
 
-![请假处理流程](img/uml/state-machine-diagram.jpg)
+![请假处理流程](/img/uml/state-machine-diagram.jpg)
 
 图 1.8 请假处理流程
 
@@ -234,7 +237,7 @@ Package有“打包”的意思，包图的主要用途是“打包”类图。�
 
 你去餐厅吃饭，向服务员点餐到服务员送菜上来，这个过程用顺序图可表示如下：
 
-![点菜的顺序图](img/uml/sequence-diagram.jpg)
+![点菜的顺序图](/img/uml/sequence-diagram.jpg)
 
 图 1.9 点菜的顺序图
 
@@ -248,7 +251,7 @@ UML1.1时，该图英文名为Collaboration Diagram;UML2.x时，英文名为Comm
 
 通信图是顺序图的另外一种画法，点菜的顺序图，如果用通信图来画可表示如下：
 
-![点菜的通信图](img/uml/communication-diagram.jpg)
+![点菜的通信图](/img/uml/communication-diagram.jpg)
 
 图 1.10 点菜的通信图
 
@@ -260,7 +263,7 @@ UML1.1时，该图英文名为Collaboration Diagram;UML2.x时，英文名为Comm
 
 下图是用例图的示意图：
 
-![用例图](img/uml/use-case-diagram.jpg)
+![用例图](/img/uml/use-case-diagram.jpg)
 
 图 1.11 用例图
 
@@ -272,7 +275,7 @@ UML1.1时，该图英文名为Collaboration Diagram;UML2.x时，英文名为Comm
 
 时序图是表示某东西的状态随时间变化而变化的一种图，参见下图：
 
-![灯的开关状态随时间变化图](img/uml/timing-diagram.jpg)
+![灯的开关状态随时间变化图](/img/uml/timing-diagram.jpg)
 
 图 1.12 灯的开关状态随时间变化图
 
@@ -282,7 +285,7 @@ UML1.1时，该图英文名为Collaboration Diagram;UML2.x时，英文名为Comm
 
 ### 下面通过这个表格来总结一下我在需求分析工作中应用各种UML图的情况：
 
-![](img/uml/diagram-table.jpg)
+![](/img/uml/diagram-table.jpg)
 
 表 1.1 各种UML图实际应用情况
 

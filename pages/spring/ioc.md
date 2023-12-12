@@ -77,7 +77,7 @@ public class Main {
 
 比如我们住的房子，不会自己画图纸修建，而是之间找开发商或中介购买使用。
 
-![](img/ioc.png)
+![](/img/spring/ioc.png)
 
 **扩展阅读**
 

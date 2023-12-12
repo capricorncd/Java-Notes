@@ -136,13 +136,16 @@ int m = j.intValue();
 int n = j;
 ```
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> Integer 类型可以自动转化为 int 基本类型
+Integer 类型可以自动转化为 int 基本类型
+:::
 
-> int 类型对应的包装类是 java.lang.Integer
+int 类型对应的包装类是 java.lang.Integer
+:::
 
-> long 类型可以自动转化为 Long类型
+long 类型可以自动转化为 Long类型
+:::
 
 ### 基本类型和字符串之间的转换
 
@@ -179,11 +182,14 @@ int e = Integer.valueOf(str);
 
 PS：其他基本类型与字符串的相互转化这里不再一一列出，方法都类似。
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> 每一个基本数据类型，都对应一个包装类
+每一个基本数据类型，都对应一个包装类
+:::
 
-> 包装类都在 java.lang 包中
+包装类都在 java.lang 包中
+:::
 
-> 包装类提供了在不同类型间进行转换的方法
+包装类提供了在不同类型间进行转换的方法
+:::
 

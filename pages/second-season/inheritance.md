@@ -2,9 +2,10 @@
 
 继承是类与类的一种关系，是一种`is a`的关系。
 
-> [!TIP|style:flat]
+::: tip
 
-> Java中的继承是单继承。
+Java中的继承是单继承。
+:::
 
 ### 优点：
 
@@ -162,4 +163,4 @@ Object类中的方法，适合所有子类。
 source -> Generate hasCode() and equals()...
 ```
 
-![](img/object-2.jpg)
+![](/img/object-2.jpg)

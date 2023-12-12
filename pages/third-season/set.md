@@ -2,25 +2,31 @@
 
 Set是元素无序，并且不可以重复的集合，被称为**集**。
 
-![](img/set-methods.png)
+![](/img/set-methods.png)
 
 HashSet：哈希集，是Set的一个重要实现类。
 
-![](img/hash-set-methods.png)
+![](/img/hash-set-methods.png)
 
-> [!NOTE|label:案例功能说明]
+::: tip 案例功能说明
 
-> 提供备选课程
+提供备选课程
+:::
 
-> 创建学生对象，并给该学生添加三门课程（添加在学生的courses——Set类型的属性中）
+创建学生对象，并给该学生添加三门课程（添加在学生的courses——Set类型的属性中）
+:::
 
-> * 显示备选课程
+* 显示备选课程
+:::
 
-> * 循环三次，每次输入课程ID
+* 循环三次，每次输入课程ID
+:::
 
-> * 往学生的Courses属性中添加与输入的ID匹配的课程
+* 往学生的Courses属性中添加与输入的ID匹配的课程
+:::
 
-> * 输出学生选课的课程
+* 输出学生选课的课程
+:::
 
 Student类
 
@@ -136,13 +142,16 @@ public class TestSet {
 }
 ```
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> Set 只能使用 foreach或iterator遍历，不能像List那样使用get()方法。
+Set 只能使用 foreach或iterator遍历，不能像List那样使用get()方法。
+:::
 
-> 因为Set是无序的，不能通过索引去查找元素，只能通过foreach或iterator一个个循环迭代出来。而且每次迭代出来的结果顺序都可能不同。
+因为Set是无序的，不能通过索引去查找元素，只能通过foreach或iterator一个个循环迭代出来。而且每次迭代出来的结果顺序都可能不同。
+:::
 
-> Set中可以添加 `null` 空对象，不过在实际应用中不常见。
+Set中可以添加 `null` 空对象，不过在实际应用中不常见。
+:::
 
 ### 代码
 

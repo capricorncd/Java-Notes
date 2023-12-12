@@ -102,11 +102,13 @@ BeanScope say: 161960012
 
 定义、初始化、使用、销毁
 
-> [!TIP|style:flat|label:初始化的两种方式]
+::: tip 初始化的两种方式
 
-> 实现org.springframework.beans.factory.InitializingBean接口，覆盖afterPropertiesSet方法
+实现org.springframework.beans.factory.InitializingBean接口，覆盖afterPropertiesSet方法
+:::
 
-> 配置init-method
+配置init-method
+:::
 
 覆盖afterPropertiesSet方法
 
@@ -133,11 +135,13 @@ public class ExampleBean {
 }
 ```
 
-> [!TIP|style:flat|label:销毁的两种方式]
+::: tip 销毁的两种方式
 
-> 实现org.springframework.beans.factory.DisposableBean接口，覆盖destroy方法
+实现org.springframework.beans.factory.DisposableBean接口，覆盖destroy方法
+:::
 
-> 配置destroy-method
+配置destroy-method
+:::
 
 覆盖destroy方法
 
@@ -396,9 +400,10 @@ BeanLifeCycle init
 BeanLifeCycleOverride: destroy
 BeanLifeCycle destroy
 ```
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 默认的default-init(destroy)-method配置未生效。
+默认的default-init(destroy)-method配置未生效。
+:::
 
 ### Aware接口
 

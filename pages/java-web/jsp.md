@@ -1,12 +1,10 @@
 # Jsp基本语法
 
-> [!TIP|style:flat|label:JSP（Java Server Pages]
-
-> 其根本是一个简化的Servlet设计，他实现了在Java当中使用HTML标签。
-
-> JSP是一种动态网页技术标准，也是JavaEE的标准。
-
-> JSP与Servlet一样，是在服务器端执行的。
+::: tip JSP（Java Server Pages
+其根本是一个简化的Servlet设计，他实现了在Java当中使用HTML标签。
+JSP是一种动态网页技术标准，也是JavaEE的标准。
+JSP与Servlet一样，是在服务器端执行的。
+:::
 
 |名称|说明|
 |:--|:--|
@@ -16,7 +14,7 @@
 
 ### JSP页面元素构成
 
-![jsp-page-struct](img/jsp-page-struct.jpg)
+![jsp-page-struct](/img/jsp-page-struct.jpg)
 
 ### JSP指令
 
@@ -117,7 +115,7 @@ add方法输出：10 + 20 = <%=add(10, 20)%>
 
 ### JSP生命周期
 
-![jsp-life-cycle](img/jsp-life-cycle.png)
+![jsp-life-cycle](/img/jsp-life-cycle.png)
 
 **jspService()方法**被调用来处理客户端的请求。对每一个请求，JSP引擎创建一个新的线程来处理该请求。
 
@@ -128,17 +126,13 @@ add方法输出：10 + 20 = <%=add(10, 20)%>
 /tomcatx.x/work/Catalina/localhost/MyEclipseTest090301
 ```
 
-> [!WARNING|style:flat|label:练习]
-
-> 当用户第一次请求一个jsp页面时，首先被执行的方法是(A)
-
-> A. **构造方法**
-
-> B. jspInit()
-
-> C. jspService()
-
-> D. jspDestroy()
+::: warning 练习
+当用户第一次请求一个jsp页面时，首先被执行的方法是(A)
+A. **构造方法**
+B. jspInit()
+C. jspService()
+D. jspDestroy()
+:::
 
 ```
 codes/first-eclipse-web-project/

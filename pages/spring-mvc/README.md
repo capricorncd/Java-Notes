@@ -1,6 +1,6 @@
 # Spring MVC起步
 
-![font-controller](img/font-controller.jpg)
+![font-controller](/img/spring-mvc/font-controller.jpg)
 
 * Font Controller分发调度
 
@@ -20,27 +20,31 @@ Model-View-Controller
 
 **控制层**调用业务逻辑产生合适的数据(Model)传递给视图层用于呈现
 
-> [!TIP|style:flat|label:MVC]
+::: tip MVC
 
-> **MVC是一种架构模式**
+**MVC是一种架构模式**
+:::
 
-> 程序分层，分工合作，既相互独立，又协同工作。
+程序分层，分工合作，既相互独立，又协同工作。
+:::
 
-> **MVC是一种思考方式**
+**MVC是一种思考方式**
+:::
 
-> 需要将什么信息展示给用户？如何布局？调用哪些业务逻辑？
+需要将什么信息展示给用户？如何布局？调用哪些业务逻辑？
+:::
 
 ### Spring MVC静态概念
 
 * DispatcherServlet
 
-![dispatcher-servlet](img/dispatcher-servlet.png)
+![dispatcher-servlet](/img/spring-mvc/dispatcher-servlet.png)
 
 * Controller
 
 * HandlerAdapter：DispatcherServlet内部使用类，就是Controller的一个表现形式
 
-![handler-adapter](img/handler-adapter.png)
+![handler-adapter](/img/spring-mvc/handler-adapter.png)
 
 ```
 adapter 英 [əˈdæptə]   美 [əˈdæptər]  
@@ -55,7 +59,7 @@ n.(电器设备的)转接器，适配器;改编者;改写者
 
 * HandlerExecutionChain
 
-![handler-execution-chain](img/handler-execution-chain.png)
+![handler-execution-chain](/img/spring-mvc/handler-execution-chain.png)
 
 内部实现使用的是Java的反射机制
 
@@ -67,9 +71,9 @@ n.(电器设备的)转接器，适配器;改编者;改写者
 
 ### Spring MVC动态概念
 
-![handler-flow](img/handler-flow.png)
+![handler-flow](/img/spring-mvc/handler-flow.png)
 
-![handler-flow](img/handler-flow2.png)
+![handler-flow](/img/spring-mvc/handler-flow2.png)
 
 ### Maven 搭建Spring MVC项目开发环境
 
@@ -140,7 +144,7 @@ https://maven.apache.org/ref/3.6.1/maven-model/maven.html
 
 四个属性：groupId, artifactId, version, packaging(默认值jar)，通过这四个属性就可以标识唯一的一个坐标??
 
-![maven-coordinates](img/maven-coordinates.jpg)
+![maven-coordinates](/img/spring-mvc/maven-coordinates.jpg)
 
 ## 安装Maven
 
@@ -148,7 +152,7 @@ https://maven.apache.org/ref/3.6.1/maven-model/maven.html
 
 * 配置环境变量(M2_HOME, Path)
 
-![system-variables](img/system-variables.png)
+![system-variables](/img/spring-mvc/system-variables.png)
 
 ```
 拷贝conf/setting.xml到user/.m2/目录中
@@ -176,7 +180,7 @@ https://maven.apache.org/ref/3.6.1/maven-model/maven.html
 
 * Eclipse集成Maven(下载eclipse kepler自带m2e)
 
-![eclipse-maven-installations](img/eclipse-maven-installations.png)
+![eclipse-maven-installations](/img/spring-mvc/eclipse-maven-installations.png)
 
 ```
 # 创建目录结构
@@ -185,7 +189,7 @@ mvn archetype:generate -DgroupId=test-java-maven -DartifactId=spring-mvc-demo1 -
 
 Eclipse导入通过命令创建的项目：
 
-![eclipse-import-maven-project](img/eclipse-import-maven-project.png)
+![eclipse-import-maven-project](/img/spring-mvc/eclipse-import-maven-project.png)
 
 修改pom.xml
 

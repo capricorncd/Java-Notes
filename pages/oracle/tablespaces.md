@@ -1,18 +1,24 @@
 # 表空间
 
-> [!TIP|style:flat|label:表空间]
+::: tip 表空间
 
-> **数据库与表空间**
+**数据库与表空间**
+:::
 
-> **表空间**实际上是**数据库的逻辑存储空间**，可以理解为在数据库中开辟的一个空间，用来**存储数据库对象**。一个数据库可以由多个表空间构成。
+**表空间**实际上是**数据库的逻辑存储空间**，可以理解为在数据库中开辟的一个空间，用来**存储数据库对象**。一个数据库可以由多个表空间构成。
+:::
 
-> 此特点也是与MySQL等数据库的主要区别。Oracle的很多优化也是通过表空间来实现的。
+此特点也是与MySQL等数据库的主要区别。Oracle的很多优化也是通过表空间来实现的。
+:::
 
-> **表空间与数据文件**
+**表空间与数据文件**
+:::
 
-> **表空间**实际上是由**多个数据文件**构成的，数据文件的大小和位置可以由用户自己定义。
+**表空间**实际上是由**多个数据文件**构成的，数据文件的大小和位置可以由用户自己定义。
+:::
 
-> 表空间可分为：永久表空间、临时表空间、UNDO表空间
+表空间可分为：永久表空间、临时表空间、UNDO表空间
+:::
 
 **永久表空间**
 
@@ -37,9 +43,9 @@ user_tablespaces
 
 **系统用户**
 
-![sql-plus-dba-tablespaces](img/sql-plus-dba-tablespaces.png)
+![sql-plus-dba-tablespaces](/img/oracle/sql-plus-dba-tablespaces.png)
 
-![sql-plus-dba-tablespaces](img/sql-plus-dba-tablespace-name.png)
+![sql-plus-dba-tablespaces](/img/oracle/sql-plus-dba-tablespace-name.png)
 
 SYSTEM: 系统表空间
 
@@ -53,7 +59,7 @@ USERS:
 
 **普通用户**
 
-![sql-plus-users-tablespaces](img/sql-plus-users-tablespaces.png)
+![sql-plus-users-tablespaces](/img/oracle/sql-plus-users-tablespaces.png)
 
 ```
 # 系统用户登录查看的数据字典
@@ -62,7 +68,7 @@ dba_users
 user_users
 ```
 
-![select default_tablespace, temporary_tablespace from dba_users where username='SYSTEM'](img/sql-plus-select-default-from-dbasys.png)
+![select default_tablespace, temporary_tablespace from dba_users where username='SYSTEM'](/img/oracle/sql-plus-select-default-from-dbasys.png)
 
 ### 设置用户的默认或临时表空间
 
@@ -71,9 +77,10 @@ ALTER USER username DEFAULT|TEMPORARY TABLESPACE tablespace_name
 # alter user system default tablespace xxx
 ```
 
-> [!TIP|style:flat|label:单选]
+::: tip 单选
 
-> 在Oracle数据库安装完成后，system用户的默认表空间和临时表空间分别是：`system, temp`
+在Oracle数据库安装完成后，system用户的默认表空间和临时表空间分别是：`system, temp`
+:::
 
 ### 创建表空间
 
@@ -99,17 +106,19 @@ tempfile `tempfile1.dbf` size 10m;
 
 查看表空间路径等操作
 
-![](img/create-data-file.png)
+![](/img/oracle/create-data-file.png)
 
-![select-dba-temp-files](img/select-dba-temp-files.png)
+![select-dba-temp-files](/img/oracle/select-dba-temp-files.png)
 
 ### 修改表空间
 
-> [!TIP|style:flat|label:修改表空间的状态]
+::: tip 修改表空间的状态
 
-> 脱机状态
+脱机状态
+:::
 
-> 读写状态
+读写状态
+:::
 
 **设置联机或脱机状态**
 
@@ -121,11 +130,11 @@ ONLINE|OFFLINE;
 
 脱机状态的表空间无法使用。
 
-![](img/alter-tablespace-offline.png)
+![](/img/oracle/alter-tablespace-offline.png)
 
 查看online_status
 
-![online-status](img/online-status.png)
+![online-status](/img/oracle/online-status.png)
 
 ```
 # 修改表空间的读写状态
@@ -133,13 +142,15 @@ ALTER TABLESPACE tablespace_name
 READ ONLY|READ WRITE
 ```
 
-![change-status](img/change-status.png)
+![change-status](/img/oracle/change-status.png)
 
-> [!TIP|style:flat|label:修改数据文件]
+::: tip 修改数据文件
 
-> 增加数据文件
+增加数据文件
+:::
 
-> 删除数据文件
+删除数据文件
+:::
 
 ```
 # 向tablespace_name中添加一个文件
@@ -147,7 +158,7 @@ ALTER TABLESPACE tablespace_name
 ADD DATAFILE 'xx.dbf' SIZE xx;
 ```
 
-![alter-tablespace-add](img/alter-tablespace-add.png)
+![alter-tablespace-add](/img/oracle/alter-tablespace-add.png)
 
 
 ```
@@ -156,11 +167,13 @@ ALTER TABLESPACE tablespace_name
 DROP DATAFILE 'filename.dbf'
 ```
 
-> [!WARNING|style:flate|label:注意]
+::: warning 注意
 
-> 不能删除表空间的第一个数据文件
+不能删除表空间的第一个数据文件
+:::
 
-> 如果需要删除第一个数据文件，则需将整个表空间删除。
+如果需要删除第一个数据文件，则需将整个表空间删除。
+:::
 
 ### 删除表空间
 

@@ -9,9 +9,10 @@ n. 一般情况以外的人(或事物);例外;规则的例外;例外的事物
 
 程序中：阻止当前方法或作用域正常运行的情况，称之为异常。
 
-> [!TIP|style:flat|label:Exception异常]
+::: tip Exception异常
 
-> 异常指的是在程序运行过程中发生的异常事件，通常是由外部问题（如硬件错误、输入错误）所导致的。在Java等面向对象的编程语言中异常属于对象。
+异常指的是在程序运行过程中发生的异常事件，通常是由外部问题（如硬件错误、输入错误）所导致的。在Java等面向对象的编程语言中异常属于对象。
+:::
 
 ### 导致的问题：
 
@@ -35,27 +36,35 @@ n. 一般情况以外的人(或事物);例外;规则的例外;例外的事物
 
 * Error 错误
 
-> [!TIP|style:flat|label:Error]
+::: tip Error
 
-> 系统错误，内存溢出
+系统错误，内存溢出
+:::
 
-> 虚拟机错误 VirtualMachineError
+虚拟机错误 VirtualMachineError
+:::
 
-> 线程死锁 ThreadDeath
+线程死锁 ThreadDeath
+:::
 
-> 它的出现，即意味着程序挂了，即程序终结者
+它的出现，即意味着程序挂了，即程序终结者
+:::
 
-> 好比工厂停水/停电/机器挂了
+好比工厂停水/停电/机器挂了
+:::
 
 * Exception 异常
 
-> [!TIP|style:flat|label:Exception]
+::: tip Exception
 
-> 编码、环境、用户操作输入出现问题
+编码、环境、用户操作输入出现问题
+:::
 
-> 主要有 RuntimeException 称之为非检查异常
+主要有 RuntimeException 称之为非检查异常
+:::
 
-> 其他异常称之为：检查异常 CheckException
+其他异常称之为：检查异常 CheckException
+:::
 
 ### 非检查异常 RuntimeException
 
@@ -103,11 +112,13 @@ System.out.println(a / b);
 
 5、等等...
 
-> [!TIP|style:flat|label:RuntimeException]
+::: tip RuntimeException
 
-> `运行时异常` 会由Java虚拟机自动抛出，并自动捕获。
+`运行时异常` 会由Java虚拟机自动抛出，并自动捕获。
+:::
 
-> 运行时异常的出现，多数情况下说明代码本身出了问题，应该从逻辑上去改进代码。
+运行时异常的出现，多数情况下说明代码本身出了问题，应该从逻辑上去改进代码。
+:::
 
 ### 检查异常 CheckException
 
@@ -129,11 +140,13 @@ try {
 }
 ```
 
-> [!WARNING|style:flat|label:如果try抛出异常将会发生什么？]
+::: warning 如果try抛出异常将会发生什么？
 
-> 抛出异常的方法会终止执行！
+抛出异常的方法会终止执行！
+:::
 
-> 程序的控制权将被移交给catch块中的异常处理程序
+程序的控制权将被移交给catch块中的异常处理程序
+:::
 
 ##### catch中可以做的事情：
 
@@ -291,13 +304,16 @@ Result值为：281
 test2返回值result为: 999
 ```
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> catch块跟在try语句后面，它可以是一个或多个
+catch块跟在try语句后面，它可以是一个或多个
+:::
 
-> catch块有一个参数，该参数是某种异常类的对象
+catch块有一个参数，该参数是某种异常类的对象
+:::
 
-> 多重catch语句中，异常类型必须子类在前，父类在后
+多重catch语句中，异常类型必须子类在前，父类在后
+:::
 
 ### 原视频教程出处
 

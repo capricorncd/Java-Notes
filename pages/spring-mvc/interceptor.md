@@ -6,13 +6,15 @@ interceptor
 n.截击机，拦截器
 ```
 
-> [!TIP|style:flat|label:Interceptor]
+::: tip Interceptor
 
-> 拦截器是指通过统一拦截从浏览器发往服务器的请求来完成功能的增强。(相当于Node.js KOA2的中间件)
+拦截器是指通过统一拦截从浏览器发往服务器的请求来完成功能的增强。(相当于Node.js KOA2的中间件)
+:::
 
-> 使用场景：解决请求的共性问题（如：乱码问题、权限验证问题等）
+使用场景：解决请求的共性问题（如：乱码问题、权限验证问题等）
+:::
 
-![interceptor-instruction](img/interceptor-instruction.png)
+![interceptor-instruction](/img/spring-mvc/interceptor-instruction.png)
 
 ### 拦截器的基本工作原理
 
@@ -203,7 +205,7 @@ src/main/webapp/index.jsp
 
 工作流程：
 
-![spring-mvc-mutiple-interceptor](img/spring-mvc-mutiple-interceptor.png)
+![spring-mvc-mutiple-interceptor](/img/spring-mvc/spring-mvc-mutiple-interceptor.png)
 
 ### 拦截器的其他实现方法
 

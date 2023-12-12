@@ -91,8 +91,10 @@ parse后的时间：Mon Apr 08 22:44:23 CST 2019
 
 ```
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 调用 SimpleDateFormat 对象的 parse() 方法时可能会出现转换异常，即 ParseException ，因此需要进行异常处理
+调用 SimpleDateFormat 对象的 parse() 方法时可能会出现转换异常，即 ParseException ，因此需要进行异常处理
+:::
 
-> 使用 Date 类时需要导入 java.util 包，使用 SimpleDateFormat 时需要导入 java.text 包
+使用 Date 类时需要导入 java.util 包，使用 SimpleDateFormat 时需要导入 java.text 包
+:::

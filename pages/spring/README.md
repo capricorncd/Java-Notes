@@ -22,7 +22,7 @@ https://repo.spring.io/libs-release-local/org/springframework/spring/
 
 * 将简单的组件配置、组合成为复杂的应用，这个意义上讲Spring就是一个框架
 
-![spring-framework](img/spring-framework.gif)
+![spring-framework](/img/spring/spring-framework.gif)
 
 ### 为什么是Spring
 
@@ -30,7 +30,7 @@ https://repo.spring.io/libs-release-local/org/springframework/spring/
 
 * Spring带来了**复杂JavaEE**开发的春天
 
-![framework-runtime](img/framework-runtime.png)
+![framework-runtime](/img/spring/framework-runtime.png)
 
 **核心容器**
 
@@ -46,7 +46,7 @@ https://repo.spring.io/libs-release-local/org/springframework/spring/
 
 它们的完整依赖关系如下图所示：
 
-![spring-core](img/spring-core.png)
+![spring-core](/img/spring/spring-core.png)
 
 **数据访问/集成**
 
@@ -118,9 +118,10 @@ Messaging 模块为 STOMP 提供了支持作为在应用程序中 WebSocket 子�
 
 维基百科：**软件框架**，通常指的是为了实现某个业界标准或完成特定基本任务的软件组件规范，也指为了实现某个软件组织规范时，提供规范所要求的基础功能的软件产品。
 
-> [!TIP|style:flat|label:框架]
+::: tip 框架
 
-> 是制定一套规范或规则（思想），大家（程序员）在该规范或者规则（思想）下工作。或者说就是使用别人搭好的舞台，你来做表演。
+是制定一套规范或规则（思想），大家（程序员）在该规范或者规则（思想）下工作。或者说就是使用别人搭好的舞台，你来做表演。
+:::
 
 **特点**：
 

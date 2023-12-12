@@ -57,7 +57,7 @@ src/main/webapp/WEB-INF/web.xml
 
 **Spring MVC的上下文层级**
 
-![spring-context](img/spring-context.png)
+![spring-context](/img/spring-mvc/spring-context.png)
 
 src/main/webapp/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml
 
@@ -181,15 +181,19 @@ public class CourseController {
 }
 ```
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> 通过@Controller声明一个Controller
+通过@Controller声明一个Controller
+:::
 
-> 通过@RequestMapping 映射URL和方法，通常出现在我们的类级别和方法级别，二者组合完成了对URL映射请求的拦截
+通过@RequestMapping 映射URL和方法，通常出现在我们的类级别和方法级别，二者组合完成了对URL映射请求的拦截
+:::
 
-> 通过URL template(@RequestParam and @PathVariable)将URL中的参数，绑定到Controller中method的入参
+通过URL template(@RequestParam and @PathVariable)将URL中的参数，绑定到Controller中method的入参
+:::
 
-> 同时也可以通过HTTPServletRequest and/or HttpSession等对象来获取我们想要的结果
+同时也可以通过HTTPServletRequest and/or HttpSession等对象来获取我们想要的结果
+:::
 
 ### Binding 数据绑定
 
@@ -219,9 +223,10 @@ public class CourseController {
   }
 ```
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> 在Controller参数上，使用@ModelAttribute实现模型与页面数据的绑定，及如果在MVC中使用重定向或转发redirect/forward
+在Controller参数上，使用@ModelAttribute实现模型与页面数据的绑定，及如果在MVC中使用重定向或转发redirect/forward
+:::
 
 ### FileUpload 单文件上传
 
@@ -368,7 +373,7 @@ ResponseEntity
 
 Details
 
-![spring-mvc-summary1](img/spring-mvc-summary1.png)
+![spring-mvc-summary1](/img/spring-mvc/spring-mvc-summary1.png)
 
 ### 源码
 

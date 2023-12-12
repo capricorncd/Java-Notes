@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaBean | Java Memo - Capricorncd</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="Java Note">
+    
+    <link rel="preload" href="./assets/css/0.styles.aeae4c2c.css" as="style"><link rel="preload" href="./assets/js/app.e6184122.js" as="script"><link rel="preload" href="./assets/js/2.4c546f0b.js" as="script"><link rel="preload" href="./assets/js/1.71926bfe.js" as="script"><link rel="preload" href="./assets/js/28.ebbf2fa8.js" as="script"><link rel="prefetch" href="./assets/js/10.66b9053d.js"><link rel="prefetch" href="./assets/js/11.732cf3e0.js"><link rel="prefetch" href="./assets/js/12.1bdea263.js"><link rel="prefetch" href="./assets/js/13.9426da25.js"><link rel="prefetch" href="./assets/js/14.856c1518.js"><link rel="prefetch" href="./assets/js/15.758ee11b.js"><link rel="prefetch" href="./assets/js/16.e925b239.js"><link rel="prefetch" href="./assets/js/17.5b873df7.js"><link rel="prefetch" href="./assets/js/18.4c170722.js"><link rel="prefetch" href="./assets/js/19.a45744ea.js"><link rel="prefetch" href="./assets/js/20.e4646aa0.js"><link rel="prefetch" href="./assets/js/21.a45f0526.js"><link rel="prefetch" href="./assets/js/22.93c2b9e7.js"><link rel="prefetch" href="./assets/js/23.9ce14859.js"><link rel="prefetch" href="./assets/js/24.820c63e5.js"><link rel="prefetch" href="./assets/js/25.9f4e5404.js"><link rel="prefetch" href="./assets/js/26.da2c4729.js"><link rel="prefetch" href="./assets/js/27.da8ed983.js"><link rel="prefetch" href="./assets/js/29.47cf2c69.js"><link rel="prefetch" href="./assets/js/3.4db2e19a.js"><link rel="prefetch" href="./assets/js/30.d384982e.js"><link rel="prefetch" href="./assets/js/31.dfdfdedb.js"><link rel="prefetch" href="./assets/js/32.f8520363.js"><link rel="prefetch" href="./assets/js/33.0bd2083b.js"><link rel="prefetch" href="./assets/js/34.755224d7.js"><link rel="prefetch" href="./assets/js/35.b5ce2bd5.js"><link rel="prefetch" href="./assets/js/36.ecdeaff6.js"><link rel="prefetch" href="./assets/js/37.c00596a4.js"><link rel="prefetch" href="./assets/js/38.13ca3522.js"><link rel="prefetch" href="./assets/js/39.0ee3b454.js"><link rel="prefetch" href="./assets/js/4.45665f8a.js"><link rel="prefetch" href="./assets/js/40.3474d42e.js"><link rel="prefetch" href="./assets/js/41.1f27acaf.js"><link rel="prefetch" href="./assets/js/42.d5b0d701.js"><link rel="prefetch" href="./assets/js/43.4b34f7ba.js"><link rel="prefetch" href="./assets/js/44.1a396407.js"><link rel="prefetch" href="./assets/js/45.3d395539.js"><link rel="prefetch" href="./assets/js/46.e83d4818.js"><link rel="prefetch" href="./assets/js/47.bac67d19.js"><link rel="prefetch" href="./assets/js/48.654850d2.js"><link rel="prefetch" href="./assets/js/49.1ed6baea.js"><link rel="prefetch" href="./assets/js/5.b31b942f.js"><link rel="prefetch" href="./assets/js/50.f496c11b.js"><link rel="prefetch" href="./assets/js/51.c68e80c4.js"><link rel="prefetch" href="./assets/js/52.08b94f8f.js"><link rel="prefetch" href="./assets/js/53.d8ea6a2d.js"><link rel="prefetch" href="./assets/js/54.97945caa.js"><link rel="prefetch" href="./assets/js/55.6b41d4f7.js"><link rel="prefetch" href="./assets/js/56.6ab93232.js"><link rel="prefetch" href="./assets/js/57.9850aa03.js"><link rel="prefetch" href="./assets/js/58.965c4a2f.js"><link rel="prefetch" href="./assets/js/59.7ed1f320.js"><link rel="prefetch" href="./assets/js/6.4910e764.js"><link rel="prefetch" href="./assets/js/60.056ff164.js"><link rel="prefetch" href="./assets/js/61.67547d76.js"><link rel="prefetch" href="./assets/js/62.09c02b34.js"><link rel="prefetch" href="./assets/js/63.262cabcb.js"><link rel="prefetch" href="./assets/js/64.c312532a.js"><link rel="prefetch" href="./assets/js/65.ae106a20.js"><link rel="prefetch" href="./assets/js/66.3f321f2a.js"><link rel="prefetch" href="./assets/js/67.2c7f2a4f.js"><link rel="prefetch" href="./assets/js/68.ba59bccb.js"><link rel="prefetch" href="./assets/js/69.96e25018.js"><link rel="prefetch" href="./assets/js/7.c5640ac7.js"><link rel="prefetch" href="./assets/js/70.886c9c87.js"><link rel="prefetch" href="./assets/js/71.051b9660.js"><link rel="prefetch" href="./assets/js/72.599adf35.js"><link rel="prefetch" href="./assets/js/73.a5a8cee4.js"><link rel="prefetch" href="./assets/js/74.1aa465ae.js"><link rel="prefetch" href="./assets/js/75.136064d9.js"><link rel="prefetch" href="./assets/js/76.e15179e4.js"><link rel="prefetch" href="./assets/js/77.9662e252.js"><link rel="prefetch" href="./assets/js/78.fbb1732b.js"><link rel="prefetch" href="./assets/js/79.bddbb8e3.js"><link rel="prefetch" href="./assets/js/80.3fbe5fb7.js"><link rel="prefetch" href="./assets/js/81.269eabe1.js"><link rel="prefetch" href="./assets/js/82.30cad37b.js"><link rel="prefetch" href="./assets/js/83.d0d0034b.js"><link rel="prefetch" href="./assets/js/84.06dd08bc.js"><link rel="prefetch" href="./assets/js/vendors~docsearch.77260563.js">
+    <link rel="stylesheet" href="./assets/css/0.styles.aeae4c2c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/./" class="home-link router-link-active"><!----> <span class="site-name">Java Memo - Capricorncd</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/./" aria-current="page" class="sidebar-link">Java</a><ul class="sidebar-sub-headers"></ul></li><li><section class="sidebar-group collapsable depth-0"><a href="/./java/variable-and-constant" class="sidebar-heading clickable"><span>JAVA基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./regular-expression" class="sidebar-heading clickable"><span>正则表达式</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./spring" class="sidebar-heading clickable"><span>Spring框架</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./spring-mvc" class="sidebar-heading clickable"><span>Spring MVC</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./java-web/" class="sidebar-heading clickable router-link-active open"><span>Java Web应用程序</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/./java-web/" aria-current="page" class="sidebar-link">JavaWeb应用程序</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/jsp.html" class="sidebar-link">JSP基本语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/built-in-object.html" class="sidebar-link">JSP内置对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/java-bean.html" aria-current="page" class="active sidebar-link">JavaBean</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/state-management.html" class="sidebar-link">Jsp状态管理Cookie</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/commands-and-actions.html" class="sidebar-link">指令与动作include/forward</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/./java-web/filter.html" class="sidebar-link">过滤器Filter</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./oracle" class="sidebar-heading clickable"><span>Oracle</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./file" class="sidebar-heading clickable"><span>文件处理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/./message-digest" class="sidebar-heading clickable"><span>消息摘要算法及应用</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javabean"><a href="#javabean" class="header-anchor">#</a> JavaBean</h1> <p>是一种JAVA语言写成的可重用组件。为写成JavaBean，类必须是具体的和公共的，并且具有无参数的构造器。</p> <p>JavaBean 通过提供符合一致性设计模式的公共方法将内部域暴露成员属性，set和get方法获取。众所周知，属性名称符合这种模式，其他Java 类可以通过自省机制(反射机制)发现和操作这些JavaBean 的属性。</p> <div class="custom-block tip"><p class="custom-block-title">JavaBeans</p> <p>就是<strong>符合某种特定的规范的java类</strong>。使用JavaBeans的好处是实现代码复用，减少冗余，功能区分明确，提高代码的可维护性。</p></div> <h3 id="javabean设计原则"><a href="#javabean设计原则" class="header-anchor">#</a> JavaBean设计原则</h3> <p><img src="/img/java-bean-design-principles.png" alt="java-bean-design-principles"></p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// JavaBean设计原则实例：设计学生类</span>
+<span class="token comment">// 1.公有类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Students</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 2.属性私有</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token comment">// 3.无参的公共构造方法</span>
+    <span class="token keyword">public</span> <span class="token class-name">Students</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// constructor</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 4.setter和getter方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="jsp动作元素"><a href="#jsp动作元素" class="header-anchor">#</a> Jsp动作元素</h3> <p>JSP动作元素(action elements)为请求处理阶段提供信息。动作元素即<strong>标签</strong>，遵循XML语法。有一个包含元素名的开始标签，可以有属性、可选的内容、与开始标签匹配的结束标签。</p> <p><strong>第一类与存取JavaBean有关的，包括：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean&gt;
+&lt;jsp:setProperty&gt;
+&lt;jsp:getProperty&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>第二类是JSP1.2就开始有的基本元素，包括6个动作元素</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;jsp:include&gt;
+&lt;jsp:forward&gt;
+&lt;jsp:param&gt;
+&lt;jsp:params&gt;
+&lt;jsp:plugin&gt;
+&lt;jsp:fallback&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><strong>第三类是JSP2.0新增的元素，主要与JSP Document有关，包括6个元素</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;jsp:root&gt;
+&lt;jsp:declaration&gt;
+&lt;jsp:scriptlet&gt;
+&lt;jsp:expression&gt;
+&lt;jsp:text&gt;
+&lt;jsp:output&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><strong>第四类是JSP2.0新增，主要是用来动态生成XML元素标签的值，包括3个动作</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;jsp:attribute&gt;
+&lt;jsp:body&gt;
+&lt;jsp:element&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>第五类是JSP2.0新增，主要是用在Tag File中，有2个元素</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;jsp:invoke&gt;
+&lt;jsp:dobody&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="在jsp页面中使用javabean"><a href="#在jsp页面中使用javabean" class="header-anchor">#</a> 在JSP页面中使用JavaBean</h3> <p>1.<strong>像使用普通java一样，创建javabean实例。</strong></p> <p>src/com.test/Users.java</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Users</span> <span class="token punctuation">{</span>
+	<span class="token comment">// private properties</span>
+	<span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+	<span class="token keyword">private</span> <span class="token class-name">String</span> password<span class="token punctuation">;</span>
+	<span class="token comment">// constructor</span>
+	<span class="token keyword">public</span> <span class="token class-name">Users</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> username<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token class-name">String</span> username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>username <span class="token operator">=</span> username<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> password<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPassword</span><span class="token punctuation">(</span><span class="token class-name">String</span> password<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>password <span class="token operator">=</span> password<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>	
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>bean-users.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;%@ page import=&quot;com.test.Users&quot;%&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;    
+    &lt;title&gt;使用普通方式创建javabean实例&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;%
+	    Users u = new Users();
+	    u.setUsername(&quot;admin&quot;);
+	    u.setPassword(&quot;123465&quot;);
+    %&gt;
+    &lt;p&gt;用户名：&lt;%=u.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=u.getPassword() %&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>2.<strong>在JSP页面中通常使用JSP动作标签使用JavaBean。</strong></p> <p>useBeans/setProperty/getProperty</p> <div class="custom-block tip"><p class="custom-block-title">useBeans</p> <p><code>&lt;jsp:useBeans&gt;</code>
+作用：在jsp页面中实例化或者在指定范围内使用JavaBean</p></div> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean id=&quot;标识符&quot; class=&quot;java类名&quot; scope=&quot;作用范围&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;    
+    &lt;title&gt;2.在JSP页面中通常使用JSP动作标签使用JavaBean&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jsp:useBean id=&quot;myUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;&gt;&lt;/jsp:useBean&gt;
+    &lt;p&gt;用户名：&lt;%=u.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=u.getPassword() %&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">setProperty</p> <p><code>&lt;jsp:setProperty&gt;</code>
+作用：给已实例化的JavaBean对象的属性赋值，一共有4种形式。</p></div> <p>1.跟表单关联</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:setProperty name=&quot;JavaBean实例名&quot; property=&quot;*&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>2.跟表单关联</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:setProperty name=&quot;JavaBean实例名&quot; property=&quot;JavaBean属性名&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>3.手动设置</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:setProperty name=&quot;JavaBean实例名&quot; property=&quot;JavaBean属性名&quot; value=&quot;BeanValue&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>4.跟request参数关联</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:setProperty name=&quot;JavaBean实例名&quot; property=&quot;propertyName&quot; param=&quot;request对象中的参数名&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="实例1"><a href="#实例1" class="header-anchor">#</a> 实例1</h3> <p>login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;form action=&quot;do-login.jsp&quot; method=&quot;post&quot;&gt;
+    &lt;p&gt;用户名: &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;密 &amp;nbsp;&amp;nbsp;码: &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登 录&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>1.跟表单关联</p> <p>do-login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;body&gt;
+    &lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;*&quot;/&gt;
+    &lt;p&gt;用户名：&lt;%=testUsers.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=testUsers.getPassword() %&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>2.跟表单关联</p> <p>do-login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;body&gt;
+    &lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;username&quot;/&gt;
+    &lt;p&gt;用户名：&lt;%=testUsers.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=testUsers.getPassword() %&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>3.手动设置</p> <p>do-login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;body&gt;
+    &lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;username&quot; value=&quot;Jock&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;password&quot; value=&quot;1234679&quot;/&gt;
+    &lt;p&gt;用户名：&lt;%=testUsers.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=testUsers.getPassword() %&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>4.跟request参数关联</p> <p>do-login.jsp?queryUserName=Tom&amp;queryPassWord=999999</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;body&gt;
+    &lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;username&quot; param=&quot;queryUserName&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;password&quot; param=&quot;queryPassWord&quot;/&gt;
+    &lt;!-- 使用传统的方式获取用户名、密码 --&gt;
+    &lt;p&gt;用户名：&lt;%=testUsers.getUsername() %&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;%=testUsers.getPassword() %&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">getProperty</p> <p><code>&lt;jsp:getProperty&gt;</code>
+作用：获取指定JavaBean对象的属性值。</p></div> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:getProperty name=&quot;JavaBean实例名&quot; property=&quot;属性名&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>跟request参数关联</p> <p>do-login.jsp?queryUserName=Tom&amp;queryPassWord=999999</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;body&gt;
+    &lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;username&quot; param=&quot;queryUserName&quot;/&gt;
+    &lt;jsp:setProperty name=&quot;testUsers&quot; property=&quot;password&quot; param=&quot;queryPassWord&quot;/&gt;
+    &lt;!-- 使用getProperty方式获取用户名、密码 --&gt;
+    &lt;p&gt;用户名：&lt;jsp:getProperty name=&quot;testUsers&quot; property=&quot;username&quot;/&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;jsp:getProperty name=&quot;testUsers&quot; property=&quot;password&quot;/&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="javabean的4个作用域"><a href="#javabean的4个作用域" class="header-anchor">#</a> JavaBean的4个作用域</h3> <p>使用useBean的scope属性，可以用来指定JavaBean的作用域。</p> <table><thead><tr><th style="text-align:left;">作用域</th> <th style="text-align:left;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;"><strong>page</strong></td> <td style="text-align:left;">仅在当前页面有效</td></tr> <tr><td style="text-align:left;"><strong>request</strong></td> <td style="text-align:left;">可以通过HttpRequest.getAttribute() 方法取得JavaBean对象。</td></tr> <tr><td style="text-align:left;"><strong>session</strong></td> <td style="text-align:left;">可以通过HttpSession.getAttribute() 方法获取JavaB对象。</td></tr> <tr><td style="text-align:left;"><strong>application</strong></td> <td style="text-align:left;">可以通过application.getAttribute() 方法取得JavaBean对象</td></tr></tbody></table> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;application&quot;/&gt;
+&lt;!-- application --&gt;
+&lt;%=((Users) application.getAttribute(&quot;testUsers&quot;)).getUsername() %&gt;
+&lt;%=((Users) application.getAttribute(&quot;testUsers&quot;)).getPassword() %&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;session&quot;/&gt;
+&lt;!-- session --&gt;
+&lt;%=((Users) session.getAttribute(&quot;testUsers&quot;)).getUsername() %&gt;
+&lt;%=((Users) session.getAttribute(&quot;testUsers&quot;)).getPassword() %&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;request&quot;/&gt;
+&lt;!-- request --&gt;
+&lt;%=((Users) request.getAttribute(&quot;testUsers&quot;)).getUsername() %&gt;
+&lt;%=((Users) request.getAttribute(&quot;testUsers&quot;)).getPassword() %&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:useBean id=&quot;testUsers&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+&lt;!-- page --&gt;
+&lt;%
+String username = &quot;&quot;;
+String password = &quot;&quot;;
+// 避免空指针异常
+if (pageContext.getAttribute(&quot;testUsers&quot;) != null) {
+    ((Users) username = pageContext.getAttribute(&quot;testUsers&quot;)).getUsername();
+    ((Users) password = pageContext.getAttribute(&quot;testUsers&quot;)).getPassword();
+}
+%&gt;
+
+&lt;%=username %&gt;
+&lt;%=password %&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="model-1"><a href="#model-1" class="header-anchor">#</a> Model 1</h3> <p>Java开发总的方向可以分为<strong>Model 1</strong>和<strong>Model 2</strong>。</p> <p><strong>Model 1</strong> 模型出现前，整个Web应用的情况：几乎全部由JSP页面组成，JSP页面接收处理客户端请求，对请求处理后直接作出相应。</p> <p><strong>弊端</strong>：在界面层充斥着大量的业务逻辑代码和数据访问层的代码，Web程序的可扩展性和可维护性非常差。</p> <p><strong>JavaBean</strong>的出现，可以使jsp页面中使用JavaBean封装的数据或者调用JavaBean的业务逻辑代码，这样大大提升了程序的可维护性。</p> <p><img src="/img/java-bean-model-1.jpg" alt="java-bean-model-1"></p> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>JavaBean就是符合某种设计规范的Java类</p> <p>在Model 1中，由Jsp页面去调用JavaBean。</p> <p>JavaBean既可以封装数据，同时也可以封装业务逻辑。</p> <p>JavaBean一般把属性设计为私有，使用setter和getter访问属性。</p> <h3 id="实例"><a href="#实例" class="header-anchor">#</a> 实例</h3> <p>使用jsp + JavaBean完成用户登录功能</p> <p>src/com.dao/UsersDao.java</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>test<span class="token punctuation">.</span></span><span class="token class-name">Users</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UsersDao</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token class-name">String</span> userName <span class="token operator">=</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">;</span> 
+	<span class="token keyword">private</span> <span class="token class-name">String</span> passWord <span class="token operator">=</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">;</span> 
+	
+	<span class="token comment">// 用户登录验证</span>
+	<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">checkLoginUserInfo</span><span class="token punctuation">(</span><span class="token class-name">Users</span> user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> userName<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> passWord<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>bean-login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;!DOCTYPE&gt;
+&lt;html&gt;
+  &lt;head&gt;    
+    &lt;title&gt;Login&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;form action=&quot;bean-do-login.jsp&quot; method=&quot;post&quot;&gt;
+    	&lt;p&gt;用户名: &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;
+    	&lt;p&gt;密 &amp;nbsp;&amp;nbsp;码: &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+    	&lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登 录&quot;&gt;&lt;/p&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>bean-do-login.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;jsp:useBean id=&quot;loginUser&quot; class=&quot;com.test.Users&quot; scope=&quot;page&quot;/&gt;
+&lt;jsp:useBean id=&quot;userDao&quot; class=&quot;com.dao.UsersDao&quot; scope=&quot;page&quot;/&gt;
+&lt;jsp:setProperty property=&quot;*&quot; name=&quot;loginUser&quot;/&gt;
+
+&lt;%
+	if (userDao.checkLoginUserInfo(loginUser)) {
+		session.setAttribute(&quot;username&quot;, loginUser.getUsername());
+		request.getRequestDispatcher(&quot;bean-login-success.jsp&quot;).forward(request, response);
+	} else {
+		response.sendRedirect(&quot;bean-login-failure.jsp&quot;);
+	}
+%&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>bean-login-success.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;!DOCTYPE&gt;
+&lt;html&gt;
+  &lt;head&gt;    
+    &lt;title&gt;Login Success&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;登录成功&lt;/h1&gt;
+    &lt;p&gt;用户名：&lt;%=session.getAttribute(&quot;username&quot;) %&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>bean-login-failure.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html; charset=utf-8&quot;%&gt;
+&lt;!DOCTYPE&gt;
+&lt;html&gt;
+  &lt;head&gt;    
+    &lt;title&gt;Login Failure&lt;/title&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;h1&gt;登录失败&lt;/h1&gt;
+    &lt;p&gt;--&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/./java-web/built-in-object.html" class="prev">
+        JSP内置对象
+      </a></span> <span class="next"><a href="/./java-web/state-management.html">
+        Jsp状态管理Cookie
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="./assets/js/app.e6184122.js" defer></script><script src="./assets/js/2.4c546f0b.js" defer></script><script src="./assets/js/1.71926bfe.js" defer></script><script src="./assets/js/28.ebbf2fa8.js" defer></script>
+  </body>
+</html>

@@ -2,11 +2,10 @@
 
 **正则表达式**定义了字符串的模式；可以用来搜索、编辑或处理文本。在**不种语言中正则表达式有细微的差别**。
 
-```
-regular expression
+::: tip regular expression
 英 [ˈreɡjələ(r) ɪkˈspreʃn]   美 [ˈreɡjələr ɪkˈspreʃn]  
 正则表达式;正规表达式;正則表達式;规则表达式;正规式
-```
+:::
 
 ### java.util.regex包
 

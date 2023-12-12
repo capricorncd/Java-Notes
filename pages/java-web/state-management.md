@@ -14,7 +14,7 @@
 
 无状态是指，当浏览器发送请求给服务器，服务器响应浏览器请求；但当同一个浏览器再次发送请求给该服务器时，服务器并不知道它就是之前那个浏览器；简单讲就是服务器不会去记得你，所以就是无状态协议。
 
-![http-no-state-example](img/http-no-state-example.jpg)
+![http-no-state-example](/img/http-no-state-example.jpg)
 
 ### 保存用户状态的两大机制
 
@@ -24,11 +24,10 @@
 
 ### Cookie简介
 
-> [!TIP|style:flat|Cookie]
-
-> Cookie（译：小甜饼），是Web服务器保存在客户端的一系列文本信息。
-
-> 典型应用：判断注册用户是否已经登录网站；购物车的处理等。
+::: tip Cookie
+Cookie（译：小甜饼），是Web服务器保存在客户端的一系列文本信息。
+典型应用：判断注册用户是否已经登录网站；购物车的处理等。
+:::
 
 **作用**：
 
@@ -192,4 +191,4 @@ cookie-user-info.jsp
 
 ### Session与Cookie的对比
 
-![session-vs-cookie](img/session-vs-cookie.jpg)
+![session-vs-cookie](/img/session-vs-cookie.jpg)
