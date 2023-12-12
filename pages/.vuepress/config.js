@@ -4,7 +4,7 @@
 module.exports = {
   title: 'Java Memo - Capricorncd',
   description: 'Java Note',
-  base: './',
+  base: '/Java-Notes/',
   dest: './docs',
   themeConfig: {
     displayAllHeaders: true, // Default: false
