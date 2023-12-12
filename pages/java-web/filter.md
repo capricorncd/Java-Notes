@@ -6,10 +6,10 @@
 
 ### 工作原理
 
-![working-principle-of-filter](img/working-principle-of-filter.png)
+![working-principle-of-filter](/img/working-principle-of-filter.png)
 
 ### 生命周期
 
-![filter-life-cycle](img/filter-life-cycle.png)
+![filter-life-cycle](/img/filter-life-cycle.png)
 
 ### 过滤器类型

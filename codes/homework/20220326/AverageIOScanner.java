@@ -51,30 +51,48 @@ public class AverageIOScanner {
         Scanner sc = new Scanner(System.in);
         System.out.print("Please enter an integer, the program ends when -1 is entered\n");
 
-        int input;
-        while (true) {
-            // check number
-            if (!sc.hasNextInt()) {
-                sc.next();
-                System.out.print("Please enter an integer...\n");
-            } else {
-                input = sc.nextInt();
-                if (input == -1)
-                    break;
-                inputs.add(input);
-            }
-        }
+        // int input;
+        // while (true) {
+        // // check number
+        // if (!sc.hasNextInt()) {
+        // sc.next();
+        // System.out.print("Please enter an integer...\n");
+        // } else {
+        // input = sc.nextInt();
+        // if (input == -1)
+        // break;
+        // inputs.add(input);
+        // }
+        // }
 
-        sc.close();
+        // sc.close();
 
-        double sum = 0;
-        for (int i = 0; i < inputs.size(); i++) {
-            sum += inputs.get(i);
-        }
+        // double sum = 0;
+        // for (int i = 0; i < inputs.size(); i++) {
+        // sum += inputs.get(i);
+        // }
 
-        double result = sum / inputs.size();
+        // double result = sum / inputs.size();
 
         // 保留一位小数
-        System.out.println("Average is " + String.format("%.1f", result));
+        // System.out.println("Average is " + String.format("%.1f", result));
+
+        // 结果
+        double sum2 = 0;
+        // 输入了多少次有效数字
+        int count = 0;
+
+        while (true) {
+            int m = sc.nextInt();
+            // 输入结束
+            if (m == -1)
+                break;
+            // 正常输入
+            sum2 += m;
+            count = count + 1;
+        }
+        // 求平均值
+        double x = sum2 / count;
+        System.out.println("Average is " + String.format("%.1f", x));
     }
 }

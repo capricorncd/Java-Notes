@@ -14,7 +14,7 @@
 
 ### 封装的实现步骤
 
-![](img/oop-encapsulation.jpg)
+![](/img/oop-encapsulation.jpg)
 
 例子
 
@@ -44,9 +44,10 @@ public class Hello {
 
 2、包的定义：package 包名
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 必须放在Java源程序的第一行，包名间可以使用 `.` 号隔开，eg:  `com.test.HelloWorld`
+必须放在Java源程序的第一行，包名间可以使用 `.` 号隔开，eg:  `com.test.HelloWorld`
+:::
 
 ```java
 // 例子：音乐类-MyClassMusic
@@ -75,9 +76,10 @@ java.(功能).(类)
 ```
 import com.test.music.MyClass;
 ```
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> Java中，包的命名规范是全小写字母拼写
+Java中，包的命名规范是全小写字母拼写
+:::
 
 使用的时候不但可以加载某个包下面的所有文件
 
@@ -203,7 +205,7 @@ public class Outer {
 
 4、编译上面的程序后，会发现产生了两个 `.class` 文件
 
-![](img/outer-inner-class.jpg)
+![](/img/outer-inner-class.jpg)
 
 其中，第二个是外部类的 .class 文件，第一个是内部类的 .class 文件，即成员内部类的 .class 文件总是这样：
 
@@ -211,19 +213,21 @@ public class Outer {
 外部类名$内部类名.class
 ```
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 1、外部类不能直接使用内部类的成员和方法
+1、外部类不能直接使用内部类的成员和方法
+:::
 
-![](img/outer-inner-class-2.jpg)
+![](/img/outer-inner-class-2.jpg)
 
 可先创建内部类的对象，然后通过内部类的对象来访问其成员变量和方法。
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 2、如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 `this`关键字。如：
+2、如果外部类和内部类具有相同的成员变量或方法，内部类默认访问自己的成员变量或方法，如果要访问外部类的成员变量，可以使用 `this`关键字。如：
+:::
 
-![](img/outer-inner-class-3.jpg)
+![](/img/outer-inner-class-3.jpg)
 
 运行结果：
 
@@ -242,7 +246,7 @@ public class Outer {
 
 3、创建静态内部类的对象时，不需要外部类的对象，可以直接创建 内部类 `对象名= new 内部类();`
 
-![](img/outer-inner-static-class.jpg)
+![](/img/outer-inner-static-class.jpg)
 
 结果：
 
@@ -255,10 +259,11 @@ public class Outer {
 
 方法内部类就是内部类定义在外部类的方法中，方法内部类只在该方法的内部可见，即只在该方法内可以使用。
 
-![](img/outer-inner-method-class.jpg)
+![](/img/outer-inner-method-class.jpg)
 
-> [!WARNING|style:flat|label:注意]
+::: warning 注意
 
-> 由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。
+由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。
+:::
 
 

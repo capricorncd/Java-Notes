@@ -4,13 +4,13 @@
 
 JavaBean 通过提供符合一致性设计模式的公共方法将内部域暴露成员属性，set和get方法获取。众所周知，属性名称符合这种模式，其他Java 类可以通过自省机制(反射机制)发现和操作这些JavaBean 的属性。
 
-> [!TIP|style:flat|label:JavaBeans]
-
-> 就是**符合某种特定的规范的java类**。使用JavaBeans的好处是实现代码复用，减少冗余，功能区分明确，提高代码的可维护性。
+::: tip JavaBeans
+就是**符合某种特定的规范的java类**。使用JavaBeans的好处是实现代码复用，减少冗余，功能区分明确，提高代码的可维护性。
+:::
 
 ### JavaBean设计原则
 
-![java-bean-design-principles](img/java-bean-design-principles.png)
+![java-bean-design-principles](/img/java-bean-design-principles.png)
 
 ```java
 // JavaBean设计原则实例：设计学生类
@@ -137,11 +137,10 @@ bean-users.jsp
 
 useBeans/setProperty/getProperty
 
-> [!TIP|style:flat|label:useBeans]
-
-> `<jsp:useBeans>`
-
-> 作用：在jsp页面中实例化或者在指定范围内使用JavaBean
+::: tip useBeans
+`<jsp:useBeans>`
+作用：在jsp页面中实例化或者在指定范围内使用JavaBean
+:::
 
 ```jsp
 <jsp:useBean id="标识符" class="java类名" scope="作用范围" />
@@ -162,11 +161,10 @@ useBeans/setProperty/getProperty
 </html>
 ```
 
-> [!TIP|style:flat|label:setProperty]
-
-> `<jsp:setProperty>`
-
-> 作用：给已实例化的JavaBean对象的属性赋值，一共有4种形式。
+::: tip setProperty
+`<jsp:setProperty>`
+作用：给已实例化的JavaBean对象的属性赋值，一共有4种形式。
+:::
 
 1.跟表单关联
 
@@ -259,11 +257,10 @@ do-login.jsp?queryUserName=Tom&queryPassWord=999999
 </body>
 ```
 
-> [!TIP|style:flat|label:getProperty]
-
-> `<jsp:getProperty>`
-
-> 作用：获取指定JavaBean对象的属性值。
+::: tip getProperty
+`<jsp:getProperty>`
+作用：获取指定JavaBean对象的属性值。
+:::
 
 ```jsp
 <jsp:getProperty name="JavaBean实例名" property="属性名" />
@@ -343,7 +340,7 @@ Java开发总的方向可以分为**Model 1**和**Model 2**。
 
 **JavaBean**的出现，可以使jsp页面中使用JavaBean封装的数据或者调用JavaBean的业务逻辑代码，这样大大提升了程序的可维护性。
 
-![java-bean-model-1](img/java-bean-model-1.jpg)
+![java-bean-model-1](/img/java-bean-model-1.jpg)
 
 ### 总结
 

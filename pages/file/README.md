@@ -244,15 +244,12 @@ IO流（输入流、输出流）
 
 字节流、字符流
 
-> [!TIP|style:flat|label: 1.字节流]
-
-> **InputStream、OutputStream**
-
-> InputStream抽象了应用程序读取数据的方式
-
-> OutputStream抽象了应用程序写出数据的方式
-
-> **EOF** = End 读到-1，即读到结尾
+::: tip  1.字节流
+**InputStream、OutputStream**
+InputStream抽象了应用程序读取数据的方式
+OutputStream抽象了应用程序写出数据的方式
+**EOF** = End 读到-1，即读到结尾
+:::
 
 **输入流基本方法：**
 
@@ -276,9 +273,9 @@ out.write(buf);
 out.write(byte[] buf, int start, int size);
 ```
 
-> [!TIP|style:flat|label: FileInputStream]
-
-> **FileInputStream**(InputStream的子类，及继承了InputStream)，具体实现了在文件上读取数据
+::: tip  FileInputStream
+**FileInputStream**(InputStream的子类，及继承了InputStream)，具体实现了在文件上读取数据
+:::
 
 ```java
 /**
@@ -376,9 +373,10 @@ System.out.println("\n");
 IOUtils.printHexByByteArray2(filePath);
 ```
 
-> [!TIP|style:flat|label: FileOutputStream]
+::: tip  FileOutputStream
 
-> **FileOutputStream**(OutputStream的子类，及继承了OutputStream)，实现了向文件中写入byte数据的方法
+**FileOutputStream**(OutputStream的子类，及继承了OutputStream)，实现了向文件中写入byte数据的方法
+:::
 
 ```java
 String filePath = "D:\\java\\temp\\out.dat";

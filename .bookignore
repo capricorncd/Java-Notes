@@ -1,8 +1,0 @@
-/build
-/docs
-/codes
-
-gulpfile.js
-
-.bookignore
-.gitignore

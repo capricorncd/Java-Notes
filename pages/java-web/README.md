@@ -32,17 +32,15 @@ JavaEE方向需求一直较大，也就是就业比较容易和稳定。
 
 * Tomcat7.0+
 
-> [!TIP|style:flat|label:Tomcat服务器简介]
-
-> Apache Jakarta的开源项目
-
-> JSP/Servlet容器
-
-> **安装步骤**：下载-解压-配置环境变量(CATALINA_HOME)-测试首页(http://localhost:8080)
+::: tip Tomcat服务器简介
+Apache Jakarta的开源项目
+JSP/Servlet容器
+**安装步骤**：下载-解压-配置环境变量(CATALINA_HOME)-测试首页(http://localhost:8080)
+:::
 
 Tomcat服务器目录结构：
 
-![tomcat-dirs](img/tomcat-dirs.png)
+![tomcat-dirs](/img/tomcat-dirs.png)
 
 **MyEclipse or eclipse**手动编写第一个Web程序，步骤：
 
@@ -53,15 +51,12 @@ Tomcat服务器目录结构：
 4.测试运行
 ```
 
-> [!TIP|style:flat|label:WEB-INF目录结构：]
-
-> WEB-INF是Java web应用的**安全目录**。所谓安全就是客户端无法访问，只有服务端代码可以访问的目录。
-
-> web.xml，项目部署配置文件
-
-> classes文件夹，用于存放*.class文件。
-
-> lib文件夹，用于存放需要的jar包。
+::: tip WEB-INF目录结构：
+WEB-INF是Java web应用的**安全目录**。所谓安全就是客户端无法访问，只有服务端代码可以访问的目录。
+web.xml，项目部署配置文件
+classes文件夹，用于存放*.class文件。
+lib文件夹，用于存放需要的jar包。
+:::
 
 ```
 # /tomcat9/webapps/examples/WEB-INF
@@ -73,11 +68,10 @@ Tomcat服务器目录结构：
 web.xml
 ```
 
-> [!TIP|style:flat|label:MyEclipse与Eclipse]
-
-> MyEclipse 收费，继承了很多收费的插件，比如SSH、安卓等
-
-> Eclipse 免费开源，不包含任何附加功能的插件
+::: tip MyEclipse与Eclipse
+MyEclipse 收费，继承了很多收费的插件，比如SSH、安卓等
+Eclipse 免费开源，不包含任何附加功能的插件
+:::
 
 ### MyEclipse
  
@@ -101,7 +95,7 @@ Tomcat 7.x -> Enable -> Brower -> Tomcat安装目录
 JDK -> 选择自己安装的JDK
 ```
 
-![myeclipse-tomcat](img/myeclipse-tomcat.png)
+![myeclipse-tomcat](/img/myeclipse-tomcat.png)
 
 创建Web项目
 
@@ -118,11 +112,11 @@ http://localhost:8080/Test0703
 # 注意名称大小写
 ```
 
-![myeclipse-publish-tomcat](img/myeclipse-publish-tomcat.png)
+![myeclipse-publish-tomcat](/img/myeclipse-publish-tomcat.png)
 
 Web项目目录结构
 
-![myeclipse-dir](img/myeclipse-dir.png)
+![myeclipse-dir](/img/myeclipse-dir.png)
 
 **项目的虚拟路径**：默认与项目名称相同
 
@@ -130,21 +124,21 @@ Web项目目录结构
 右键单击项目根目录名称 -> Properties
 ```
 
-![myeclipse-web-context-root](img/myeclipse-web-context-root.png)
+![myeclipse-web-context-root](/img/myeclipse-web-context-root.png)
 
 ### Eclipse
 
 创建一个动态web项目(Eclipse Jee 2018-12)
 
-![eclipse-new-dynamic-web-project](img/eclipse-new-dynamic-web-project.png)
+![eclipse-new-dynamic-web-project](/img/eclipse-new-dynamic-web-project.png)
 
 project name, and Runtime...
 
-![eclipse-new-dynamic-web-project-name, Eclipse Jee 2018-12](img/eclipse-new-dynamic-web-project-name.png)
+![eclipse-new-dynamic-web-project-name, Eclipse Jee 2018-12](/img/eclipse-new-dynamic-web-project-name.png)
 
 Run as
 
-![eclipse-new-dynamic-web-project-run.png](img/eclipse-new-dynamic-web-project-run.png)
+![eclipse-new-dynamic-web-project-run.png](/img/eclipse-new-dynamic-web-project-run.png)
 
 ### 修改Tomcat默认端口
 

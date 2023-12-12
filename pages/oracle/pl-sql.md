@@ -12,15 +12,15 @@ https://docs.oracle.com/en/database/oracle/sql-developer/index.html
 
 连接数据库：
 
-![sql-developer-connect-db](img/sql-developer-connect-db.png)
+![sql-developer-connect-db](/img/oracle/sql-developer-connect-db.png)
 
 设置SQL编辑器行编号，和添加MySQL等第三方连接驱动：
 
-![sql-developer-tools-preferences](img/sql-developer-tools-preferences.png)
+![sql-developer-tools-preferences](/img/oracle/sql-developer-tools-preferences.png)
 
 连接MySQL数据库
 
-![sql-developer-connect-mysql](img/sql-developer-connect-mysql.png)
+![sql-developer-connect-mysql](/img/oracle/sql-developer-connect-mysql.png)
 
 ### 参考资料
 

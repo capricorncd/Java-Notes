@@ -1,10 +1,12 @@
 # 管理表
 
-> [!TIP|style:flat|label:认识表]
+::: tip 认识表
 
-> **表**是存储数据的基本存储单位
+**表**是存储数据的基本存储单位
+:::
 
-> **表**是**二维结构**，由行(记录)和列(域和字段)组成
+**表**是**二维结构**，由行(记录)和列(域和字段)组成
+:::
 
 ### 约定
 
@@ -61,11 +63,12 @@ CREATE TABLE table_name
 
 实例：
 
-![create-table-user-info](img/create-table-user-info.png)
+![create-table-user-info](/img/oracle/create-table-user-info.png)
 
-> [!TIP|style:flat|label:修改表]
+::: tip 修改表
 
-> 添加字段、更改字段数据类型、修改字段名、删除字段、修改表名
+添加字段、更改字段数据类型、修改字段名、删除字段、修改表名
+:::
 
 **添加字段**
 
@@ -107,11 +110,13 @@ RENAME table_name TO new_table_name;
 # rename user_info to userinfo;
 ```
 
-> [!TIP|style:flat|label:删除表]
+::: tip 删除表
 
-> 删除表中所有数据
+删除表中所有数据
+:::
 
-> 删除表
+删除表
+:::
 
 **删除表中所有数据**
 

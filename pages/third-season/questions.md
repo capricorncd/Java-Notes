@@ -1,16 +1,21 @@
 # 问题思考
 
-> [!NOTE|label:问题思考]
+::: tip 问题思考
 
-> 在课程序列中，如何判断是否包含某门或者某几门课程？
+在课程序列中，如何判断是否包含某门或者某几门课程？
+:::
 
-> 如果课程序列包含某门课程，如果判断该课程的索引位置？
+如果课程序列包含某门课程，如果判断该课程的索引位置？
+:::
 
-> 在学生映射表中，如何判断是否包含某个学ID？
+在学生映射表中，如何判断是否包含某个学ID？
+:::
 
-> 又该如何判断是否包含某个学生对象？
+又该如何判断是否包含某个学生对象？
+:::
 
-> 如何按照课程名称或者学生姓名排序？或是按ID排序？
+如何按照课程名称或者学生姓名排序？或是按ID排序？
+:::
 
 TestSet.java
 
@@ -28,9 +33,10 @@ public void testLsitContains() {
 }
 ```
 
-> [!NOTE|style:flat|label:List contains()]
+::: tip List contains()
 
-> 在课程序列中，如何判断是否包含某门或者某几门课程？
+在课程序列中，如何判断是否包含某门或者某几门课程？
+:::
 
 
 运行结果：
@@ -42,7 +48,7 @@ public void testLsitContains() {
 备选课程中是否包含课程B：数据结构, false
 ```
 
-![](img/set-contains.png)
+![](/img/set-contains.png)
 
 重写Course类的equals方法
 
@@ -73,27 +79,32 @@ public boolean equals(Object obj) {
 备选课程中是否包含课程B：数据结构, true
 ```
 
-![](img/set-hashset-contains.png)
+![](/img/set-hashset-contains.png)
 
-> [!NOTE|style:flat|label:List indexOf()]
+::: tip List indexOf()
 
-> 如果课程序列包含某门课程，如果判断该课程的索引位置？
+如果课程序列包含某门课程，如果判断该课程的索引位置？
+:::
 
-> indexOf: 列表头开始遍历，获取元素第一次出现位置的索引。
+indexOf: 列表头开始遍历，获取元素第一次出现位置的索引。
+:::
 
-> lastIndexOf：从列表尾部（队尾）开始遍历，获取元素最后一次出现的位置索引。
+lastIndexOf：从列表尾部（队尾）开始遍历，获取元素最后一次出现的位置索引。
+:::
 
-![](img/list-indexof.png)
+![](/img/list-indexof.png)
 
 ```java
 
 ```
 
-> [!NOTE|style:flat|label:Map containsKey(), containseValue()]
+::: tip Map containsKey(), containseValue()
 
-> 在Map中，用containsKey()方法，判断是否包含某个key值
+在Map中，用containsKey()方法，判断是否包含某个key值
+:::
 
-> 使用containsValue()方法，判断是否包含某个Value值
+使用containsValue()方法，判断是否包含某个Value值
+:::
 
 ```java
 /**

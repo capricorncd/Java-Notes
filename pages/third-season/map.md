@@ -10,7 +10,7 @@ Map中的键值对以Entry类型的对象实例形式存在。
 
 键（key值）不可重复，value值可以。每个键最多只能映射到一个值。
 
-![](img/set-example.jpg)
+![](/img/set-example.jpg)
 
 Map支持泛型，形式如：`Map<K, V>`
 
@@ -22,15 +22,18 @@ HashMap中的Entry对象是无序排列的。
 
 Key值和Value值都可以为null，但是一个HashMap只能有一个key值的null的映射（key值不可重复）。
 
-![](img/hash-map-methods.png)
+![](/img/hash-map-methods.png)
 
-> [!NOTE|label:案例功能说明]
+::: tip 案例功能说明
 
-> 通过Map<String, Student>进行学生信息管理，其中key为学生ID，value为学生对象。
+通过Map<String, Student>进行学生信息管理，其中key为学生ID，value为学生对象。
+:::
 
-> 通过键盘输入学生信息。
+通过键盘输入学生信息。
+:::
 
-> 对集合中的学生信息进行增/删/改/查操作。
+对集合中的学生信息进行增/删/改/查操作。
+:::
 
 Student2类
 

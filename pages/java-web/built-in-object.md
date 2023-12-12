@@ -30,15 +30,13 @@ for (int i : value) {
 %>
 ```
 
-> [!TIP|style:flat|label:JSP九大内置对象]
+::: tip JSP九大内置对象
+常用内置对象：
+**out, request, response, session, application**
 
-> 常用内置对象：
-
-> **out, request, response, session, application**
-
-> 其它内置对象
-
-> **page, pageContext, exception, config**
+其它内置对象
+**page, pageContext, exception, config**
+:::
 
 **Web程序的请求响应模式**：
 
@@ -161,13 +159,11 @@ for (int i : value) {
 
 ### request对象
 
-> [!TIP|style:flat|label:request对象]
-
-> 客户端的请求信息被封装在request对象中，通过它才能了解到客户端的需求，然后做出响应。
-
-> 它是HttpServletRequest类的实例。
-
-> 具有请求域，即完成客户端的请求之前，该对象一直有效。
+::: tip request对象
+客户端的请求信息被封装在request对象中，通过它才能了解到客户端的需求，然后做出响应。
+它是HttpServletRequest类的实例。
+具有请求域，即完成客户端的请求之前，该对象一直有效。
+:::
 
 常用方法如下：
 
@@ -229,9 +225,9 @@ regdo.jsp
 </body>
 ```
 
-> [!WARNING|style:flat|label:注意]
-
-> 通过URL传参中文乱码问题，可以在tomcat/conf/server.xml中设置编码。
+::: warning 注意
+通过URL传参中文乱码问题，可以在tomcat/conf/server.xml中设置编码。
+:::
 
 ```xml
 <Connector
@@ -279,11 +275,10 @@ getScheme http
 
 ### response对象
 
-> [!TIP|style:flat|label:response对象]
-
-> response对象包含了响应客户端请求的相关信息，但在JSP中很少直接用到它。它是HttpServletResponse类的实例。
-
-> response对象具有**页面作用域**，即访问一个页面时，该页面内的response对象只能对这次访问有效。其他页面的response对象对当前页面无效。
+::: tip response对象
+response对象包含了响应客户端请求的相关信息，但在JSP中很少直接用到它。它是HttpServletResponse类的实例。
+response对象具有**页面作用域**，即访问一个页面时，该页面内的response对象只能对这次访问有效。其他页面的response对象对当前页面无效。
+:::
 
 常用方法：
 
@@ -293,13 +288,11 @@ getScheme http
 
 **PrintWriter getWriter()** 返回可以向客户端输出字符的一个对象（注意**比较PrintWriter与内置out对象的区别**）
 
-> [!WARNING|style:flat|label:区别]
-
-> PrintWriter outer = response.getWriter();
-
-> 默认情况下，outer.println()该对象输出的内容，总是在内置对象out.println()之前。
-
-> 可以通过 `out.flush()` 方法，实现按文档流输出。（见代码部分）
+::: warning 区别
+PrintWriter outer = response.getWriter();
+默认情况下，outer.println()该对象输出的内容，总是在内置对象out.println()之前。
+可以通过 `out.flush()` 方法，实现按文档流输出。（见代码部分）
+:::
 
 **sendRedirect(java.lang.String location)** 重新定向客户端的请求
 
@@ -360,33 +353,26 @@ response.jsp
 
 ### session
 
-> [!TIP|style:flat|label:session]
+::: tip session
+session表示客户端与服务端的一次会话。
+Web中的session指的是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。
+从上述定义中可以看到，session实际上是一个特定的时间概念。
+在服务器内存中，保存着不同用户(客户端)的session。即**session存在于服务器内存中**。
+:::
 
-> session表示客户端与服务端的一次会话。
-
-> Web中的session指的是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。
-
-> 从上述定义中可以看到，session实际上是一个特定的时间概念。
-
-> 在服务器内存中，保存着不同用户(客户端)的session。即**session存在于服务器内存中**。
-
-![session-shopping](img/session-shopping.jpg)
+![session-shopping](/img/session-shopping.jpg)
 
 在服务器内存中，保存着不同用户的session。
 
-![session-server](img/session-server.jpg)
+![session-server](/img/session-server.jpg)
 
-> [!NOTE|style:flat|label:session对象]
-
-> 是一个JSP内置对象
-
-> 在第一个JSP页面被装载时自动创建，完成会话期管理。
-
-> 从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离开这个服务器结束，被称为**一个会话**。
-
-> 当一个客户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要session对象。
-
-> session对象时HttpSession类的实例
+::: tip session对象
+是一个JSP内置对象
+在第一个JSP页面被装载时自动创建，完成会话期管理。
+从一个客户打开浏览器并连接到服务器开始，到客户关闭浏览器离开这个服务器结束，被称为**一个会话**。
+当一个客户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器应当通过某种办法知道这是一个客户，就需要session对象。
+session对象时HttpSession类的实例
+:::
 
 session对象常用方法：
 
@@ -475,19 +461,14 @@ Tomcat web.xml中配置过期时间：(默认为30分钟)
 
 ### application
 
-> [!TIP|style:flat|label:application]
-
-> **application对象**实现了用户间数据的共享，可以存放全局变量
-
-> **application**开始于服务器的启动，终止于服务器的关闭
-
-> 在用户的前后连接或不同用户之间的连接中，可以对**application对象**的同一属性进行操作。
-
-> 在任何地方对**application对象**属性的操作，都将影响到其他用户对此的访问。
-
-> 服务器的启动和关闭决定了**application对象**的生命周期
-
-> application对象是**ServletContext类的实例**
+::: tip application
+**application对象**实现了用户间数据的共享，可以存放全局变量
+**application**开始于服务器的启动，终止于服务器的关闭
+在用户的前后连接或不同用户之间的连接中，可以对**application对象**的同一属性进行操作。
+在任何地方对**application对象**属性的操作，都将影响到其他用户对此的访问。
+服务器的启动和关闭决定了**application对象**的生命周期
+application对象是**ServletContext类的实例**
+:::
 
 **常用方法**
 

@@ -1,12 +1,15 @@
 # 用户
 
-> [!TIP|style:flat|label:系统用户]
+::: tip 系统用户
 
-> sys, system。密码为安装软件时设置的密码
+sys, system。密码为安装软件时设置的密码
+:::
 
-> sysman。密码为安装软件时设置的密码
+sysman。密码为安装软件时设置的密码
+:::
 
-> scott。密码默认为tiger
+scott。密码默认为tiger
+:::
 
 权限依次从高到低
 
@@ -21,7 +24,7 @@
 
 不区分大小写
 
-![sql-plus-sys](img/sql-plus-sys.png)
+![sql-plus-sys](/img/oracle/sql-plus-sys.png)
 
 ### 查看登录用户
 
@@ -36,7 +39,7 @@ show user
 desc dba_users
 ```
 
-![sql-plus-dba-users](img/sql-plus-dba-users.png)
+![sql-plus-dba-users](/img/oracle/sql-plus-dba-users.png)
 
 查看有哪些用户，注意SQL语句要以 `;` 分号结束。
 

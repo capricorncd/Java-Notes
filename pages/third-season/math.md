@@ -39,11 +39,12 @@ ceil(23.92)：24.0
 random()：0.5485492457892083
 ```
 
-> [!TIP|style:flat|label:PS]
+::: tip PS
 
-> Math 类还提供了许多其他方法，各位小伙伴们可以注意关注 wiki ，查阅更多信息。
+Math 类还提供了许多其他方法，各位小伙伴们可以注意关注 wiki ，查阅更多信息。
+:::
 
-![](img/math-props-and-methods.png)
+![](/img/math-props-and-methods.png)
 
 练习
 

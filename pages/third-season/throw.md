@@ -47,7 +47,7 @@ public void compute() throws Exception {
 }
 ```
 
-![](img/throwables.png)
+![](/img/throwables.png)
 
 ### 自定义异常
 
@@ -128,13 +128,16 @@ public void test2 () {
 }
 ```
 
-> [!TIP|style:flat|label:总结]
+::: tip 总结
 
-> Exception的父类是Throwable
+Exception的父类是Throwable
+:::
 
-> 使用try-catch-finally语句捕获并处理异常
+使用try-catch-finally语句捕获并处理异常
+:::
 
-> 可以使用throw语句抛出异常
+可以使用throw语句抛出异常
+:::
 
 ### 实际应用中的经验与总结
 
