@@ -138,7 +138,6 @@ public class ExampleBean {
 ::: tip 销毁的两种方式
 
 实现org.springframework.beans.factory.DisposableBean接口，覆盖destroy方法
-:::
 
 配置destroy-method
 :::
