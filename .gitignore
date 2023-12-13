@@ -73,6 +73,7 @@ dist
 
 # vuepress build output
 .vuepress/dist
+docs
 
 # Serverless directories
 .serverless
@@ -97,9 +98,6 @@ public/**
 .metadata/
 .classpath
 target/
-
-package-lock.json
-yarn.lock
 
 .vscode
 

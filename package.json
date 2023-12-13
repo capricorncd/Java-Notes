@@ -15,10 +15,11 @@
   "keywords": [
     "Java",
     "tutorial",
-    "notes"
+    "notes",
+    "VuePress"
   ],
   "author": "Capricorncd",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/capricorncd/Java-Notes/issues"
   },

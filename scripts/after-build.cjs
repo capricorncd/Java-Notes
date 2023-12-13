@@ -1,5 +1,12 @@
-const path = require('path')
+/**
+ * Created by Capricorncd.
+ * https://github.com/capricorncd
+ * Date: 2023/12/12 20:42:46 (GMT+0900)
+ * 
+ * node version: v20.10.0
+ */
 const fs = require('fs')
+const path = require('path')
 const config = require('../pages/.vuepress/config')
 
 const BASE_PATH = config.base.replace(/\/+$/, '')
@@ -13,7 +20,7 @@ function getHtmlFiles(filePath, result = []) {
         getHtmlFiles(path.join(filePath, file), result)
       })
     } else if (stat.isFile()) {
-      if (path.extname(filePath) === ".html") {
+      if (path.extname(filePath) === '.html') {
         result.push(filePath)
       }
     }
@@ -23,7 +30,7 @@ function getHtmlFiles(filePath, result = []) {
 
 function fixPublicFilesPath(htmlFile) {
   const html = fs.readFileSync(htmlFile, 'utf-8')
-  // img file
+  // has img
   if (REG_IMG.test(html)) {
     const newHtml = html.replace(REG_IMG, `src="${BASE_PATH}$1"`)
     fs.writeFileSync(htmlFile, newHtml, 'utf-8')
@@ -33,7 +40,6 @@ function fixPublicFilesPath(htmlFile) {
 
 function main() {
   const docsDir = path.join(path.resolve(__dirname, '../docs'))
-  // console.log(docsDir)
   const htmlList = getHtmlFiles(docsDir)
   // console.log(htmlList)
   htmlList.forEach(fixPublicFilesPath)

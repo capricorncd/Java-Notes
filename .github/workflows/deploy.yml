@@ -13,5 +13,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: capricorncd/Java-Notes
         TARGET_BRANCH: master
-        BUILD_SCRIPT: npm run build
+        BUILD_SCRIPT: npm i && npm run build
         BUILD_DIR: docs
