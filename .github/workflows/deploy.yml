@@ -3,15 +3,33 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: capricorncd/Java-Notes
-        TARGET_BRANCH: master
-        BUILD_SCRIPT: npm i && npm run build
-        BUILD_DIR: docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit and push changes
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          git init
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          git add .
+          git commit -m "build: Auto build from Github Actions"
+          git push origin master
+
+          cd $GITHUB_WORKSPACE
+          echo "Successfully build!"
