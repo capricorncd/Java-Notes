@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>指令与动作 | Java Memo - Capricorncd</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="Java Note">
+    
+    <link rel="preload" href="/Java-Notes/assets/css/0.styles.29b98670.css" as="style"><link rel="preload" href="/Java-Notes/assets/js/app.7ab262ae.js" as="script"><link rel="preload" href="/Java-Notes/assets/js/2.670a8c78.js" as="script"><link rel="preload" href="/Java-Notes/assets/js/1.71926bfe.js" as="script"><link rel="preload" href="/Java-Notes/assets/js/26.e24a7968.js" as="script"><link rel="prefetch" href="/Java-Notes/assets/js/10.66b9053d.js"><link rel="prefetch" href="/Java-Notes/assets/js/11.04545941.js"><link rel="prefetch" href="/Java-Notes/assets/js/12.1bdea263.js"><link rel="prefetch" href="/Java-Notes/assets/js/13.9426da25.js"><link rel="prefetch" href="/Java-Notes/assets/js/14.856c1518.js"><link rel="prefetch" href="/Java-Notes/assets/js/15.b360c35b.js"><link rel="prefetch" href="/Java-Notes/assets/js/16.e925b239.js"><link rel="prefetch" href="/Java-Notes/assets/js/17.5b873df7.js"><link rel="prefetch" href="/Java-Notes/assets/js/18.4c170722.js"><link rel="prefetch" href="/Java-Notes/assets/js/19.a45744ea.js"><link rel="prefetch" href="/Java-Notes/assets/js/20.e4646aa0.js"><link rel="prefetch" href="/Java-Notes/assets/js/21.a45f0526.js"><link rel="prefetch" href="/Java-Notes/assets/js/22.0e268d0f.js"><link rel="prefetch" href="/Java-Notes/assets/js/23.dccf23af.js"><link rel="prefetch" href="/Java-Notes/assets/js/24.f0a5c2a4.js"><link rel="prefetch" href="/Java-Notes/assets/js/25.9f00feb7.js"><link rel="prefetch" href="/Java-Notes/assets/js/27.afe2db8c.js"><link rel="prefetch" href="/Java-Notes/assets/js/28.5a59e889.js"><link rel="prefetch" href="/Java-Notes/assets/js/29.0299ce1a.js"><link rel="prefetch" href="/Java-Notes/assets/js/3.4db2e19a.js"><link rel="prefetch" href="/Java-Notes/assets/js/30.e3e19196.js"><link rel="prefetch" href="/Java-Notes/assets/js/31.a28b4396.js"><link rel="prefetch" href="/Java-Notes/assets/js/32.00321b8d.js"><link rel="prefetch" href="/Java-Notes/assets/js/33.03660fd1.js"><link rel="prefetch" href="/Java-Notes/assets/js/34.87616dac.js"><link rel="prefetch" href="/Java-Notes/assets/js/35.2d517d76.js"><link rel="prefetch" href="/Java-Notes/assets/js/36.c680a86a.js"><link rel="prefetch" href="/Java-Notes/assets/js/37.429013ee.js"><link rel="prefetch" href="/Java-Notes/assets/js/38.63796709.js"><link rel="prefetch" href="/Java-Notes/assets/js/39.e502348f.js"><link rel="prefetch" href="/Java-Notes/assets/js/4.45665f8a.js"><link rel="prefetch" href="/Java-Notes/assets/js/40.c1702775.js"><link rel="prefetch" href="/Java-Notes/assets/js/41.33cae0d9.js"><link rel="prefetch" href="/Java-Notes/assets/js/42.88c37ecc.js"><link rel="prefetch" href="/Java-Notes/assets/js/43.ca8c2280.js"><link rel="prefetch" href="/Java-Notes/assets/js/44.4557a7f5.js"><link rel="prefetch" href="/Java-Notes/assets/js/45.069e4d97.js"><link rel="prefetch" href="/Java-Notes/assets/js/46.9f980e2c.js"><link rel="prefetch" href="/Java-Notes/assets/js/47.790ea8ae.js"><link rel="prefetch" href="/Java-Notes/assets/js/48.f4e976d2.js"><link rel="prefetch" href="/Java-Notes/assets/js/49.66fe73d9.js"><link rel="prefetch" href="/Java-Notes/assets/js/5.b31b942f.js"><link rel="prefetch" href="/Java-Notes/assets/js/50.eeaa1202.js"><link rel="prefetch" href="/Java-Notes/assets/js/51.d118e57d.js"><link rel="prefetch" href="/Java-Notes/assets/js/52.7eda0485.js"><link rel="prefetch" href="/Java-Notes/assets/js/53.71ce3da0.js"><link rel="prefetch" href="/Java-Notes/assets/js/54.7c1ba0bb.js"><link rel="prefetch" href="/Java-Notes/assets/js/55.778a61eb.js"><link rel="prefetch" href="/Java-Notes/assets/js/56.490855ea.js"><link rel="prefetch" href="/Java-Notes/assets/js/57.65bbbfd5.js"><link rel="prefetch" href="/Java-Notes/assets/js/58.6c4d03cf.js"><link rel="prefetch" href="/Java-Notes/assets/js/59.6238c605.js"><link rel="prefetch" href="/Java-Notes/assets/js/6.4910e764.js"><link rel="prefetch" href="/Java-Notes/assets/js/60.e5bfec3c.js"><link rel="prefetch" href="/Java-Notes/assets/js/61.ea01b109.js"><link rel="prefetch" href="/Java-Notes/assets/js/62.c580f753.js"><link rel="prefetch" href="/Java-Notes/assets/js/63.42896ede.js"><link rel="prefetch" href="/Java-Notes/assets/js/64.58d03d80.js"><link rel="prefetch" href="/Java-Notes/assets/js/65.276b99e8.js"><link rel="prefetch" href="/Java-Notes/assets/js/66.942578ab.js"><link rel="prefetch" href="/Java-Notes/assets/js/67.92d5e2e6.js"><link rel="prefetch" href="/Java-Notes/assets/js/68.df8aab21.js"><link rel="prefetch" href="/Java-Notes/assets/js/69.3a4fe52c.js"><link rel="prefetch" href="/Java-Notes/assets/js/7.c5640ac7.js"><link rel="prefetch" href="/Java-Notes/assets/js/70.dac87329.js"><link rel="prefetch" href="/Java-Notes/assets/js/71.9c572401.js"><link rel="prefetch" href="/Java-Notes/assets/js/72.45c4c555.js"><link rel="prefetch" href="/Java-Notes/assets/js/73.209421cb.js"><link rel="prefetch" href="/Java-Notes/assets/js/74.4497e34d.js"><link rel="prefetch" href="/Java-Notes/assets/js/75.cff3cbda.js"><link rel="prefetch" href="/Java-Notes/assets/js/76.ff007448.js"><link rel="prefetch" href="/Java-Notes/assets/js/77.722fb84e.js"><link rel="prefetch" href="/Java-Notes/assets/js/78.6233cb6c.js"><link rel="prefetch" href="/Java-Notes/assets/js/79.945bf8b2.js"><link rel="prefetch" href="/Java-Notes/assets/js/80.f3d10e61.js"><link rel="prefetch" href="/Java-Notes/assets/js/81.9c471409.js"><link rel="prefetch" href="/Java-Notes/assets/js/82.85a0ce9a.js"><link rel="prefetch" href="/Java-Notes/assets/js/83.75079681.js"><link rel="prefetch" href="/Java-Notes/assets/js/84.6bd4c459.js"><link rel="prefetch" href="/Java-Notes/assets/js/vendors~docsearch.5e19b665.js">
+    <link rel="stylesheet" href="/Java-Notes/assets/css/0.styles.29b98670.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Java-Notes/" class="home-link router-link-active"><!----> <span class="site-name">Java Memo - Capricorncd</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/Java-Notes/" aria-current="page" class="sidebar-link">Java</a><ul class="sidebar-sub-headers"></ul></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/java/variable-and-constant" class="sidebar-heading clickable"><span>JAVA基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/regular-expression" class="sidebar-heading clickable"><span>正则表达式</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/spring" class="sidebar-heading clickable"><span>Spring框架</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/spring-mvc" class="sidebar-heading clickable"><span>Spring MVC</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/java-web/" class="sidebar-heading clickable router-link-active open"><span>Java Web应用程序</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/Java-Notes/java-web/" aria-current="page" class="sidebar-link">JavaWeb应用程序</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/jsp.html" class="sidebar-link">JSP基本语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/built-in-object.html" class="sidebar-link">JSP内置对象</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/java-bean.html" class="sidebar-link">JavaBean</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/state-management.html" class="sidebar-link">Jsp状态管理Cookie</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/commands-and-actions.html" aria-current="page" class="active sidebar-link">指令与动作include/forward</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/Java-Notes/java-web/filter.html" class="sidebar-link">过滤器Filter</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/oracle" class="sidebar-heading clickable"><span>Oracle</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/file" class="sidebar-heading clickable"><span>文件处理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Java-Notes/message-digest" class="sidebar-heading clickable"><span>消息摘要算法及应用</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="指令与动作"><a href="#指令与动作" class="header-anchor">#</a> 指令与动作</h1> <ul><li><p>include指令、include动作，及二者的区别</p></li> <li><p>jsp:forward动作</p></li> <li><p>jsp:param动作</p></li> <li><p>jsp:plugin动作</p></li></ul> <h3 id="include指令"><a href="#include指令" class="header-anchor">#</a> include指令</h3> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ include file=&quot;PATH&quot;%&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="include动作"><a href="#include动作" class="header-anchor">#</a> include动作</h3> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:include page=&quot;PATH&quot; flush=&quot;true|false&quot;/&gt;
+# flush 被包含的页面是否从缓冲区读取
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><table><thead><tr><th style="text-align:left;"></th> <th style="text-align:left;">include指令</th> <th style="text-align:left;">include动作</th></tr></thead> <tbody><tr><td style="text-align:left;">语法格式</td> <td style="text-align:left;">(见上面)</td> <td style="text-align:left;">(见上面)</td></tr> <tr><td style="text-align:left;">发生作用的时间</td> <td style="text-align:left;">页面转换期间</td> <td style="text-align:left;">请求期间</td></tr> <tr><td style="text-align:left;">包含的内容</td> <td style="text-align:left;">文件的实际内容</td> <td style="text-align:left;">页面的输出</td></tr> <tr><td style="text-align:left;">转换成的Servlet</td> <td style="text-align:left;">主页面和包含页面转换为一个Servlet</td> <td style="text-align:left;">主页面和包含页面转换为独立的Servlet</td></tr> <tr><td style="text-align:left;">编译时间</td> <td style="text-align:left;">较慢，资源必须被解析</td> <td style="text-align:left;">较快</td></tr> <tr><td style="text-align:left;">执行时间</td> <td style="text-align:left;">稍快</td> <td style="text-align:left;">较慢，每次资源必须被解析</td></tr></tbody></table> <p><strong>总结</strong>：页面内容经常变化时，更适合使用**&lt;jsp:include&gt;动作**；不经常变化时，更适合使用<strong>include指令</strong>；<strong>&lt;jsp:include&gt;动作</strong>包含的是执行结果，而<strong>include指令</strong>包含的是文件内容。</p> <h3 id="jsp-forward动作"><a href="#jsp-forward动作" class="header-anchor">#</a> jsp:forward动作</h3> <p>语法：</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:forward page=&quot;URL&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>等同于：</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;!-- 服务器转发 --&gt;
+request.getRequestDispatcher(&quot;/url&quot;).forward(request, response);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="jsp-param动作"><a href="#jsp-param动作" class="header-anchor">#</a> jsp:param动作</h3> <p>语法：</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:param page=&quot;参数名&quot; value=&quot;参数值&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>常与 <code>&lt;jsp:forward&gt;</code> 一起使用，作为其的子标签。</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;jsp:forward page=&quot;URL&quot;&gt;
+    &lt;!-- 新增一个参数emial --&gt;
+    &lt;jsp:param value=&quot;admin@xxxx.com&quot; name=&quot;email&quot; /&gt;
+&lt;/jsp:forward&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="jsp-plugin动作"><a href="#jsp-plugin动作" class="header-anchor">#</a> jsp:plugin动作</h3> <p>略</p> <h3 id="商品浏览记录实例"><a href="#商品浏览记录实例" class="header-anchor">#</a> 商品浏览记录实例</h3> <p>/jsp-commands-and-actions/WebContent/index.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot;
+	contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%@ page import=&quot;com.jspcommands.entity.JspCookieItem&quot;%&gt;
+&lt;%@ page import=&quot;com.jspcommands.dao.JspCookieItemDAO&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;案例：商品浏览记录的实现&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;采用Model1(JSP + JavaBean)实现&lt;/h1&gt;
+	&lt;ul&gt;
+		&lt;li&gt;实现DBHelper类&lt;/li&gt;
+		&lt;li&gt;创建实体类&lt;/li&gt;
+		&lt;li&gt;创建业务逻辑类(DAO)，即JavaBeans&lt;/li&gt;
+		&lt;li&gt;创建页面层&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;商品列表：&lt;/h2&gt;
+	&lt;%
+	  JspCookieItemDAO jspCookieItemDao = new JspCookieItemDAO();
+	  ArrayList&lt;JspCookieItem&gt; list = jspCookieItemDao.getAllItems();
+	  if (list.size() == 0) {
+	    out.print(&quot;数据为空！&quot;);
+	  }
+	%&gt;
+	&lt;dl&gt;
+		&lt;%
+		  for (int i = 0; i &lt; list.size(); i++) {
+		    JspCookieItem item = list.get(i);
+		%&gt;
+		&lt;dd style=&quot;float:left;width:200px;&quot;&gt;
+			&lt;a href=&quot;detail.jsp?id=&lt;%=item.getId()%&gt;&quot; target=&quot;_blank&quot;&gt;
+				&lt;h3 style=&quot;margin-bottom:5px;&quot;&gt;&lt;%=item.getName()%&gt;&lt;/h3&gt;
+				&lt;div&gt;
+					&lt;img src=&quot;&lt;%=item.getCover()%&gt;&quot; height=&quot;80&quot;&gt;
+				&lt;/div&gt;
+				&lt;div&gt;价格：&lt;%=item.getPrice()%&gt;&lt;/div&gt;
+				&lt;div&gt;产地：&lt;%=item.getCity()%&gt;&lt;/div&gt;
+				&lt;div&gt;库存：&lt;%=item.getStock()%&gt;&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/dd&gt;
+		&lt;%
+		  }
+		%&gt;
+	&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><p>/jsp-commands-and-actions/WebContent/detail.jsp</p> <div class="language-jsp line-numbers-mode"><pre class="language-text"><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*, java.lang.String&quot;
+	contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%@ page import=&quot;com.jspcommands.entity.JspCookieItem&quot;%&gt;
+&lt;%@ page import=&quot;com.jspcommands.dao.JspCookieItemDAO&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;案例：商品浏览记录的实现&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%!
+String[] slice(String[] arr, int index, int sliceLength) {
+  int len = arr.length;
+  if (index &lt; 0 || len == 0 || index &gt;= len) {
+    return arr;
+  }
+  int end = Math.min(sliceLength + index, len);
+  String[] list = new String[Math.min(sliceLength, len - index)];
+  for (int i = index, j = 0; i &lt; end; i++, j++) {
+    list[j] = arr[i];
+  }
+  return list;
+}
+
+String[] push(String[] arr, String str) {
+  int len = arr.length;
+  String[] newArr = new String[len + 1];
+  for (int i = 0; i &lt; len; i++) {
+    newArr[i] = arr[i];
+  }
+  newArr[len] = str;
+  return newArr;
+}
+
+String toString(String[] arr, String connector) {
+  String str = &quot;&quot;;
+  for (String s:arr) {
+    str += s + connector;
+  }
+  return str.substring(0, str.length() - 1);
+}
+
+String checkStr(String str) {
+  String newStr = &quot;&quot;;
+  String tmp;
+  for (int i = 0; i &lt; str.length(); i++) {
+    tmp = str.substring(i, i + 1);
+    if (i == 0 &amp;&amp; tmp.indexOf(&quot;#&quot;) == 0) continue;
+    newStr += tmp;
+  }
+  return newStr;
+}
+%&gt;
+	&lt;%
+	  JspCookieItemDAO jspCookieItemDao = new JspCookieItemDAO();
+	  String id = request.getParameter(&quot;id&quot;);
+	  JspCookieItem item = id != null &amp;&amp; id != &quot;&quot; ? jspCookieItemDao.getDetailById(Integer.parseInt(id)) : null;
+	  if (item != null) {
+	%&gt;
+	&lt;dl&gt;
+		&lt;dd&gt;
+			&lt;h1&gt;&lt;%=item.getName()%&gt;&lt;/h1&gt;
+		&lt;/dd&gt;
+		&lt;dd&gt;
+			&lt;p&gt;
+		价格：&lt;%=item.getPrice()%&gt;
+				| 产地：&lt;%=item.getCity()%&gt;
+				| 库存：&lt;%=item.getStock()%&gt;
+				&lt;/p&gt;
+		&lt;/dd&gt;
+		&lt;dd&gt;&lt;img src=&quot;&lt;%=item.getCover()%&gt;&quot; style=&quot;max-width:400px&quot;&gt;&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;%
+	  } else {
+	  	out.println(&quot;无相关商品信息&quot;);
+	  }
+	%&gt;
+	&lt;%
+	String records = &quot;&quot;;
+	// 从客户端获取Cookie集合
+	Cookie[] cookies = request.getCookies();
+	// 遍历集合
+	if (cookies != null) {
+	  for (Cookie c:cookies) {
+		if (c.getName().equals(&quot;recordsCookie&quot;)) {
+		  records = checkStr(c.getValue());
+		  out.println(&quot;getCookies: &quot; + records + &quot;&lt;br&gt;&quot;);
+		}
+	  }
+	}
+	// records += request.getParameter(&quot;id&quot;) + &quot;,&quot;;
+	// String id = request.getParameter(&quot;id&quot;);
+	// 转换为数组
+	String[] arr = records.split(&quot;#&quot;);
+	int len = arr[0] != null &amp;&amp; arr[0] != &quot;&quot; ? arr.length : 0;
+	// 判断记录是否已存在
+	if (id != null &amp;&amp; !Arrays.asList(arr).contains(id)) {
+	  //判断记录条数
+	  String[] tmp = push(slice(arr, len - 4, 5), id);
+	  // 保存Cookie
+	  // 注意(使用逗号','作为字符串分隔符，jdk1.8中cookie会抛出以下异常：)
+	  // java.lang.IllegalArgumentException: An invalid character [44] was present in the Cookie value
+	  Cookie cookie = new Cookie(&quot;recordsCookie&quot;, toString(tmp, &quot;#&quot;));
+	  // 最大有效时间
+	  cookie.setMaxAge(24 * 3600 * 30);
+	  // cookie.setPath(&quot;/&quot;);
+	  response.addCookie(cookie);
+	}
+	%&gt;
+	
+	&lt;h2&gt;最近浏览商品列表：&lt;/h2&gt;
+	&lt;%
+	  ArrayList&lt;JspCookieItem&gt; list = jspCookieItemDao.getViewList(records);
+	  if (list.size() == 0) {
+	    out.print(&quot;无浏览记录！&quot;);
+	  } else {
+	%&gt;
+	&lt;dl&gt;
+		&lt;%
+		  for (int i = 0; i &lt; list.size(); i++) {
+		    JspCookieItem cookieItem = list.get(i);
+		%&gt;
+		&lt;dd style=&quot;float:left;width:200px;&quot;&gt;
+			&lt;a href=&quot;detail.jsp?id=&lt;%=cookieItem.getId()%&gt;&quot; target=&quot;_blank&quot;&gt;
+				&lt;h3 style=&quot;margin-bottom:5px;&quot;&gt;&lt;%=cookieItem.getName()%&gt;&lt;/h3&gt;
+				&lt;div&gt;
+					&lt;img src=&quot;&lt;%=cookieItem.getCover()%&gt;&quot; height=&quot;80&quot;&gt;
+				&lt;/div&gt;
+				&lt;div&gt;价格：&lt;%=cookieItem.getPrice()%&gt;&lt;/div&gt;
+				&lt;div&gt;产地：&lt;%=cookieItem.getCity()%&gt;&lt;/div&gt;
+				&lt;div&gt;库存：&lt;%=cookieItem.getStock()%&gt;&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/dd&gt;
+		&lt;%
+		  }
+	  }
+		%&gt;
+	&lt;/dl&gt;
+	&lt;div style=&quot;margin-bottom: 20px; clear:both;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br></div></div><p>/jsp-commands-and-actions/src/com/jspcommands/util/DBHelper.java</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>jspcommands<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Connection</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">DriverManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">SQLException</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DBHelper</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 数据库驱动</span>
+  <span class="token comment">// private static final String MYSQL_DRIVER = &quot;com.mysql.jdbc.Driver&quot;;</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">ORACLE_DRIVER</span> <span class="token operator">=</span> <span class="token string">&quot;oracle.jdbc.driver.OracleDriver&quot;</span><span class="token punctuation">;</span> <span class="token comment">//驱动</span>
+  <span class="token comment">// 连接数据库的URL地址</span>
+  <span class="token comment">// private static final String DB_URL = &quot;jdbc:mysql://localhost:3306/shopping?useUnicode=true&amp;charaterEncoding=UTF-8&quot;;</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">DB_URL</span> <span class="token operator">=</span> <span class="token string">&quot;jdbc:oracle:thin:@//127.0.0.1:1521/orcl&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// 数据库用户名</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">USER_NAME</span> <span class="token operator">=</span> <span class="token string">&quot;system&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// 数据库密码</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">PASSWORD</span> <span class="token operator">=</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// </span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 静态代码块负责加载驱动</span>
+  <span class="token keyword">static</span>
+  <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token constant">ORACLE_DRIVER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// TODO Auto-generated catch block</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 单列模式返回数据库连接对象</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Connection</span> <span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>conn <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        conn <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token constant">DB_URL</span><span class="token punctuation">,</span> <span class="token constant">USER_NAME</span><span class="token punctuation">,</span> <span class="token constant">PASSWORD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">SQLException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// TODO Auto-generated catch block</span>
+        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> conn<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token class-name">DBHelper</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>conn <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;数据库连接成功!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;数据库连接失败!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;数据库连接失败，发生异常：&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p>/jsp-commands-and-actions/src/com/jspcommands/dao/JspCookieItemDAO.java</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>jspcommands<span class="token punctuation">.</span>dao</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Connection</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">PreparedStatement</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">ResultSet</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>jspcommands<span class="token punctuation">.</span>entity<span class="token punctuation">.</span></span><span class="token class-name">JspCookieItem</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>jspcommands<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">DBHelper</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// 商品业务逻辑类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JspCookieItemDAO</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 获取所有商品列表</span>
+  <span class="token keyword">public</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span> <span class="token function">getAllItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">PreparedStatement</span> stat <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    
+    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// System.out.println(&quot;=============ArrayList下面尝试获取数据&quot;);</span>
+    
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      conn <span class="token operator">=</span> <span class="token class-name">DBHelper</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">&quot;select * from jsp_cookie_items&quot;</span><span class="token punctuation">;</span>
+      stat <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      rs <span class="token operator">=</span> stat<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// System.out.println(&quot;=============执行try&quot;);</span>
+      <span class="token keyword">while</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">JspCookieItem</span> item <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JspCookieItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setCity</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;city&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getDouble</span><span class="token punctuation">(</span><span class="token string">&quot;price&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setStock</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">&quot;stock&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setCover</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;cover&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;=========while循环中: &quot;</span> <span class="token operator">+</span> rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 释放数据集对象</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>rs <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          rs <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 释放语句对象</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stat <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          stat<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          stat <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">/**
+   * 获取商品详情
+   * @param id
+   * @return
+   */</span>
+  <span class="token keyword">public</span> <span class="token class-name">JspCookieItem</span> <span class="token function">getDetailById</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Connection</span> conn <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">PreparedStatement</span> stat <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">ResultSet</span> rs <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      conn <span class="token operator">=</span> <span class="token class-name">DBHelper</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">&quot;select * from jsp_cookie_items where id=?&quot;</span><span class="token punctuation">;</span>
+      stat <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      stat<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      rs <span class="token operator">=</span> stat<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// System.out.println(&quot;=============执行try&quot;);</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">JspCookieItem</span> item <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JspCookieItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setCity</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;city&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getDouble</span><span class="token punctuation">(</span><span class="token string">&quot;price&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setStock</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">&quot;stock&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span><span class="token function">setCover</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">&quot;cover&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> item<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 释放数据集对象</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>rs <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          rs <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 释放语句对象</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stat <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          stat<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          stat <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          ex<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">/**
+   * get 获取最近浏览的5条记录
+   * @param records
+   * @return
+   */</span>
+  <span class="token keyword">public</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span> <span class="token function">getViewList</span><span class="token punctuation">(</span><span class="token class-name">String</span> records<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">JspCookieItem</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>records <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> records<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> records<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;#&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        id <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">&quot;&quot;</span> <span class="token operator">?</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">getDetailById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br></div></div><p>/jsp-commands-and-actions/src/com/jspcommands/entity/JspCookieItem.java</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>jspcommands<span class="token punctuation">.</span>entity</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 商品实体类</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JspCookieItem</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> city<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">Double</span> price<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token keyword">int</span> stock<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> cover<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> city<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCity</span><span class="token punctuation">(</span><span class="token class-name">String</span> city<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>city <span class="token operator">=</span> city<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">Double</span> <span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> price<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPrice</span><span class="token punctuation">(</span><span class="token class-name">Double</span> price<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getStock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> stock<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setStock</span><span class="token punctuation">(</span><span class="token keyword">int</span> stock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stock <span class="token operator">=</span> stock<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getCover</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> cover<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCover</span><span class="token punctuation">(</span><span class="token class-name">String</span> cover<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cover <span class="token operator">=</span> cover<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><p>源码位置：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>codes/jsp-commands-and-actions
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Java-Notes/java-web/state-management.html" class="prev">
+        Jsp状态管理Cookie
+      </a></span> <span class="next"><a href="/Java-Notes/java-web/filter.html">
+        过滤器Filter
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Java-Notes/assets/js/app.7ab262ae.js" defer></script><script src="/Java-Notes/assets/js/2.670a8c78.js" defer></script><script src="/Java-Notes/assets/js/1.71926bfe.js" defer></script><script src="/Java-Notes/assets/js/26.e24a7968.js" defer></script>
+  </body>
+</html>
