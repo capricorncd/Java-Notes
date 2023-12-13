@@ -34,7 +34,7 @@ jobs:
 
           git add .
           git commit -m "build: Auto build from Github Actions"
-          git push origin master
+          git push
 
           cd $GITHUB_WORKSPACE
           echo "Successfully build!"
