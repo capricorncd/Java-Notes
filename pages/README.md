@@ -40,23 +40,25 @@ Java Runtime Environment (Java运行时环境)
 
 1、安装JDK
 
-https://www.oracle.com/technetwork/java/javase/downloads/index.html
+[https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
 
 JDK8
 
-https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+[https://www.oracle.com/java/technologies/downloads/#java8](https://www.oracle.com/java/technologies/downloads/#java8)
 
 ::: tip
 Java库文件，以 `.jar` 结尾
 :::
 
-bin目录文件：
+::: details bin目录文件：
 
 ![jdk-bin](/img/jdk-bin.png)
+:::
 
-lib目录文件：
+::: details lib目录文件：
 
 ![jdk-lib](/img/jdk-lib.png)
+:::
 
 2、window 10 配置环境变量（系统变量）
 
@@ -75,9 +77,10 @@ C:\ProgramFiles\Java\jdk1.8.0_172\bin
 C:\Program Files\Java\jdk1.8.0_172\bin\jre\bin
 ```
 
-测试配置是否成功：
+::: details 测试配置是否成功：
 
 ![cmd-java](/img/cmd-java.png)
+:::
 
 3、Mac
 
@@ -117,15 +120,13 @@ java HelloWorld
 
 将程序开发环境和程序调试环境集合在一起，提高开发效率。
 
+#### Spring Tools 4 
+
+[https://spring.io/tools](https://spring.io/tools)
+
 #### Eclipse
 
-开源免费的。下载地址 https://www.eclipse.org/downloads/
-
-#### MyEclipse
-
-MyEclipse是对Eclipse的扩展，是一个十分优秀的用于开发Java、JavaEE的Eclipse插件集合。
-
-https://www.myeclipsecn.com
+开源免费的。下载地址 [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
 
 ### 开发流程
 

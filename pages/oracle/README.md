@@ -6,7 +6,7 @@
 
 * 安装
 
-https://www.oracle.com/downloads/
+[https://www.oracle.com/downloads/](https://www.oracle.com/downloads/)
 
 * 卸载
 
@@ -14,8 +14,3 @@ https://www.oracle.com/downloads/
 # windows系统运行
 deinstall/deinstall.bat
 ```
-
-
-### 出处或参考资料
-
-https://www.imooc.com/

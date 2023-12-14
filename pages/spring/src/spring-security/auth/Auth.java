@@ -17,7 +17,7 @@ public class Auth {
   }
 
   public void authWithUser(HttpServletRequest request, User user) {
-    if (user != null) {
+    if (user == null) {
       throw new Exception("Invalid username or password");
     }
 
