@@ -1,4 +1,8 @@
 /**
+ * Created by Capricorncd.
+ * https://github.com/capricorncd
+ * Date: 2023/12/12 20:42:46 (GMT+0900)
+ * 
  * https://vuepress.vuejs.org/
  */
 module.exports = {
@@ -6,8 +10,13 @@ module.exports = {
   description: 'Java Note',
   base: '/Java-Notes/',
   dest: './docs',
+  plugins: ['@vuepress/back-to-top'],
   themeConfig: {
     displayAllHeaders: true, // Default: false
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Github', link: 'https://github.com/capricorncd/Java-Notes' }
+    ],
     sidebar: [
       {
         title: 'Java',
