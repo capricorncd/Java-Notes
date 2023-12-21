@@ -286,10 +286,8 @@ public class ThreadLockSecurity {
 ::: tip 总结
 
 由于**synchronized**是在**JVM层面实现**的，因此**系统可以监控锁的释放与否**；
-:::
 
 而**ReentrantLock**是使用**代码实现**的，系统**无法自动释放锁**，需要在代码中的**finally子句**中**显式释放锁lock.unlock()**。
-:::
 
 另外，在**并发量比较小**的情况下，**使用synchronized**是个不错的选择；但是在**并发量比较高**的情况下，其性能下降会很严重，此时**ReentrantLock是个不错的方案**。
 :::

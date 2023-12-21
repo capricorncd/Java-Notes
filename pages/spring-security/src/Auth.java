@@ -1,13 +1,23 @@
-package com.demo;
+package com.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthentication;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class Auth {
   @Autowired
   private UserDetailsService userDetailsService;
 
+  @Autowired
+  private BCryptPasswordEncoder bCryptPasswordEncoder;
+
   public User authenticateUsernameAndPassword(String username, String password) {
     try {
+      // User user = userService.findByUsername(username);
       User user = userDetailsService.loadUserByUsername(username);
-      if (user != null && user.getPassword().equals(password)) {
+      if (user != null && bCryptPasswordEncoder.matches(password, user.getPassword())) {
         return user;
       }
     } catch (UserNotFoundException e) {

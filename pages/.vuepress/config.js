@@ -23,7 +23,7 @@ module.exports = {
         path: '/',
       },
       {
-        title: 'JAVA基础',
+        title: 'Season 1',
         path: '/java/variable-and-constant',
         children: [
           {
@@ -46,6 +46,12 @@ module.exports = {
             title: '方法',
             path: '/java/function',
           },
+        ],
+      },
+      {
+        title: 'Season 2',
+        path: '/second-season/class-and-object',
+        children: [
           {
             title: '类与对象', 
             path: '/second-season/class-and-object',
@@ -74,6 +80,12 @@ module.exports = {
             title: 'UML(Unified Modeling Language)',
             path: '/second-season/UML',
           },
+        ],
+      },
+      {
+        title: 'Season 3',
+        path: '/third-season/exception',
+        children: [
           {
             title: '异常与异常处理',
             path: '/third-season/exception',
@@ -186,11 +198,25 @@ module.exports = {
             title: 'Spring对AspectJ的支持',
             path: '/spring/aspect-j',
           },
+        ],
+      },
+      {
+        title: 'Spring Boot',
+        path: '/spring-boot/',
+        children: [
           {
-            title: 'Spring Security',
-            path: '/spring/spring-security'
+            title: 'Spring Boot简介',
+            path: '/spring-boot/',
+          },
+          {
+            title: '启动顺序',
+            path: '/spring-boot/spring-startup-sequence',
           },
         ],
+      },
+      {
+        title: 'Spring Security',
+        path: '/spring-security/',
       },
       {
         title: 'Spring MVC',
@@ -242,6 +268,20 @@ module.exports = {
             title: '过滤器Filter',
             path: '/java-web/filter',
           },
+        ],
+      },
+      {
+        title: 'HttpServlet',
+        path: '/servlet/',
+        children: [
+          {
+            title: 'HttpServlet',
+            path: '/servlet/',
+          },
+          {
+            title: 'RestTemplate',
+            path: '/servlet/RestTemplate',
+          }
         ],
       },
       {
